@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installing numina &mdash; numina-tools 2025.10.15 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f0ca2dfd" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5d99d348"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f0b92f1e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Removing CR in multiple exposures" href="../crmasks/crmasks.html" />
+    <link rel="prev" title="NUMINA tools" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            numina-tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing numina</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-and-activating-a-python-virtual-environment">Creating and activating a python virtual environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-venv">Using <code class="docutils literal notranslate"><span class="pre">venv</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-conda">Using <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-software">Installing the software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uninstalling-the-software">Uninstalling the software</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../crmasks/crmasks.html">Removing CR in multiple exposures</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">numina-tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installing numina</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/installation/installation.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="installing-numina">
+<h1>Installing numina<a class="headerlink" href="#installing-numina" title="Link to this heading"></a></h1>
+<p>As the scripts described on this webpage are occasionally modified to improve
+their performance, we recommend installing the latest version of <strong>numina</strong> to
+ensure compatibility and access to the most up-to-date features.</p>
+<p>In order to keep your current Python installation clean, it is highly
+recommended to install a Python 3 <em>virtual environment</em> as a first step.</p>
+<section id="creating-and-activating-a-python-virtual-environment">
+<h2>Creating and activating a python virtual environment<a class="headerlink" href="#creating-and-activating-a-python-virtual-environment" title="Link to this heading"></a></h2>
+<p>The following describes two different ways to generate a Python environment:
+<code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
+<section id="using-venv">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">venv</span></code><a class="headerlink" href="#using-venv" title="Link to this heading"></a></h3>
+<p>Suppose we want to generate a virtual environment that hangs directly from the
+user’s root directory. In that case, we must execute the following
+instructions:</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span>
+<span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv_numina
+</pre></div>
+</div>
+<p>Note that the above process generates a folder called <code class="docutils literal notranslate"><span class="pre">venv_numina</span></code> just
+below the root directory. It is also possible to specify an alternative path
+and name to generate the desired environment. It is important to remember the
+location and name of this directory if we later need to remove the environment
+from the system.</p>
+<p>To activate the environment:</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>.<span class="w"> </span>venv_numina/bin/activate
+<span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$</span>
+</pre></div>
+</div>
+<p>From now on, the prompt</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$</span>
+</pre></div>
+</div>
+<p>will indicate that we are working in this specific environment.</p>
+<p>To stop using this environment, we only need to execute the following command:</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>deactivate
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>For more information on the use of virtual environments, it is advisable to
+consult the <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv documentation</a>.</p>
+</section>
+<section id="using-conda">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#using-conda" title="Link to this heading"></a></h3>
+<p>Conda users can also easily generate Python environments. It is also possible
+to specify a particular Python version, e.g.:</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(base)</span> <span class="gp">$ </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>venv_numina<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13
+</pre></div>
+</div>
+<p>To activate the new environment:</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(base)</span> <span class="gp">$ </span>conda<span class="w"> </span>activate<span class="w"> </span>venv_numina
+<span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$</span>
+</pre></div>
+</div>
+<p>From now on, the prompt</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$</span>
+</pre></div>
+</div>
+<p>will indicate that we are working in this specific environment.</p>
+<p>To stop using this environment, we only need to execute the following command:</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>conda<span class="w"> </span>deactivate
+<span class="gp gp-VirtualEnv">(base)</span> <span class="gp">$</span>
+</pre></div>
+</div>
+<p>For more information on the use of conda virtual environments, please consult
+<a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">this link</a>.</p>
+</section>
+</section>
+<section id="installing-the-software">
+<h2>Installing the software<a class="headerlink" href="#installing-the-software" title="Link to this heading"></a></h2>
+<p>After activating the Python enviroment, <strong>numina</strong> can be easily installed with
+<code class="docutils literal notranslate"><span class="pre">pip</span></code>, a standard Python tool for package management. It should download the
+package and its dependencies, unpack everything and compile when needed.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>numina
+</pre></div>
+</div>
+<p>Since the <em>numina</em> package may contain recent changes that are not in,
+it is advisable to install its development version</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/guaix-ucm/numina.git@main#egg<span class="o">=</span>numina
+</pre></div>
+</div>
+<p>If, for any reason, the standard installation of the package provides
+functionality that differs from what is described here, it is possible that
+recent changes have been introduced which have not yet been incorporated into
+the release available via pip. In such cases, it is recommended to install the
+development version of the code directly from its GitHub repository.</p>
+</section>
+<section id="uninstalling-the-software">
+<h2>Uninstalling the software<a class="headerlink" href="#uninstalling-the-software" title="Link to this heading"></a></h2>
+<p>If the software has been installed in an environment as described above using
+<code class="docutils literal notranslate"><span class="pre">venv</span></code>, its removal from the system is very simple. It is only necessary to
+disable the environment and delete the directory in which the environment has
+been generated.</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>deactivate
+<span class="gp">$ </span><span class="nb">cd</span>
+<span class="gp">$ </span>rm<span class="w"> </span>-fr<span class="w"> </span>venv_numina
+</pre></div>
+</div>
+<p>If the software was installed using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, you can remove the environment
+using:</p>
+<div class="no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>conda<span class="w"> </span>deactivate
+<span class="gp gp-VirtualEnv">(base)</span> <span class="gp">$ </span>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>venv_numina<span class="w"> </span>--all
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="NUMINA tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../crmasks/crmasks.html" class="btn btn-neutral float-right" title="Removing CR in multiple exposures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sergio Pascual, Nicolás Cardiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
