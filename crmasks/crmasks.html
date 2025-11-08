@@ -453,6 +453,9 @@ factor between the signal measured in the different individual exposures.</p></l
 <li><p><strong>Example 4:</strong> three equivalent exposures are used, but there is an (X, Y)
 offset between the individual images.</p></li>
 </ul>
+<p>The files required to run these examples are available in the
+following ZIP file:
+<a class="reference external" href="https://guaix.fis.ucm.es/data/megaradrp/crmasks_tutorial_v1.zip">crmasks_tutorial_v1.zip</a></p>
 <p>The initial images have been preprocessed (bias subtracted and gain scale
 corrected).</p>
 <p>A simple median combination of the three images initially performs well, but as
@@ -1348,6 +1351,11 @@ Compare this figure with
 </figcaption>
 </figure>
 <p>From this point onward, the program can be used in the same way as in Example 1.</p>
+<p>If the user obtains incorrect values when applying the cross-correlation
+technique but has another way to estimate the offsets between individual
+exposures, those values can be entered explicitly under the parameter
+<code class="docutils literal notranslate"><span class="pre">mm_xy_offsets</span></code>. In this case, each pair of offsets (X, Y) must be provided
+on a separate line for each individual exposure.</p>
 </section>
 </section>
 <section id="parameters-in-the-requirements-section">
