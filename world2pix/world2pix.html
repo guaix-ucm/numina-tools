@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World to/from pixel &mdash; numina-tools 2025.10.15 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f0ca2dfd" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5d99d348"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f0b92f1e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mosaicking" href="../mosaicking/mosaicking.html" />
+    <link rel="prev" title="Miscellaneous 3D data scripts" href="../misc3d/misc3d.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            numina-tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installing numina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arithmetic/arithmetic.html">Basic arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/adr.html">Atmospheric differential refraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc3d/misc3d.html">Miscellaneous 3D data scripts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">World to/from pixel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pixel-solid-angle-arcsec2">pixel_solid_angle_arcsec2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pixel-to-world">pixel_to_world</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#world-to-pixel">world_to_pixel</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mosaicking/mosaicking.html">Mosaicking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crmasks/crmasks.html">Removing CR in multiple exposures</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">numina-tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">World to/from pixel</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/world2pix/world2pix.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="world-to-from-pixel">
+<h1>World to/from pixel<a class="headerlink" href="#world-to-from-pixel" title="Link to this heading"></a></h1>
+<section id="pixel-solid-angle-arcsec2">
+<h2>pixel_solid_angle_arcsec2<a class="headerlink" href="#pixel-solid-angle-arcsec2" title="Link to this heading"></a></h2>
+<p>This script calculates the solid angle subtended by a pixel in a 2D FITS image
+(in arcsec^2).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-pixel_solid_angle_arcsec2<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>usage: numina-pixel_solid_angle_arcsec2 [-h] [--extname EXTNAME]
+                                        [--method METHOD]
+                                        [--kernel_size KERNEL_SIZE]
+                                        [--verbose] [--echo]
+                                        input_file output_file
+
+Compute the solid angle in arcsec^2 for each pixel in a 2D image.
+
+positional arguments:
+  input_file            FITS file containing the image data.
+  output_file           Output FITS file to save the solid angle data.
+
+options:
+  -h, --help            show this help message and exit
+  --extname EXTNAME     Extension name of the input HDU (default: &#39;PRIMARY&#39;).
+  --method METHOD       Method to compute the solid angle:
+                        1: Use spherical polygons (slow)
+                           (not recommended for very small pixel sizes)
+                        2: Use spherical polygons (different approach, slow)
+                           (recommended for small pixel sizes)
+                        3: Use spherical coordinates and distances (fast)
+                           (default, not recommended for very small pixel sizes)
+  --kernel_size KERNEL_SIZE
+                        Kernel size for smoothing the result using a median
+                        filter. If not specified, no smoothing is applied.
+  --verbose             Display intermediate information
+  --echo                Display full command line
+</pre></div>
+</div>
+</section>
+<section id="pixel-to-world">
+<h2>pixel_to_world<a class="headerlink" href="#pixel-to-world" title="Link to this heading"></a></h2>
+<p>Auxiliary script to convert from pixel coordinates to celestial coordinates and
+wavelength. There is also the script <code class="docutils literal notranslate"><span class="pre">numina-world_to_pixel</span></code>, which performs
+the inverse transformation.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-pixel_to_world<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-pixel_to_world</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--pixel</span> <span class=" -Color -Color-C36 -C-C36">PIXEL</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--extnum</span> <span class=" -Color -Color-C36 -C-C36">EXTNUM</span>]
+                             [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
+                             <span class=" -Color -Color-Cyan -C-Cyan">inputfile</span>
+
+Convert pixel to world coordinates.
+
+<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">inputfile</span>        Input FITS file
+
+<span class=" -Color -Color-C208 -C-C208">Options:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>       show this help message and exit
+  <span class=" -Color -Color-Cyan -C-Cyan">--pixel</span> <span class=" -Color -Color-C36 -C-C36">PIXEL</span>    WCS pixel coordinate (comma separated values)
+  <span class=" -Color -Color-Cyan -C-Cyan">--extnum</span> <span class=" -Color -Color-C36 -C-C36">EXTNUM</span>  Extension number (default 0=PRIMARY)
+  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>        Display intermediate information
+  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>           Display full command line
+</pre></div>
+</div>
+</section>
+<section id="world-to-pixel">
+<h2>world_to_pixel<a class="headerlink" href="#world-to-pixel" title="Link to this heading"></a></h2>
+<p>Auxiliary script to convert from celestial coordinates and wavelength to pixel
+coordinates. There is also the script <code class="docutils literal notranslate"><span class="pre">numina-pixel_to_world</span></code>, which performs
+the inverse transformation.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-world_to_pixel<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>usage: numina-world_to_pixel [-h] [--sky SKY] [--wave WAVE] [--extnum EXTNUM]
+                             [--verbose] [--echo]
+                             inputfile
+
+Convert world to pixel coordinates.
+
+positional arguments:
+  inputfile        Input FITS file
+
+options:
+  -h, --help       show this help message and exit
+  --sky SKY        Celestial coordinate (string)
+                   e.g. &#39;SkyCoord(0*u.arcsec, 0*u.arcsec)&#39;
+  --wave WAVE      Spectral wavelength (string)
+                   e.g. &#39;1.9344e-06*u.m&#39;
+  --extnum EXTNUM  Extension number (default 0=PRIMARY)
+  --verbose        Display intermediate information
+  --echo           Display full command line
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../misc3d/misc3d.html" class="btn btn-neutral float-left" title="Miscellaneous 3D data scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../mosaicking/mosaicking.html" class="btn btn-neutral float-right" title="Mosaicking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sergio Pascual, Nicolás Cardiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

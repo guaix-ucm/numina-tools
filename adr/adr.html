@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atmospheric differential refraction &mdash; numina-tools 2025.10.15 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f0ca2dfd" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5d99d348"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f0b92f1e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Miscellaneous 3D data scripts" href="../misc3d/misc3d.html" />
+    <link rel="prev" title="Basic arithmetic" href="../arithmetic/arithmetic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            numina-tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installing numina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arithmetic/arithmetic.html">Basic arithmetic</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Atmospheric differential refraction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#compare-adr-extensions-in-3d-cube">compare_adr_extensions_in_3d_cube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compute-adr-wavelength">compute_adr_wavelength</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../misc3d/misc3d.html">Miscellaneous 3D data scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../world2pix/world2pix.html">World to/from pixel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mosaicking/mosaicking.html">Mosaicking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crmasks/crmasks.html">Removing CR in multiple exposures</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">numina-tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Atmospheric differential refraction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/adr/adr.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="atmospheric-differential-refraction">
+<h1>Atmospheric differential refraction<a class="headerlink" href="#atmospheric-differential-refraction" title="Link to this heading"></a></h1>
+<section id="compare-adr-extensions-in-3d-cube">
+<h2>compare_adr_extensions_in_3d_cube<a class="headerlink" href="#compare-adr-extensions-in-3d-cube" title="Link to this heading"></a></h2>
+<p>This script computes the correction for differential atmospheric refraction
+present in a 3D data cube, by reading the information from two specific
+extensions (e.g., <code class="docutils literal notranslate"><span class="pre">ADRCROSS</span></code>, <code class="docutils literal notranslate"><span class="pre">ADRTHEOR</span></code>).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-compare_adr_extensions_in_3d_cube<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-compare_adr_extensions_in_3d_cube</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
+                                                <span class=" -Color -Color-Cyan -C-Cyan">filename</span> <span class=" -Color -Color-Cyan -C-Cyan">extname1</span> <span class=" -Color -Color-Cyan -C-Cyan">extname2</span>
+
+Compare ADR extensions in 3D cube
+
+<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">filename</span>    Input 3D FITS file
+  <span class=" -Color -Color-Cyan -C-Cyan">extname1</span>    First extension name
+  <span class=" -Color -Color-Cyan -C-Cyan">extname2</span>    Second extension name (optional)
+
+<span class=" -Color -Color-C208 -C-C208">Options:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>  show this help message and exit
+  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>   Display intermediate information
+  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>      Display full command line
+</pre></div>
+</div>
+</section>
+<section id="compute-adr-wavelength">
+<h2>compute_adr_wavelength<a class="headerlink" href="#compute-adr-wavelength" title="Link to this heading"></a></h2>
+<p>This script calculates the effect of atmospheric refraction, using a predefined
+wavelength as reference.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-compute_adr_wavelength<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-compute_adr_wavelength</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--airmass</span> <span class=" -Color -Color-C36 -C-C36">AIRMASS</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--reference_wave_vacuum</span> <span class=" -Color -Color-C36 -C-C36">REFERENCE_WAVE_VACUUM</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--wave_ini</span> <span class=" -Color -Color-C36 -C-C36">WAVE_INI</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--wave_end</span> <span class=" -Color -Color-C36 -C-C36">WAVE_END</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--wave_step</span> <span class=" -Color -Color-C36 -C-C36">WAVE_STEP</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--wave_unit</span> <span class=" -Color -Color-C36 -C-C36">WAVE_UNIT</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--temperature</span> <span class=" -Color -Color-C36 -C-C36">TEMPERATURE</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--pressure</span> <span class=" -Color -Color-C36 -C-C36">PRESSURE</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--pressure_water_vapor</span> <span class=" -Color -Color-C36 -C-C36">PRESSURE_WATER_VAPOR</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--plots</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--ndecimal_wave</span> <span class=" -Color -Color-C36 -C-C36">NDECIMAL_WAVE</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--ndecimal_adr</span> <span class=" -Color -Color-C36 -C-C36">NDECIMAL_ADR</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
+                                     [<span class=" -Color -Color-Cyan -C-Cyan">--debug</span>]
+
+Compute Atmospheric Differential Refraction
+
+<span class=" -Color -Color-C208 -C-C208">Options:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
+  <span class=" -Color -Color-Cyan -C-Cyan">--airmass</span> <span class=" -Color -Color-C36 -C-C36">AIRMASS</span>     Airmass
+  <span class=" -Color -Color-Cyan -C-Cyan">--reference_wave_vacuum</span> <span class=" -Color -Color-C36 -C-C36">REFERENCE_WAVE_VACUUM</span>
+                        Reference wavelength (vacuum)
+  <span class=" -Color -Color-Cyan -C-Cyan">--wave_ini</span> <span class=" -Color -Color-C36 -C-C36">WAVE_INI</span>   Initial wavelength
+  <span class=" -Color -Color-Cyan -C-Cyan">--wave_end</span> <span class=" -Color -Color-C36 -C-C36">WAVE_END</span>   Final wavelength
+  <span class=" -Color -Color-Cyan -C-Cyan">--wave_step</span> <span class=" -Color -Color-C36 -C-C36">WAVE_STEP</span>
+                        Wavelength step
+  <span class=" -Color -Color-Cyan -C-Cyan">--wave_unit</span> <span class=" -Color -Color-C36 -C-C36">WAVE_UNIT</span>
+                        Wavelength unit (astropy)
+  <span class=" -Color -Color-Cyan -C-Cyan">--temperature</span> <span class=" -Color -Color-C36 -C-C36">TEMPERATURE</span>
+                        Temperature (Celsius)
+  <span class=" -Color -Color-Cyan -C-Cyan">--pressure</span> <span class=" -Color -Color-C36 -C-C36">PRESSURE</span>   Pressure (mmHg)
+  <span class=" -Color -Color-Cyan -C-Cyan">--pressure_water_vapor</span> <span class=" -Color -Color-C36 -C-C36">PRESSURE_WATER_VAPOR</span>
+                        Water vapor pressure (mmHg)
+  <span class=" -Color -Color-Cyan -C-Cyan">--plots</span>               Plot intermediate results
+  <span class=" -Color -Color-Cyan -C-Cyan">--ndecimal_wave</span> <span class=" -Color -Color-C36 -C-C36">NDECIMAL_WAVE</span>
+                        Number of decimal places in wavelength
+  <span class=" -Color -Color-Cyan -C-Cyan">--ndecimal_adr</span> <span class=" -Color -Color-C36 -C-C36">NDECIMAL_ADR</span>
+                        Number of decimal places in ADR
+  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+  <span class=" -Color -Color-Cyan -C-Cyan">--debug</span>               Debug
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../arithmetic/arithmetic.html" class="btn btn-neutral float-left" title="Basic arithmetic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../misc3d/misc3d.html" class="btn btn-neutral float-right" title="Miscellaneous 3D data scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sergio Pascual, Nicolás Cardiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

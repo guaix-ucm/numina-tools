@@ -1,0 +1,139 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; numina-tools 2025.10.15 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=f0ca2dfd" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5d99d348"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f0b92f1e"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            numina-tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">Installing numina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arithmetic/arithmetic.html">Basic arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adr/adr.html">Atmospheric differential refraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc3d.html">Miscellaneous 3D data scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../world2pix/world2pix.html">World to/from pixel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mosaicking/mosaicking.html">Mosaicking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../crmasks/crmasks.html">Removing CR in multiple exposures</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">numina-tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/misc3d/files/help_numina-resample_wave_3d_cube.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-resample_wave_3d_cube<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-resample_wave_3d_cube</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>]
+                                    [<span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>]
+                                    [<span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>]
+                                    [<span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
+                                    <span class=" -Color -Color-Cyan -C-Cyan">input_file</span> <span class=" -Color -Color-Cyan -C-Cyan">output_file</span>
+
+Resample a 3D cube in the wavelength axis (NAXIS3).
+
+<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">input_file</span>            Input FITS file with the 3D cube.
+  <span class=" -Color -Color-Cyan -C-Cyan">output_file</span>           Output FITS file with the resampled 3D cube.
+
+<span class=" -Color -Color-C208 -C-C208">Options:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
+  <span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>
+                        Minimum wavelength for the output image (in meters).
+  <span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>
+                        Wavelength step for the output image (in meters).
+  <span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>
+                        Number of slices in the output image.
+  <span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>     Extension name of the input HDU (default: &#39;PRIMARY&#39;).
+  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
+  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+</pre></div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sergio Pascual, Nicolás Cardiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

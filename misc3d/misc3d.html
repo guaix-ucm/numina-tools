@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miscellaneous 3D data scripts &mdash; numina-tools 2025.10.15 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f0ca2dfd" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5d99d348"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f0b92f1e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="World to/from pixel" href="../world2pix/world2pix.html" />
+    <link rel="prev" title="Atmospheric differential refraction" href="../adr/adr.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            numina-tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installing numina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arithmetic/arithmetic.html">Basic arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/adr.html">Atmospheric differential refraction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Miscellaneous 3D data scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#measure-slice-xy-offsets-in-3d-cube">measure_slice_xy_offsets_in_3d_cube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resample-wave-3d-cube">resample_wave_3d_cube</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../world2pix/world2pix.html">World to/from pixel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mosaicking/mosaicking.html">Mosaicking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crmasks/crmasks.html">Removing CR in multiple exposures</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">numina-tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Miscellaneous 3D data scripts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/misc3d/misc3d.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="miscellaneous-3d-data-scripts">
+<h1>Miscellaneous 3D data scripts<a class="headerlink" href="#miscellaneous-3d-data-scripts" title="Link to this heading"></a></h1>
+<section id="measure-slice-xy-offsets-in-3d-cube">
+<h2>measure_slice_xy_offsets_in_3d_cube<a class="headerlink" href="#measure-slice-xy-offsets-in-3d-cube" title="Link to this heading"></a></h2>
+<p>This script calculates the spatial offset in the sky plane between a particular
+spatial slice and all the spatial slices of a given 3D cube. It does so using a
+cross-correlation method.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-measure_slice_xy_offsets_in_3d_cube<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-measure_slice_xy_offsets_in_3d_cube</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>]
+                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--polydeg</span> <span class=" -Color -Color-C36 -C-C36">POLYDEG</span>]
+                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--times_sigma_reject</span> <span class=" -Color -Color-C36 -C-C36">TIMES_SIGMA_REJECT</span>]
+                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--islice_reference</span> <span class=" -Color -Color-C36 -C-C36">ISLICE_REFERENCE</span>]
+                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--iterate</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--method</span> <span class=" -Color -Color-C36 -C-C36">{1,2}</span>]
+                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--plots</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>]
+                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
+                                                  <span class=" -Color -Color-Cyan -C-Cyan">filename</span> <span class=" -Color -Color-Cyan -C-Cyan">npoints</span>
+
+Determine (X,Y) offsets between slices along NAXIS3
+
+<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">filename</span>              Input 3D FITS file
+  <span class=" -Color -Color-Cyan -C-Cyan">npoints</span>               Number of points along NAXIS3
+
+<span class=" -Color -Color-C208 -C-C208">Options:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
+  <span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>     Output extension name to store result (default None)
+  <span class=" -Color -Color-Cyan -C-Cyan">--polydeg</span> <span class=" -Color -Color-C36 -C-C36">POLYDEG</span>     Polynomial degree to fit distortion
+  <span class=" -Color -Color-Cyan -C-Cyan">--times_sigma_reject</span> <span class=" -Color -Color-C36 -C-C36">TIMES_SIGMA_REJECT</span>
+                        Times sigma to reject fitted offsets (default 3.0)
+  <span class=" -Color -Color-Cyan -C-Cyan">--islice_reference</span> <span class=" -Color -Color-C36 -C-C36">ISLICE_REFERENCE</span>
+                        Initial pixel corresponding to the reference slice
+                        (from 1 to NAXIS3)
+  <span class=" -Color -Color-Cyan -C-Cyan">--iterate</span>             Force one iteration
+  <span class=" -Color -Color-Cyan -C-Cyan">--method</span> <span class=" -Color -Color-C36 -C-C36">{1,2}</span>        Method (1: skimage, 2: scipy)
+  <span class=" -Color -Color-Cyan -C-Cyan">--plots</span>               Plot intermediate results
+  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
+  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+</pre></div>
+</div>
+</section>
+<section id="resample-wave-3d-cube">
+<h2>resample_wave_3d_cube<a class="headerlink" href="#resample-wave-3d-cube" title="Link to this heading"></a></h2>
+<p>This script resamples a 3D data cube by specifying the output values for
+<code class="docutils literal notranslate"><span class="pre">CRVAL3</span></code>, <code class="docutils literal notranslate"><span class="pre">CDELT3</span></code> and <code class="docutils literal notranslate"><span class="pre">NAXIS3</span></code>. The celestial WCS is preserved, and the
+spectral WCS is modified in order to make use of the new wavelength sampling.
+This code does not use the functionality of the reproject package and instead
+performs a simple linear redistribution of the signal in the newly sampled
+wavelength grid. In this sense, it produces the same result as the
+<code class="docutils literal notranslate"><span class="pre">numina-generate_mosaic_of_3d_images</span></code> script when employed with a single input
+3D FITS file and the reprojection method is <code class="docutils literal notranslate"><span class="pre">interp</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-resample_wave_3d_cube<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-resample_wave_3d_cube</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>]
+                                    [<span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>]
+                                    [<span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>]
+                                    [<span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
+                                    <span class=" -Color -Color-Cyan -C-Cyan">input_file</span> <span class=" -Color -Color-Cyan -C-Cyan">output_file</span>
+
+Resample a 3D cube in the wavelength axis (NAXIS3).
+
+<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">input_file</span>            Input FITS file with the 3D cube.
+  <span class=" -Color -Color-Cyan -C-Cyan">output_file</span>           Output FITS file with the resampled 3D cube.
+
+<span class=" -Color -Color-C208 -C-C208">Options:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
+  <span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>
+                        Minimum wavelength for the output image (in meters).
+  <span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>
+                        Wavelength step for the output image (in meters).
+  <span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>
+                        Number of slices in the output image.
+  <span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>     Extension name of the input HDU (default: &#39;PRIMARY&#39;).
+  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
+  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../adr/adr.html" class="btn btn-neutral float-left" title="Atmospheric differential refraction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../world2pix/world2pix.html" class="btn btn-neutral float-right" title="World to/from pixel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sergio Pascual, Nicolás Cardiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

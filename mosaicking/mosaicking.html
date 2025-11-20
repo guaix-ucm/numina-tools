@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mosaicking &mdash; numina-tools 2025.10.15 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f0ca2dfd" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5d99d348"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f0b92f1e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Visualization" href="../visualization/visualization.html" />
+    <link rel="prev" title="World to/from pixel" href="../world2pix/world2pix.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            numina-tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installing numina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arithmetic/arithmetic.html">Basic arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adr/adr.html">Atmospheric differential refraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc3d/misc3d.html">Miscellaneous 3D data scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../world2pix/world2pix.html">World to/from pixel</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mosaicking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#extract-2d-slice-from-3d-cube">extract_2d_slice_from_3d_cube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-mosaic-of-2d-images">generate_mosaic_of_2d_images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-mosaic-of-3d-cubes">generate_mosaic_of_3d_cubes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../crmasks/crmasks.html">Removing CR in multiple exposures</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">numina-tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Mosaicking</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/mosaicking/mosaicking.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mosaicking">
+<h1>Mosaicking<a class="headerlink" href="#mosaicking" title="Link to this heading"></a></h1>
+<section id="extract-2d-slice-from-3d-cube">
+<h2>extract_2d_slice_from_3d_cube<a class="headerlink" href="#extract-2d-slice-from-3d-cube" title="Link to this heading"></a></h2>
+<p>This script extracts a 2D section from a 3D FITS image. It allows specifying
+the axis to collapse and the interval (pixel range) along that axis.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-extract_2d_slice_from_3d_cube<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-extract_2d_slice_from_3d_cube</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--axis</span> <span class=" -Color -Color-C36 -C-C36">AXIS</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--i1</span> <span class=" -Color -Color-C36 -C-C36">I1</span>]
+                                            [<span class=" -Color -Color-Cyan -C-Cyan">--i2</span> <span class=" -Color -Color-C36 -C-C36">I2</span>]
+                                            [<span class=" -Color -Color-Cyan -C-Cyan">--method</span> <span class=" -Color -Color-C36 -C-C36">{sum,mean,median}</span>]
+                                            [<span class=" -Color -Color-Cyan -C-Cyan">--wavecal</span> <span class=" -Color -Color-C36 -C-C36">{none,fridasimulator,1,2,3}</span>]
+                                            [<span class=" -Color -Color-Cyan -C-Cyan">--transpose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--noplot</span>]
+                                            [<span class=" -Color -Color-Cyan -C-Cyan">--vmin</span> <span class=" -Color -Color-C36 -C-C36">VMIN</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--vmax</span> <span class=" -Color -Color-C36 -C-C36">VMAX</span>]
+                                            [<span class=" -Color -Color-Cyan -C-Cyan">--output</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
+                                            [<span class=" -Color -Color-Cyan -C-Cyan">--debug</span>]
+                                            <span class=" -Color -Color-Cyan -C-Cyan">input</span>
+
+Extract 2D slice from 3D cube
+
+<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">input</span>                 Input FITS file
+
+<span class=" -Color -Color-C208 -C-C208">Options:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
+  <span class=" -Color -Color-Cyan -C-Cyan">--axis</span> <span class=" -Color -Color-C36 -C-C36">AXIS</span>           Axis to be collapsed in output
+  <span class=" -Color -Color-Cyan -C-Cyan">--i1</span> <span class=" -Color -Color-C36 -C-C36">I1</span>               First pixel of the projected axis
+  <span class=" -Color -Color-Cyan -C-Cyan">--i2</span> <span class=" -Color -Color-C36 -C-C36">I2</span>               Last pixel of the projected axis (0=NAXIS value)
+  <span class=" -Color -Color-Cyan -C-Cyan">--method</span> <span class=" -Color -Color-C36 -C-C36">{sum,mean,median}</span>
+                        Collapse method (default=sum)
+  <span class=" -Color -Color-Cyan -C-Cyan">--wavecal</span> <span class=" -Color -Color-C36 -C-C36">{none,fridasimulator,1,2,3}</span>
+                        Wavelength calibration type
+  <span class=" -Color -Color-Cyan -C-Cyan">--transpose</span>           Transpose data array in output
+  <span class=" -Color -Color-Cyan -C-Cyan">--noplot</span>              Do not plot result
+  <span class=" -Color -Color-Cyan -C-Cyan">--vmin</span> <span class=" -Color -Color-C36 -C-C36">VMIN</span>           vmin value for imshow
+  <span class=" -Color -Color-Cyan -C-Cyan">--vmax</span> <span class=" -Color -Color-C36 -C-C36">VMAX</span>           vmax value for imshow
+  <span class=" -Color -Color-Cyan -C-Cyan">--output</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT</span>       Output FITS file
+  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+  <span class=" -Color -Color-Cyan -C-Cyan">--debug</span>               Debug
+</pre></div>
+</div>
+</section>
+<section id="generate-mosaic-of-2d-images">
+<h2>generate_mosaic_of_2d_images<a class="headerlink" href="#generate-mosaic-of-2d-images" title="Link to this heading"></a></h2>
+<p>This script generates a mosaic of 2D images from a list of 2D FITS files.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-generate_mosaic_of_2d_images<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-generate_mosaic_of_2d_images</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>]
+                                           [<span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>]
+                                           [<span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>]
+                                           [<span class=" -Color -Color-Cyan -C-Cyan">--extname_mask</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_MASK</span>]
+                                           [<span class=" -Color -Color-Cyan -C-Cyan">--combination_function</span> <span class=" -Color -Color-C36 -C-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>]
+                                           [<span class=" -Color -Color-Cyan -C-Cyan">--output_3D_stack</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_3D_STACK</span>]
+                                           [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
+                                           <span class=" -Color -Color-Cyan -C-Cyan">input_list</span> <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>
+
+Generate mosaic of 2D images
+
+<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">input_list</span>            TXT file with list of 2D images to be combined
+  <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>       filename of output FITS image
+
+<span class=" -Color -Color-C208 -C-C208">Options:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
+  <span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>
+                        Reprojection method (interp, adaptive, exact)
+  <span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>
+                        Extension name for image in input files. Default
+                        value: PRIMARY
+  <span class=" -Color -Color-Cyan -C-Cyan">--extname_mask</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_MASK</span>
+                        Extension name for mask in input files. Default
+                        &#39;None&#39;: use np.nan in image
+  <span class=" -Color -Color-Cyan -C-Cyan">--combination_function</span> <span class=" -Color -Color-C36 -C-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>
+                        Combination function. Default: mean
+  <span class=" -Color -Color-Cyan -C-Cyan">--output_3D_stack</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_3D_STACK</span>
+                        filename for stacked 3D array. Default None
+  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
+  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+</pre></div>
+</div>
+</section>
+<section id="generate-mosaic-of-3d-cubes">
+<h2>generate_mosaic_of_3d_cubes<a class="headerlink" href="#generate-mosaic-of-3d-cubes" title="Link to this heading"></a></h2>
+<p>This script generates a mosaic of 3D data cubes from a list of 3D FITS files.</p>
+<ul class="simple">
+<li><p>It is possible to use arguments to fix the desired outupt celestial 2D WCS,
+as well as the output <code class="docutils literal notranslate"><span class="pre">CRVAL3</span></code> and <code class="docutils literal notranslate"><span class="pre">CDELT3</span></code> parameters that define the output
+linear wavelength sampling.</p></li>
+<li><p>If the input is a single 3D FITS cube, the code can be used to resample the
+initial cube with different values of <code class="docutils literal notranslate"><span class="pre">CRVAL3</span></code> and <code class="docutils literal notranslate"><span class="pre">CDELT3</span></code>. In that case, it
+is recommended to use interp as the reprojection method to avoid the default
+Gaussian kernel used when the reprojection method is <code class="docutils literal notranslate"><span class="pre">adaptive</span></code>).</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-generate_mosaic_of_3d_cubes<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-generate_mosaic_of_3d_cubes</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>]
+                                          [<span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>]
+                                          [<span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>]
+                                          [<span class=" -Color -Color-Cyan -C-Cyan">--desired_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">DESIRED_CELESTIAL_2D_WCS</span>]
+                                          [<span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>]
+                                          [<span class=" -Color -Color-Cyan -C-Cyan">--parallel</span>]
+                                          [<span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>]
+                                          [<span class=" -Color -Color-Cyan -C-Cyan">--output_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_CELESTIAL_2D_WCS</span>]
+                                          [<span class=" -Color -Color-Cyan -C-Cyan">--footprint</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
+                                          <span class=" -Color -Color-Cyan -C-Cyan">input_list</span> <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>
+
+Generate a 3D mosaic from individual 3D cubes
+
+<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">input_list</span>            TXT file with list of 3D images to be combined or
+                        single FITS file
+  <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>       filename of output FITS image
+
+<span class=" -Color -Color-C208 -C-C208">Options:</span>
+  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
+  <span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>
+                        Minimum wavelength (in m) for the output image
+  <span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>
+                        Wavelength step (in m/pixel) for the output image
+  <span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>
+                        Number of slices in the output image
+  <span class=" -Color -Color-Cyan -C-Cyan">--desired_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">DESIRED_CELESTIAL_2D_WCS</span>
+                        Desired 2D celestial WCS projection. Default None
+                        (compute for current 3D cube combination)
+  <span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>
+                        Reprojection method (interp, adaptive, exact)
+  <span class=" -Color -Color-Cyan -C-Cyan">--parallel</span>            Use parallel processing for reprojection
+  <span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>
+                        Extension name for image in input files. Default
+                        value: PRIMARY
+  <span class=" -Color -Color-Cyan -C-Cyan">--output_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_CELESTIAL_2D_WCS</span>
+                        filename for output 2D celestial WCS
+  <span class=" -Color -Color-Cyan -C-Cyan">--footprint</span>           Generate a FOOTPRINT extension with the final
+                        footprint
+  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
+  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../world2pix/world2pix.html" class="btn btn-neutral float-left" title="World to/from pixel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../visualization/visualization.html" class="btn btn-neutral float-right" title="Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sergio Pascual, Nicolás Cardiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
