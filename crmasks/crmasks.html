@@ -157,7 +157,7 @@ exposures. In our case, it serves to identify residual cosmic-ray pixels in
 the median combination, which likely correspond to pixels suspected of
 having been hit by a cosmic ray in two out of the three available exposures.
 In this document, we will refer to this method in abbreviated form as
-<span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span>.</p></li>
+<span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span>.</p></li>
 <li><p>The Median-Minimum (MM) diagnostic diagram technique (Cardiel et al. 2025,
 in preparation), an alternative method that works by identifying pixels that
 deviate unexpectedly in a diagnostic diagram constructed using the median
@@ -171,8 +171,15 @@ With the aid of numerical simulations, a <em>detection boundary</em> is predicte
 in the MM diagnostic diagram, such that pixels falling above this boundary
 ave a high probability of having been affected by cosmic rays in two out of
 the three available exposures. In this document, we will refer to this
-method in abbreviated form as <span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span>.</p></li>
+method in abbreviated form as <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The practical application of the M.M.Cosmic algorithm for removing cosmic rays
+in scientific exposures obtained with MEGARA is explained at <a class="reference external" href="https://guaix-ucm.github.io/megaradrp-cookbook/crmasks.html">this
+link</a> within the
+MERARA cookbook.</p>
+</div>
 </section>
 <section id="script-usage">
 <h2>Script usage<a class="headerlink" href="#script-usage" title="Link to this heading"></a></h2>
@@ -184,8 +191,8 @@ is conducted with new images.</p>
 </div>
 <p>The <strong>numina</strong> script responsible for detecting and correcting residual cosmic
 rays using the methods
-<span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span> and or
-<span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span>
+<span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span> and or
+<span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>
 is called
 <strong>numina-crmasks</strong>. Its execution is straightforward:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-crmasks<span class="w"> </span>params_example1.yaml
@@ -297,14 +304,14 @@ has been converted to electrons (for this reason we are using <code class="docut
 <p>1. General execution parameters: They control the overall behavior of
 <strong>numina-crmasks</strong>.</p>
 <p>2. Parameters for the
-<span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span>
+<span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span>
 technique: Identified by the <code class="docutils literal notranslate"><span class="pre">la_</span></code>
 prefix, these parameters configure the <em>Laplacian Cosmic Ray Detection
 Algorithm</em> (van Dokkum 2001). Some default values are provided. These
 parameters, without the <code class="docutils literal notranslate"><span class="pre">la_</span></code> prefix, are transferred to the
 <a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html"><span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span>
 function</a>.</p>
-<p>3. Parameters for the <span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span> method:
+<p>3. Parameters for the <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span> method:
 Identified by the <code class="docutils literal notranslate"><span class="pre">mm_</span></code> prefix, these control the computation of the
 detection boundary in the MM diagnostic diagram.</p>
 </li>
@@ -435,7 +442,7 @@ to pixels unaffected and affected by cosmic rays.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\color{magenta}\texttt{LAMEDIAN}\)</span>: this extension does not actually contain
 a mask but rather the value of the cosmic-ray-cleaned image obtained using
-<span class="math notranslate nohighlight">\(\color{red}\texttt{LAcosmic}\)</span>.</p></li>
+<span class="math notranslate nohighlight">\(\color{red}\texttt{L.A.Cosmic}\)</span>.</p></li>
 </ul>
 </section>
 <section id="examples">
@@ -485,7 +492,7 @@ using the same instrumental configuration.</p>
 <h3>Example 1: simple execution<a class="headerlink" href="#example-1-simple-execution" title="Link to this heading"></a></h3>
 <p>In this example, we will use <code class="docutils literal notranslate"><span class="pre">crmethod:</span> <span class="pre">mm_lacosmic</span></code>,
 which means that cosmic-ray pixels will be detected using both the
-<span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span> and the <span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span>
+<span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span> and the <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>
 methods. We will consider a pixel to contain spurious signal due to a cosmic
 ray hit when it is detected by either of the two methods, and not necessarily
 by both simultaneously.</p>
@@ -522,7 +529,7 @@ color scale for plots: zscale
 </pre></div>
 </div>
 <p>After a short processing time, <strong>numina-crmasks</strong> starts applying the
-<span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span> technique to detect residual cosmic rays in the
+<span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span> technique to detect residual cosmic rays in the
 median combination.</p>
 <div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green -C-Green">-------------------------------------------------------------------------------</span> 
 starting cosmic ray detection in <span class=" -Color -Color-Magenta -C-Magenta">median2d</span> image<span class=" -Color -Color-Yellow -C-Yellow">...</span>                              
@@ -539,7 +546,7 @@ pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Re
 </div>
 <p>In this example 98 pixels are flagged as suspicious of being affected by cosmic
 rays.</p>
-<p>Next, the program begins applying the <span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span>
+<p>Next, the program begins applying the <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>
 method in the median combination.</p>
 <div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>detecting cosmic rays in median2d image using <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span><span class=" -Color -Color-Yellow -C-Yellow">...</span>                       
 flux factor for simulated images: <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>. <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>. <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>.<span class=" -Color -Color-Bold -C-Bold">]</span>                                    
@@ -606,7 +613,7 @@ exposures used are truly equivalent, the MM diagnostic diagram on the right
 should closely resemble the diagram shown on the left. Pixels that appear above
 the calculated boundary in the right-hand figure exhibit very large values of
 <code class="docutils literal notranslate"><span class="pre">median2d</span> <span class="pre">-</span> <span class="pre">min2d</span></code>, exceeding what would be expected based on the image noise,
-and are considered as cosmic-ray pixels by this <span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span>
+and are considered as cosmic-ray pixels by this <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>
 method.</p>
 <div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">72</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0022</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                       
 saving diagnostic_histogram2d.png                                               
@@ -618,8 +625,8 @@ Entering interactive mode <span class=" -Color -Color-Bold -C-Bold">(</span>pres
 <code class="docutils literal notranslate"><span class="pre">x</span></code> key to halt the program execution at this point in case it is necessary to
 modify any of the input parameters).</p>
 <p>Since we are using <code class="docutils literal notranslate"><span class="pre">crmethod:</span> <span class="pre">mm_lacosmic</span></code>, the program proceeds to combine
-the detections made by both the <span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span> and
-<span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span> methods. This allows
+the detections made by both the <span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span> and
+<span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span> methods. This allows
 for a detailed analysis of how many pixels were flagged as suspicious by one
 method but not the other, and how many were identified by both.</p>
 <div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">lacosmic</span> or  <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">154</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0048</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
@@ -636,8 +643,8 @@ Entering interactive mode <span class=" -Color -Color-Bold -C-Bold">(</span>pres
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text"><strong>Panel (a)</strong>: MM diagnostic diagram showing the pixels detected only using the
-<span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span> algorithm (red x’s), those detected only using
-the <span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span> method in the MM diagnostic diagram (blue
+<span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span> algorithm (red x’s), those detected only using
+the <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span> method in the MM diagnostic diagram (blue
 +’s), and those detected by both methods (open magenta circles). <strong>Panel (b)</strong>:
 the same diagram is shown, but instead of symbols, a sequential number is
 assigned to each suspected pixel.  The displayed numbers follow the same color
@@ -652,8 +659,8 @@ of Panel (a). Panels (c) and (d) update simultaneously when the zoom is
 modified in either of them. This interactive figure allows the user to closely
 examine which pixels are suspected of having been affected by cosmic rays in
 two out of the three available exposures. It also helps to understand how the
-two detection methods (<span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span> and
-<span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span>) have performed in identifying suspected
+two detection methods (<span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span> and
+<span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>) have performed in identifying suspected
 pixels.</span><a class="headerlink" href="#fig-diagnostic-mediancr-example1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
@@ -777,9 +784,9 @@ organized into two rows. The <em>top row</em> displays the 3 individual exposure
 left panel of the <em>bottom row</em> shows the initial <code class="docutils literal notranslate"><span class="pre">median2d</span></code> combination of the
 3 exposures. The central panel of the <em>bottom row</em> displays the detection
 information, where each detected pixel is coloured according to the detection
-method: red when detected only by <span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span>; blue when
-detected only by <span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span>; yellow when detected by
-both <span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span> and <span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span>;
+method: red when detected only by <span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span>; blue when
+detected only by <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>; yellow when detected by
+both <span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span> and <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>;
 gray for pixels included after the dilation process. The right panel of the
 <em>bottom row</em> shows the result of replacing the masked pixels in <code class="docutils literal notranslate"><span class="pre">median2d</span></code> by
 their value in <code class="docutils literal notranslate"><span class="pre">min2d</span></code>.</p>
@@ -790,9 +797,9 @@ stored in the <span class="math notranslate nohighlight">\(\color{magenta}\textt
 all individual exposures, and attempts to identify cosmic rays in this image.
 Note that in this case, the number of cosmic rays will be very large, as it
 will include all cosmic rays from all individual exposures.  This procedure
-begins with the <span class="math notranslate nohighlight">\(\color{red}\textbf{LAcosmic}\)</span> method, using the same
+begins with the <span class="math notranslate nohighlight">\(\color{red}\textbf{L.A.Cosmic}\)</span> method, using the same
 parameters for the <span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span> function as
-defined above, and continues with the <span class="math notranslate nohighlight">\(\color{blue}\textbf{MMcosmic}\)</span>
+defined above, and continues with the <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>
 method. In this second case, it is worth noting that an MM diagnostic diagram
 is constructed using <span class="math notranslate nohighlight">\(\texttt{mean2d} − \texttt{min2d}\)</span> on the vertical axis
 instead of <span class="math notranslate nohighlight">\(\texttt{median2d} − \texttt{min2d}\)</span>. <strong>The same previously derived
@@ -826,7 +833,7 @@ stored in the <span class="math notranslate nohighlight">\(\color{magenta}\textt
 <code class="docutils literal notranslate"><span class="pre">crmasks.fits</span></code> file with a value of 1.</p>
 <p>The same process is then repeated again, but this time using the individual
 exposures. In these cases, the diagnostic diagram of the
-<span class="math notranslate nohighlight">\(\color{blue}\texttt{MMCosmic}\)</span> method is constructed using the value
+<span class="math notranslate nohighlight">\(\color{blue}\texttt{M.M.Cosmic}\)</span> method is constructed using the value
 <span class="math notranslate nohighlight">\(\texttt{image#}i − \texttt{min2d}\)</span> on the vertical axis, where <span class="math notranslate nohighlight">\(i\)</span> is the
 image number (1, 2, 3, etc.). <strong>The same detection boundary calculated at the
 beginning is reused</strong>, and the figures showing the pixels detected as affected
@@ -951,7 +958,7 @@ No.    Name      Ver    Type      Cards   Dimensions   Format
 </pre></div>
 </div>
 <p>Note that in this file, the masks are stored in different extensions. Since we
-have also used the LACosmic method, the cosmic-ray-cleaned image returned by
+have also used the L.A.Cosmic method, the cosmic-ray-cleaned image returned by
 the <span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span> function is additionally saved
 in an extension named <span class="math notranslate nohighlight">\(\color{magenta}\texttt{LAMEDIAN}\)</span>.</p>
 <p>Finally, the program proceeds to compute the combined images. First, it uses
@@ -1476,12 +1483,12 @@ increase execution time). This option is only used if <code class="docutils lite
 <p>All parameters in this section correspond to parameters of the
 <a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html"><span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span>
 function</a>,
-which is used to apply the <span class="math notranslate nohighlight">\(\color{red}\texttt{LAcosmic}\)</span> technique. Not all
+which is used to apply the <span class="math notranslate nohighlight">\(\color{red}\texttt{L.A.Cosmic}\)</span> technique. Not all
 parameters from that function are used (only a subset is being employed). Note
 that the parameter names here match those in the
 <span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span> but with a <code class="docutils literal notranslate"><span class="pre">la_</span></code> prefix, which
 helps distinguish them from the parameters used in the
-<span class="math notranslate nohighlight">\(\color{blue}\texttt{MMcosmic}\)</span> algorithm.</p>
+<span class="math notranslate nohighlight">\(\color{blue}\texttt{M.M.Cosmic}\)</span> algorithm.</p>
 <p>We recommend that users consult the documentation for these parameters in the
 official documentation of the <a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html"><span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span>
 function</a>.</p>
