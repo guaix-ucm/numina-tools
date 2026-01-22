@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=42210275" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f0ca2dfd" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=9f3d14ec" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -109,7 +109,7 @@
   <section class="tex2jax_ignore mathjax_ignore" id="removing-cr-in-multiple-exposures">
 <h1>Removing CR in multiple exposures<a class="headerlink" href="#removing-cr-in-multiple-exposures" title="Link to this heading"></a></h1>
 <p>A common task in astronomical image reduction is the removal of cosmic rays
-(CRs).  When possible, observers typically acquire three or more equivalent
+(CRs). When possible, observers typically acquire three or more equivalent
 exposures, which can then be median-combined to effectively eliminate cosmic
 rays. However, this approach has limitations when exposure times are long and
 cosmic ray rates are high: individual pixels may be affected by cosmic rays in
@@ -168,8 +168,7 @@ in Python.</p>
 for cosmic-ray detection based on Laplacian edge detection. We use the
 implementation provided by the Python package
 <a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/index.html" rel="noreferrer" target="_blank">ccdproc</a> through the
-<a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span>
-function</a>,
+<a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html" rel="noreferrer" target="_blank"><code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code> function</a>,
 which itself relies on the
 <a class="reference external" href="https://github.com/astropy/astroscrappy" rel="noreferrer" target="_blank">Astro-SCRAPPY</a> package
 <span id="id4">[<a class="reference internal" href="#id26" title="Curtis McCully. Astro-SCRAPPY. https://github.com/astropy/astroscrappy, 2014. Accessed: 2026-01-03.">McCully, 2014</a>]</span>. This algorithm is widely used for cosmic ray
@@ -359,21 +358,20 @@ already been subtracted and the signal converted to electrons (hence
 Identified by the <code class="docutils literal notranslate"><span class="pre">la_</span></code> prefix, these parameters configure the <em>Laplacian
 Cosmic Ray Detection Algorithm</em> <span id="id9">[<a class="reference internal" href="#id23" title="Pieter G. van Dokkum. Cosmic-Ray Rejection by Laplacian Edge Detection. Publications of the Astronomical Society of the Pacific, 113(789):1420-1427, November 2001. arXiv:astro-ph/0108003, doi:10.1086/323894.">van Dokkum, 2001</a>]</span>. Default values
 are provided. These parameters (without the <code class="docutils literal notranslate"><span class="pre">la_</span></code> prefix) are passed to the
-<a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span>
-function</a>.</p></li>
+<a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html" rel="noreferrer" target="_blank"><code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code>
+function</a></p></li>
 <li><p>Parameters for the <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{PyCosmic}\)</span> technique
 <span id="id10">[<a class="reference internal" href="#id24" title="B. Husemann, S. Kamann, C. Sandin, S. F. Sánchez, R. García-Benito, and D. Mast. PyCosmic: a robust method to detect cosmics in CALIFA and other fiber-fed integral-field spectroscopy datasets. Astronomy &amp; Astrophysics, 545:A137, September 2012. arXiv:1208.1696, doi:10.1051/0004-6361/201220102.">Husemann <em>et al.</em>, 2012</a>]</span>: Identified by the <code class="docutils literal notranslate"><span class="pre">pc_</span></code> prefix. These parameters
-(without the <code class="docutils literal notranslate"><span class="pre">pc_</span></code> prefix) are passed to the
-<a class="reference external" href="https://github.com/brandherd/PyCosmic/blob/master/PyCosmic/det_cosmics.py" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{det_cosmics()}\)</span>
+(without the <code class="docutils literal notranslate"><span class="pre">pc_</span></code> prefix) are passed to the <a class="reference external" href="https://github.com/brandherd/PyCosmic/blob/master/PyCosmic/det_cosmics.py" rel="noreferrer" target="_blank"><code class="code-gray docutils literal notranslate"><span class="pre">det_cosmics()</span></code>
 function</a>.</p></li>
 <li><p>Parameters for the <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{deepCR}\)</span> technique
 <span id="id11">[<a class="reference internal" href="#id30" title="Keming Zhang and Joshua S. Bloom. deepCR: Cosmic Ray Rejection with Deep Learning. \apj , 889(1):24, January 2020. arXiv:1907.09500, doi:10.3847/1538-4357/ab3fa6.">Zhang and Bloom, 2020</a>]</span>: Identified by the <code class="docutils literal notranslate"><span class="pre">dc_</span></code> prefix. These parameters
-(without the <code class="docutils literal notranslate"><span class="pre">dc_</span></code> prefix) are passed to the <a class="reference external" href="https://deepcr.readthedocs.io/en/latest/tutorial_use.html" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{deepCR()}\)</span>
+(without the <code class="docutils literal notranslate"><span class="pre">dc_</span></code> prefix) are passed to the <a class="reference external" href="https://deepcr.readthedocs.io/en/latest/tutorial_use.html" rel="noreferrer" target="_blank"><code class="code-gray docutils literal notranslate"><span class="pre">deepCR()</span></code>
 class</a>.</p></li>
 <li><p>Parameters for the <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{CoNN}\)</span> technique
 <span id="id12">[<a class="reference internal" href="#id31" title="Chengyuan Xu, Curtis McCully, Boning Dong, D. Andrew Howell, and Pradeep Sen. Cosmic-CoNN: A Cosmic-Ray Detection Deep-learning Framework, Data Set, and Toolkit. The Astrophysical Journal, 942(2):73, January 2023. arXiv:2106.14922, doi:10.3847/1538-4357/ac9d91.">Xu <em>et al.</em>, 2023</a>]</span>: Identified by the <code class="docutils literal notranslate"><span class="pre">nn_</span></code> prefix. These parameters
-(without the <code class="docutils literal notranslate"><span class="pre">nn_</span></code> prefix) are passed to the
-<a class="reference external" href="https://cosmic-conn.readthedocs.io/en/latest/index.html" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{init_model()}\)</span> and <span class="math notranslate nohighlight">\(\color{gray}\texttt{detect_cr()}\)</span>
+(without the <code class="docutils literal notranslate"><span class="pre">nn_</span></code> prefix) are passed to the <a class="reference external" href="https://cosmic-conn.readthedocs.io/en/latest/index.html" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">init_model()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">detect_cr()</span></code>
 functions</a>.</p></li>
 <li><p>Parameters for the <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span> method: Identified by
 the <code class="docutils literal notranslate"><span class="pre">mm_</span></code> prefix, these control the computation of the detection boundary in
@@ -894,7 +892,7 @@ different computed masks.</p>
 <p>Note that the masks are stored in different extensions of this file.</p>
 <p>Since <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{PyCosmic}\)</span> is used as the
 <span class="math notranslate nohighlight">\(\color{red}\textbf{Aux.Cosmic}\)</span> method, the cosmic-ray-cleaned image returned
-by the <span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span> function is also saved in an
+by the <code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code> function is also saved in an
 extension named <span class="math notranslate nohighlight">\(\color{magenta}\texttt{AUXCLEAN}\)</span>.</p>
 <p>Finally, the program computes the combined images. First, the simple mean,
 median, and minimum 2D images are created. These do not require any cosmic ray
@@ -1491,26 +1489,26 @@ YAML file used to run <strong>numina-crmasks</strong>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">crmethod</span></code> (string): this parameter must take one of the following values:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{lacosmic}\)</span>: The <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{L.A.Cosmic}\)</span>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">lacosmic</span></code>: The <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{L.A.Cosmic}\)</span>
 technique <span id="id13">[<a class="reference internal" href="#id23" title="Pieter G. van Dokkum. Cosmic-Ray Rejection by Laplacian Edge Detection. Publications of the Astronomical Society of the Pacific, 113(789):1420-1427, November 2001. arXiv:astro-ph/0108003, doi:10.1086/323894.">van Dokkum, 2001</a>]</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{pycosmic}\)</span>: The <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{PyCosmic}\)</span>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">pycosmic</span></code>: The <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{PyCosmic}\)</span>
 algorithm <span id="id14">[<a class="reference internal" href="#id24" title="B. Husemann, S. Kamann, C. Sandin, S. F. Sánchez, R. García-Benito, and D. Mast. PyCosmic: a robust method to detect cosmics in CALIFA and other fiber-fed integral-field spectroscopy datasets. Astronomy &amp; Astrophysics, 545:A137, September 2012. arXiv:1208.1696, doi:10.1051/0004-6361/201220102.">Husemann <em>et al.</em>, 2012</a>]</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{deepcr}\)</span>: The <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{deepCR}\)</span>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">deepcr</span></code>: The <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{deepCR}\)</span>
 algorithm <span id="id15">[<a class="reference internal" href="#id30" title="Keming Zhang and Joshua S. Bloom. deepCR: Cosmic Ray Rejection with Deep Learning. \apj , 889(1):24, January 2020. arXiv:1907.09500, doi:10.3847/1538-4357/ab3fa6.">Zhang and Bloom, 2020</a>]</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{conn}\)</span>: The <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{CoNN}\)</span>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">conn</span></code>: The <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{CoNN}\)</span>
 algorithm <span id="id16">[<a class="reference internal" href="#id31" title="Chengyuan Xu, Curtis McCully, Boning Dong, D. Andrew Howell, and Pradeep Sen. Cosmic-CoNN: A Cosmic-Ray Detection Deep-learning Framework, Data Set, and Toolkit. The Astrophysical Journal, 942(2):73, January 2023. arXiv:2106.14922, doi:10.3847/1538-4357/ac9d91.">Xu <em>et al.</em>, 2023</a>]</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{mmcosmic}\)</span>: The <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">mmcosmic</span></code>: The <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>
 technique <span id="id17">[<a class="reference internal" href="#id33" title="N. Cardiel, M. Chillarón-Víctor, S. Pascual, and J. Gallego. In preparation, 2026.">Cardiel <em>et al.</em>, 2026</a>]</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{mm_lacosmic}\)</span>: Combination of
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">mm_lacosmic</span></code>: Combination of
 <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{L.A.Cosmic}\)</span> and
 <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{mm_pycosmic}\)</span>: Combination of
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">mm_pycosmic</span></code>: Combination of
 <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{PyCosmic}\)</span> and
 <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{mm_deepcr}\)</span>: Combination of
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">mm_deepcr</span></code>: Combination of
 <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{deepCR}\)</span> and
 <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{mm_conn}\)</span>: Combination of
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">mm_conn</span></code>: Combination of
 <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{CoNN}\)</span> and
 <span class="math notranslate nohighlight">\(\color{blue}\textbf{M.M.Cosmic}\)</span>.</p></li>
 </ul>
@@ -1520,14 +1518,14 @@ returned by the selected <span class="math notranslate nohighlight">\(\color{red
 cleaning the median array is used instead of the minimum value at each pixel.
 This affects differently depending on the combination method:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{mediancr}\)</span>: all the masked pixels in the mask
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">mediancr</span></code>: all the masked pixels in the mask
 <span class="math notranslate nohighlight">\(\color{magenta}\texttt{MEDIANCR}\)</span> are replaced.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{meancrt}\)</span>: only the pixels coincident in masks
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">meancrt</span></code>: only the pixels coincident in masks
 <span class="math notranslate nohighlight">\(\color{magenta}\texttt{MEANCRT}\)</span> and <span class="math notranslate nohighlight">\(\color{magenta}\texttt{MEDIANCR}\)</span>;
 the rest of the pixels flagged in the mask
 <span class="math notranslate nohighlight">\(\color{magenta}\texttt{MEANCRT}\)</span> are replaced by the value obtained when
 the combination method is <code class="docutils literal notranslate"><span class="pre">mediancr</span></code>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{meancr}\)</span>: only the pixels flagged in all the
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">meancr</span></code>: only the pixels flagged in all the
 individual exposures (i.e., those flagged simultaneously in all the masks
 <span class="math notranslate nohighlight">\(\color{magenta}\texttt{CRMASK1}\)</span>, <span class="math notranslate nohighlight">\(\color{magenta}\texttt{CRMASK2}\)</span>,
 etc.); the rest of the pixels flagged in any of the
@@ -1543,9 +1541,9 @@ mode. In any case, all the plots are also saved as PNG or PDF files.</p></li>
 controls how the relative flux levels of individual exposures are handled.
 This paramewter can be set in several ways:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{none}\)</span>: Assumes all exposures are equivalent;
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">none</span></code>: Assumes all exposures are equivalent;
 internally, a flux factor of 1.0 is applied to each.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{auto}\)</span>: The program automatically estimates the flux
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">auto</span></code>: The program automatically estimates the flux
 factor for each exposure by comparing it to the median of all exposures.</p></li>
 <li><p>List of values: You can manually specify a list of flux factors (e.g.,
 <code class="docutils literal notranslate"><span class="pre">[0.78,</span> <span class="pre">1.01,</span> <span class="pre">1.11]</span></code>), with one value per exposure.</p></li>
@@ -1554,7 +1552,7 @@ all exposures.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">flux_factor_regions</span></code>
-(string <span class="math notranslate nohighlight">\(\color{green}\texttt{&quot;[xmin:xmax, ymin:ymax]&quot;}\)</span>): rectangular region
+(string <code class="code-green docutils literal notranslate"><span class="pre">&quot;[xmin:xmax,</span> <span class="pre">ymin:ymax]&quot;</span></code>): rectangular region
 to determine the relative flux levels of the individual exposures in
 comparison to the median combination, where the limits are defined in pixels
 following the FITS convention (the first pixel in each direction is numbered
@@ -1563,9 +1561,9 @@ when read by Python), it is assumed that the full image area is employed.</p></l
 <li><p><code class="docutils literal notranslate"><span class="pre">apply_flux_factor_to</span></code> (string): specifies to which images the flux factors
 should be applied. Valid options are:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{original}\)</span>: apply the flux factors to the original
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">original</span></code>: apply the flux factors to the original
 images.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{simulated}\)</span>: apply the flux factors to the simulated
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">simulated</span></code>: apply the flux factors to the simulated
 data.</p></li>
 </ul>
 </li>
@@ -1573,17 +1571,16 @@ data.</p></li>
 mask around detected cosmic ray pixels. A value of 0 disables dilation. A
 value of 1 is typically recommended, as it helps include the tails of cosmic
 rays, which may have lower signal levels but are still affected.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">regions_to_be_skipped</span></code> (list of <span class="math notranslate nohighlight">\(\color{green}\texttt{[xmin, xmax, ymin,
-ymax]}\)</span> regions). The format of each region must be a list of 4 integers,
-following the FITS convention</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pixels_to_be-flagged_as_cr</span></code> (list of <span class="math notranslate nohighlight">\(\color{green}\texttt{[X,Y]}\)</span> pixel
-coordinates; FITS criterium).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pixels_to_be_ignored_as_cr</span></code> (list of <span class="math notranslate nohighlight">\(\color{green}\texttt{[X,Y]}\)</span> pixel
-coordinates; FITS criterium).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pixels_to_be_replaced_by_local_median</span></code> (list of
-<span class="math notranslate nohighlight">\(\color{green}\texttt{[X, Y, X_width, Y_width]}\)</span> values): <span class="math notranslate nohighlight">\(\color{green}\texttt{X, Y}\)</span> pixel coordinates
-(FITS criterium), and median window size <span class="math notranslate nohighlight">\(\color{green}\texttt{X_width,
-Y_width}\)</span> to compute the local median (these two numbers must be odd).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">regions_to_be_skipped</span></code> (list of <code class="code-green docutils literal notranslate"><span class="pre">[xmin,</span> <span class="pre">xmax,</span> <span class="pre">ymin,</span> <span class="pre">ymax]</span></code>
+regions). The format of each region must be a list of 4 integers, following
+the FITS convention</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pixels_to_be-flagged_as_cr</span></code> (list of <code class="code-green docutils literal notranslate"><span class="pre">[X,Y]</span></code> pixel coordinates;
+FITS criterium).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pixels_to_be_ignored_as_cr</span></code> (list of <code class="code-green docutils literal notranslate"><span class="pre">[X,Y]</span></code> pixel coordinates;
+FITS criterium).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pixels_to_be_replaced_by_local_median</span></code> (list of <code class="code-green docutils literal notranslate"><span class="pre">[X,</span> <span class="pre">Y,</span> <span class="pre">X_width,</span> <span class="pre">Y_width]</span></code> values): <code class="code-green docutils literal notranslate"><span class="pre">X,</span> <span class="pre">Y</span></code> pixel coordinates (FITS criterium), and
+median window size <code class="code-green docutils literal notranslate"><span class="pre">X_width,</span> <span class="pre">Y_width</span></code> to compute the local median
+(these two numbers must be odd).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">verify_cr</span></code> (boolean): If set to True, the code displays a graphical
 representation of the pixels detected as cosmic rays during the computation
 of the <span class="math notranslate nohighlight">\(\color{magenta}\texttt{MEDIANCR}\)</span> mask, allowing the user to decide
@@ -1592,7 +1589,7 @@ whether or not to include those pixels in the final mask.</p></li>
 plotting the double cosmic ray hits.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">color_scale</span></code> (string): Specifies the color scale used in the images
 displayed in the <code class="docutils literal notranslate"><span class="pre">mediancr_identified_cr.pdf</span></code> file.  Valid values are
-<span class="math notranslate nohighlight">\(\color{green}\texttt{minmax}\)</span> and <span class="math notranslate nohighlight">\(\color{green}\texttt{zscale}\)</span>.</p></li>
+<code class="code-green docutils literal notranslate"><span class="pre">minmax</span></code> and <code class="code-green docutils literal notranslate"><span class="pre">zscale</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">maxplots</span></code> (integer): Sets the maximum number of suspicious double
 cosmic rays to display. Limiting the number of plots is useful when
 experimenting with program parameters, as it helps avoid generating an
@@ -1604,15 +1601,14 @@ increase execution time).</p></li>
 <section id="parameters-for-the-l-a-cosmic-algorithm">
 <h3>Parameters for the L.A. Cosmic algorithm<a class="headerlink" href="#parameters-for-the-l-a-cosmic-algorithm" title="Link to this heading"></a></h3>
 <p>All parameters in this section correspond to parameters of the
-<a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span>
+<a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html" rel="noreferrer" target="_blank"><code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code>
 function</a>,
-which applies the <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{L.A.Cosmic}\)</span>
-technique <span id="id18">[<a class="reference internal" href="#id23" title="Pieter G. van Dokkum. Cosmic-Ray Rejection by Laplacian Edge Detection. Publications of the Astronomical Society of the Pacific, 113(789):1420-1427, November 2001. arXiv:astro-ph/0108003, doi:10.1086/323894.">van Dokkum, 2001</a>]</span>. Not all parameters from that function are
-used (only a subset is employed). Note that parameter names here match those in
-<span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span> but with a <code class="docutils literal notranslate"><span class="pre">la_</span></code> prefix to
-distinguish them from parameters used in other algorithms. We recommend
-consulting the official documentation for the
-<a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span>
+which applies the <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{L.A.Cosmic}\)</span> technique
+<span id="id18">[<a class="reference internal" href="#id23" title="Pieter G. van Dokkum. Cosmic-Ray Rejection by Laplacian Edge Detection. Publications of the Astronomical Society of the Pacific, 113(789):1420-1427, November 2001. arXiv:astro-ph/0108003, doi:10.1086/323894.">van Dokkum, 2001</a>]</span>. Not all parameters from that function are used
+(only a subset is employed). Note that parameter names here match those in
+<code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code> but with a <code class="docutils literal notranslate"><span class="pre">la_</span></code> prefix to distinguish them from
+parameters used in other algorithms. We recommend consulting the official
+documentation for the <a class="reference external" href="https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html" rel="noreferrer" target="_blank"><code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code>
 function</a>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">la_gain_apply</span></code> (bool): If True, apply the gain when computing the corrected
@@ -1629,7 +1625,7 @@ in the second execution.</p></li>
 structure image.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">la_satlevel</span></code> (float): Saturation level of the image (in ADU). <strong>Important</strong>:
 this parameter is employed in electrons by the
-<span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span> function.  Here we define this
+<code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code> function.  Here we define this
 parameter in ADU and it is properly transformed into electron afterwards.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">la_niter</span></code> (integer): Number of iterations of the L.A. Cosmic algorithm to
 perform.</p></li>
@@ -1637,30 +1633,28 @@ perform.</p></li>
 median filter.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">la_cleantype</span></code> (string): Clean algorithm to be used:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{median}\)</span>: An unmasked 5x5 median filter.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{medmask}\)</span>: A masked 5x5 median filter.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{meanmask}\)</span> A masked 5x5 mean filter.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{idw}\)</span>: A masked 5x5 inverse distance weighted
-interpolation.</p></li>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">median</span></code>: An unmasked 5x5 median filter.</p></li>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">medmask</span></code>: A masked 5x5 median filter.</p></li>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">meanmask</span></code> A masked 5x5 mean filter.</p></li>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">idw</span></code>: A masked 5x5 inverse distance weighted interpolation.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">la_fsmode</span></code> (string): Method to build the fine structure image. Possible
 values are:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{median}\)</span>: Use the median filter in the standard LA
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">median</span></code>: Use the median filter in the standard LA
 Cosmic algorithm.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{convolve}\)</span>: Convolve the image with the psf kernel to
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">convolve</span></code>: Convolve the image with the psf kernel to
 calculate the fine structure image.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">la_psfmodel</span></code> (string): Model to use to generate the psf kernel if <code class="docutils literal notranslate"><span class="pre">fsmode</span> <span class="pre">==</span> <span class="pre">'convolve'</span></code> and <code class="docutils literal notranslate"><span class="pre">psfk</span></code> is None (the latter is always the case when using
 <strong>numina-crmasks</strong>). Possible choices:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{gauss}\)</span> and <span class="math notranslate nohighlight">\(\color{green}\texttt{moffat}\)</span>: produce
-circular PSF kernels.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{gaussx}\)</span>: Gaussian kernel in the X direction.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{gaussy}\)</span>: Gaussian kernel in the Y direction.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{gaussxy}\)</span>: Elliptical Gaussian. This kernel is
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">gauss</span></code> and <code class="code-green docutils literal notranslate"><span class="pre">moffat</span></code>: produce circular PSF kernels.</p></li>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">gaussx</span></code>: Gaussian kernel in the X direction.</p></li>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">gaussy</span></code>: Gaussian kernel in the Y direction.</p></li>
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">gaussxy</span></code>: Elliptical Gaussian. This kernel is
 defined by <strong>numina-crmasks</strong>.</p></li>
 </ul>
 </li>
@@ -1670,8 +1664,7 @@ generate the kernel along the X axis (pixels).</p></li>
 generate the kernel along the Y axis (pixels).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">la_psfsize</span></code> (integer): Size of the kernel to calculate (pixels).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">la_psfbeta</span></code> (float): Moffat beta parameter. Only used if
-<code class="docutils literal notranslate"><span class="pre">la_fsmode</span></code>=<span class="math notranslate nohighlight">\(\color{green}\texttt{convolve}\)</span>
-and <code class="docutils literal notranslate"><span class="pre">la_psfmodel</span></code>=<span class="math notranslate nohighlight">\(\color{green}\texttt{moffat}\)</span>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">la_fsmode</span></code>=<code class="code-green docutils literal notranslate"><span class="pre">convolve</span></code> and <code class="docutils literal notranslate"><span class="pre">la_psfmodel</span></code>=<code class="code-green docutils literal notranslate"><span class="pre">moffat</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">la_verbose</span></code> (boolean): Print to the screen or not. This parameter is
 automatically set to False if the program is executed with <code class="docutils literal notranslate"><span class="pre">--log-level</span></code> set
 to <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> or higher.</p></li>
@@ -1680,36 +1673,34 @@ effects. When different from zero, images to be cleaned are padded on all
 sides by the indicated number of pixels using a mirror reflection of the data
 (without repeating the outermost values). This helps find cosmic ray pixels
 very close to the image borders, which remain undetected when using
-<span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span> without this preliminary
-manipulation.</p></li>
+<code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code> without this preliminary manipulation.</p></li>
 </ul>
 <p>In addition to these parameters, <strong>numina-crmasks</strong> also uses the values of
 <code class="docutils literal notranslate"><span class="pre">gain</span></code> and <code class="docutils literal notranslate"><span class="pre">rnoise</span></code> (defined at the top level of its configuration YAML file)
-as inputs to the <span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span> function.
+as inputs to the <code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code> function.
 Therefore, there is no need to define <code class="docutils literal notranslate"><span class="pre">la_gain</span></code> or <code class="docutils literal notranslate"><span class="pre">la_readnoise</span></code>.</p>
-<p>Note that although the <span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmicray_lacosmic()}\)</span> function
+<p>Note that although the <code class="code-gray docutils literal notranslate"><span class="pre">cosmicray_lacosmic()</span></code> function
 initially only makes use of a single parameter <code class="docutils literal notranslate"><span class="pre">psffwhm</span></code> to generate kernels,
 we have included the option to use different FWHM values along each axis. This
 is enabled by setting the desired values for <code class="docutils literal notranslate"><span class="pre">la_psffwhm_x</span></code> and <code class="docutils literal notranslate"><span class="pre">la_psffwhm_y</span></code>,
 and choosing <code class="docutils literal notranslate"><span class="pre">la_psfmodel=gaussxy</span></code>, whose kernel is defined within the
 <strong>numina-crmasks</strong> code. When <code class="docutils literal notranslate"><span class="pre">la_psfmodel</span></code> is set to
-<span class="math notranslate nohighlight">\(\color{green}\texttt{gauss}\)</span> or <span class="math notranslate nohighlight">\(\color{green}\texttt{moffat}\)</span>, a
+<code class="code-green docutils literal notranslate"><span class="pre">gauss</span></code> or <code class="code-green docutils literal notranslate"><span class="pre">moffat</span></code>, a
 single <code class="docutils literal notranslate"><span class="pre">psffwhm</span></code> value computed as the arithmetic mean of <code class="docutils literal notranslate"><span class="pre">la_psffwhm_x</span></code> and
 <code class="docutils literal notranslate"><span class="pre">la_psffwhm_y</span></code> is employed. When <code class="docutils literal notranslate"><span class="pre">la_psfmodel</span></code> is set to
-<span class="math notranslate nohighlight">\(\color{green}\texttt{gaussx}\)</span> or <span class="math notranslate nohighlight">\(\color{green}\texttt{gaussy}\)</span>,
+<code class="code-green docutils literal notranslate"><span class="pre">gaussx</span></code> or <code class="code-green docutils literal notranslate"><span class="pre">gaussy</span></code>,
 the <code class="docutils literal notranslate"><span class="pre">psffwhm</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">la_psffwhm_x</span></code> or <code class="docutils literal notranslate"><span class="pre">la_psffwhm_y</span></code>,
 respectively.</p>
 </section>
 <section id="parameters-for-the-pycosmic-algorithm">
 <h3>Parameters for the PyCosmic algorithm<a class="headerlink" href="#parameters-for-the-pycosmic-algorithm" title="Link to this heading"></a></h3>
 <p>The parameters in this section correspond to those used by the
-<a class="reference external" href="https://github.com/brandherd/PyCosmic/blob/master/PyCosmic/det_cosmics.py" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{det_cosmics()}\)</span>
+<a class="reference external" href="https://github.com/brandherd/PyCosmic/blob/master/PyCosmic/det_cosmics.py" rel="noreferrer" target="_blank"><code class="code-gray docutils literal notranslate"><span class="pre">det_cosmics()</span></code>
 function</a>,
 which applies the <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{PyCosmic}\)</span> algorithm
-<span id="id19">[<a class="reference internal" href="#id24" title="B. Husemann, S. Kamann, C. Sandin, S. F. Sánchez, R. García-Benito, and D. Mast. PyCosmic: a robust method to detect cosmics in CALIFA and other fiber-fed integral-field spectroscopy datasets. Astronomy &amp; Astrophysics, 545:A137, September 2012. arXiv:1208.1696, doi:10.1051/0004-6361/201220102.">Husemann <em>et al.</em>, 2012</a>]</span>. We recommend
-consulting the documentation for these parameters at that link.
-The parameter names here match those in <span class="math notranslate nohighlight">\(\color{gray}\texttt{det_cosmics()}\)</span>
-but with a <code class="docutils literal notranslate"><span class="pre">pc_</span></code> prefix.</p>
+<span id="id19">[<a class="reference internal" href="#id24" title="B. Husemann, S. Kamann, C. Sandin, S. F. Sánchez, R. García-Benito, and D. Mast. PyCosmic: a robust method to detect cosmics in CALIFA and other fiber-fed integral-field spectroscopy datasets. Astronomy &amp; Astrophysics, 545:A137, September 2012. arXiv:1208.1696, doi:10.1051/0004-6361/201220102.">Husemann <em>et al.</em>, 2012</a>]</span>. We recommend consulting the documentation for
+these parameters at that link.  The parameter names here match those in
+<code class="code-gray docutils literal notranslate"><span class="pre">det_cosmics()</span></code> but with a <code class="docutils literal notranslate"><span class="pre">pc_</span></code> prefix.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pc_sigma_det</span></code> ([float, float]): Detection limit of edge pixel above the
 noise in (sigma units) to be detected as comiscs. The first number is used in
@@ -1738,47 +1729,44 @@ ray pixel by the given number of pixels.</p></li>
 <section id="parameters-for-the-deepcr-algorithm">
 <h3>Parameters for the deepCR algorithm<a class="headerlink" href="#parameters-for-the-deepcr-algorithm" title="Link to this heading"></a></h3>
 <p>The parameters in this section correspond to to those used by the
-<a class="reference external" href="https://github.com/profjsb/deepCR/blob/master/deepCR/model.py" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{deepCR}\)</span>
+<a class="reference external" href="https://github.com/profjsb/deepCR/blob/master/deepCR/model.py" rel="noreferrer" target="_blank"><code class="code-gray docutils literal notranslate"><span class="pre">deepCR</span></code>
 class</a> (see
-<code class="docutils literal notranslate"><span class="pre">__init__()</span></code> and <code class="docutils literal notranslate"><span class="pre">clean()</span></code> methods of that class), which
+<code class="code-gray docutils literal notranslate"><span class="pre">__init__()</span></code> and <code class="code-gray docutils literal notranslate"><span class="pre">clean()</span></code> methods of that class), which
 applies the <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{deepCR}\)</span> technique
 <span id="id20">[<a class="reference internal" href="#id30" title="Keming Zhang and Joshua S. Bloom. deepCR: Cosmic Ray Rejection with Deep Learning. \apj , 889(1):24, January 2020. arXiv:1907.09500, doi:10.3847/1538-4357/ab3fa6.">Zhang and Bloom, 2020</a>]</span>.  Please, consult the documentation for these
 parameters at that link.  The parameter names here match those in the mentioned
-methods of the <span class="math notranslate nohighlight">\(\color{gray}\texttt{deepCR}\)</span> class but with a <code class="docutils literal notranslate"><span class="pre">dc_</span></code> prefix.</p>
+methods of the <code class="code-gray docutils literal notranslate"><span class="pre">deepCR</span></code> class but with a <code class="docutils literal notranslate"><span class="pre">dc_</span></code> prefix.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">dc_mask</span></code> (string): Name of existing deepCR-mask model. Valid values are
-<span class="math notranslate nohighlight">\(\color{green}\texttt{ACS-WFC}\)</span> and
-<span class="math notranslate nohighlight">\(\color{green}\texttt{WFC3-UVIS}\)</span>.</p></li>
+<code class="code-green docutils literal notranslate"><span class="pre">ACS-WFC</span></code> and <code class="code-green docutils literal notranslate"><span class="pre">WFC3-UVIS</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dc_threshold</span></code> (float): number in the <span class="math notranslate nohighlight">\([0,\,1]\)</span> range applied to
 probabilistic mask to generate the binary mask.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dc_verbose</span></code> (bool): Flag for providing information during the processing.
 This is not an actual parameter employed by any method of the
-<span class="math notranslate nohighlight">\(\color{gray}\texttt{deepCR}\)</span> class, but a local parameter
-employed internally by <strong>numina-crmasks</strong>.</p></li>
+<code class="code-gray docutils literal notranslate"><span class="pre">deepCR</span></code> class, but a local parameter employed internally by
+<strong>numina-crmasks</strong>.</p></li>
 </ul>
 </section>
 <section id="parameters-for-the-cosmic-conn-algorithm">
 <h3>Parameters for the Cosmic-CoNN algorithm<a class="headerlink" href="#parameters-for-the-cosmic-conn-algorithm" title="Link to this heading"></a></h3>
-<p>The parameters in this section correspond to
-to those used by the <a class="reference external" href="https://github.com/cy-xu/cosmic-conn/tree/main" rel="noreferrer" target="_blank"><span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmic-conn}\)</span> package</a>, which applies
+<p>The parameters in this section correspond to to those used by the
+<a class="reference external" href="https://github.com/cy-xu/cosmic-conn/tree/main" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">cosmic-conn</span></code></a>, which applies
 the <span class="math notranslate nohighlight">\(\color{BrickRed}\textbf{Cosmic-CoNN}\)</span> technique
-<span id="id21">[<a class="reference internal" href="#id31" title="Chengyuan Xu, Curtis McCully, Boning Dong, D. Andrew Howell, and Pradeep Sen. Cosmic-CoNN: A Cosmic-Ray Detection Deep-learning Framework, Data Set, and Toolkit. The Astrophysical Journal, 942(2):73, January 2023. arXiv:2106.14922, doi:10.3847/1538-4357/ac9d91.">Xu <em>et al.</em>, 2023</a>]</span>
-Please, consult the documentation for these parameters at that link.
-The parameter names here match those in XX function but with a <code class="docutils literal notranslate"><span class="pre">nn_</span></code> prefix.</p>
+<span id="id21">[<a class="reference internal" href="#id31" title="Chengyuan Xu, Curtis McCully, Boning Dong, D. Andrew Howell, and Pradeep Sen. Cosmic-CoNN: A Cosmic-Ray Detection Deep-learning Framework, Data Set, and Toolkit. The Astrophysical Journal, 942(2):73, January 2023. arXiv:2106.14922, doi:10.3847/1538-4357/ac9d91.">Xu <em>et al.</em>, 2023</a>]</span> Please, consult the documentation for these
+parameters at that link.  The parameter names here match those in XX function
+but with a <code class="docutils literal notranslate"><span class="pre">nn_</span></code> prefix.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">nn_model</span></code> (string): model to be employed. Valid values are
-<span class="math notranslate nohighlight">\(\color{green}\texttt{ground_imaging}\)</span>,
-<span class="math notranslate nohighlight">\(\color{green}\texttt{NRES}\)</span>, and
-<span class="math notranslate nohighlight">\(\color{green}\texttt{HST_ACS_WFC}\)</span>. These correspond to the trained models
-available at this
+<code class="code-green docutils literal notranslate"><span class="pre">ground_imaging</span></code>, <code class="code-green docutils literal notranslate"><span class="pre">NRES</span></code>, and <code class="code-green docutils literal notranslate"><span class="pre">HST_ACS_WFC</span></code>.
+These correspond to the trained models available at this
 <a class="reference external" href="https://github.com/cy-xu/cosmic-conn/tree/main/cosmic_conn/trained_models" rel="noreferrer" target="_blank">link</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nn_threshold</span></code> (float): number in the <span class="math notranslate nohighlight">\([0,\,1]\)</span> range applied to
 probabilistic mask to generate the binary mask.  This is not an actual
-parameter employed by the <span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmic-conn}\)</span> package, but a
+parameter employed by the <code class="docutils literal notranslate"><span class="pre">cosmic-conn</span></code> package, but a
 local parameter employed internally by <strong>numina-crmasks</strong>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nn_verbose</span></code> (bool): Flag for providing information during the processing.
 This is not an actual parameter employed by the
-<span class="math notranslate nohighlight">\(\color{gray}\texttt{cosmic-conn}\)</span> package, but a local parameter employed
+<code class="docutils literal notranslate"><span class="pre">cosmic-conn</span></code> package, but a local parameter employed
 internally by <strong>numina-crmasks</strong>.</p></li>
 </ul>
 </section>
@@ -1788,41 +1776,39 @@ internally by <strong>numina-crmasks</strong>.</p></li>
 the MM diagnostic diagram. Their name make use of the prefix <code class="docutils literal notranslate"><span class="pre">mm_</span></code> to clearly
 distinguish them from those associated with the L.A. Cosmic method.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">mm_xy_offsets</span></code> (list of <span class="math notranslate nohighlight">\(\color{green}\texttt{[xoffset, yoffset]}\)</span> values).
+<li><p><code class="docutils literal notranslate"><span class="pre">mm_xy_offsets</span></code> (list of <code class="code-green docutils literal notranslate"><span class="pre">[xoffset,</span> <span class="pre">yoffset]</span></code> values).
 Offsets (pixels) to apply to each simulated individual exposure when
 computing the diagnostic diagram for the mmcosmic method. This option is not
 compatible with <code class="docutils literal notranslate"><span class="pre">mm_crosscorr_region</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mm_crosscorr_region</span></code> (string <span class="math notranslate nohighlight">\(\color{green}\texttt{&quot;[xmin:xmax,
-ymin:ymax]&quot;}\)</span>): Rectangular region used to determine X and Y offsets between
-the individual exposures. The region must be specified in the format
-<span class="math notranslate nohighlight">\(\color{green}\texttt{[xmin:xmax, ymin:ymax]}\)</span>, where the limits are defined
-in pixels following the FITS convention (the first pixel in each direction is
-numbered as 1).  This means that <span class="math notranslate nohighlight">\(1 \leq \texttt{xmin} &lt; \texttt{xmax} \leq
-\texttt{NAXIS1}\)</span> and <span class="math notranslate nohighlight">\(1 \leq \texttt{ymin} &lt; \texttt{ymax} \leq
-\texttt{NAXIS2}\)</span>. If this parameter is set to null in the YAML file
-(interpreted as None when read by Python), it is assumed that the individual
-exposures are perfectly aligned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mm_crosscorr_region</span></code> (string <code class="code-green docutils literal notranslate"><span class="pre">&quot;[xmin:xmax,</span> <span class="pre">ymin:ymax]&quot;</span></code>):
+Rectangular region used to determine X and Y offsets between the individual
+exposures. The region must be specified in the format <code class="code-green docutils literal notranslate"><span class="pre">[xmin:xmax,</span> <span class="pre">ymin:ymax]</span></code>, where the limits are defined in pixels following the FITS
+convention (the first pixel in each direction is numbered as 1).  This means
+that <span class="math notranslate nohighlight">\(1 \leq \texttt{xmin} &lt; \texttt{xmax} \leq \texttt{NAXIS1}\)</span> and <span class="math notranslate nohighlight">\(1 \leq
+\texttt{ymin} &lt; \texttt{ymax} \leq \texttt{NAXIS2}\)</span>. If this parameter is set
+to null in the YAML file (interpreted as None when read by Python), it is
+assumed that the individual exposures are perfectly aligned.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mm_boundary_fit</span></code> (string): Type of mathematical function used to determine
 the boundary separating the expected signal in the MM diagnostic diagram
 between pixels affected and unaffected by cosmic rays. The two available
 options are:</p>
 <ul>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{piecewise}\)</span>: piecewise linear function passing through
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">piecewise</span></code>: piecewise linear function passing through
 a set of fixed points defined in <code class="docutils literal notranslate"><span class="pre">mm_fixed_points_in_boundary</span></code>).</p></li>
-<li><p><span class="math notranslate nohighlight">\(\color{green}\texttt{spline}\)</span>: iterative fit using splines with a
+<li><p><code class="code-green docutils literal notranslate"><span class="pre">spline</span></code>: iterative fit using splines with a
 predefined number of knots specified by <code class="docutils literal notranslate"><span class="pre">mm_knots_split</span></code>.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mm_knots_splfit</span></code> (integer): Total number of knots employed in the spline fit
 that define the detection boundary in the diagnostic diagram.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mm_fixed_points_in_boundary</span></code> (list of
-<span class="math notranslate nohighlight">\(\color{green}\texttt{[X, Y, weight]}\)</span>): Points used to fit the detection
+<code class="code-green docutils literal notranslate"><span class="pre">[X,</span> <span class="pre">Y,</span> <span class="pre">weight]</span></code>): Points used to fit the detection
 boundary in the MM diagnostic diagram. In the case of a <code class="docutils literal notranslate"><span class="pre">piecewise</span></code> fit, the
 boundary is constructed using straight lines connecting the specified points.
 If a <span class="math notranslate nohighlight">\(\texttt{spline}\)</span> fit is used, the manually provided points are combined
 with simulated ones. In the first case, each point is specified on a separate
-line in the YAML file using the format <span class="math notranslate nohighlight">\(\color{green}\texttt{[X, Y]}\)</span>. In the
-second case, the format is <span class="math notranslate nohighlight">\(\color{green}\texttt{[X, Y, weight]}\)</span>, where the
+line in the YAML file using the format <code class="code-green docutils literal notranslate"><span class="pre">[X,</span> <span class="pre">Y]</span></code>. In the
+second case, the format is <code class="code-green docutils literal notranslate"><span class="pre">[X,</span> <span class="pre">Y,</span> <span class="pre">weight]</span></code>, where the
 weight is optional and should be a large number (default 1000 when not
 provided) to ensure that the numerical fit closely follows the manually
 specified points.</p></li>
@@ -1832,7 +1818,7 @@ collection of exposures when generating the simulated diagnostic diagram.</p></l
 used to extend the detection boundary above the red crosses in the simulated
 diagnostic diagram, improving the robustness of cosmic ray detection by
 reducing the number of false positives. This option is only employed when
-<code class="docutils literal notranslate"><span class="pre">mm_boundary_fit</span></code>=<span class="math notranslate nohighlight">\(\color{green}\texttt{spline}\)</span>.</p></li>
+<code class="docutils literal notranslate"><span class="pre">mm_boundary_fit</span></code>=<code class="code-green docutils literal notranslate"><span class="pre">spline</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mm_weight_boundary_extension</span></code> (float): Weight applied to
 the vertical distance between fitted points in the diagnostic diagram when
 extending the detection boundary above the red crosses. During each
