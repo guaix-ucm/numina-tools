@@ -1,0 +1,12 @@
+```{code-block} ansi-shell-session
+:class: my-special-block no-copybutton
+
+pixels flagged as cosmic rays by [1;31mpycosmic[0m or [1;34mmmcosmic[0m : [1;36m795[0m [1m([0m[1;36m000.0247[0m%[1m)[0m         
+pixels flagged as cosmic rays by [1;31mpycosmic[0m only[33m...[0m[33m...[0m..:  [1;36m10[0m [1m([0m[1;36m000.0003[0m%[1m)[0m         
+pixels flagged as cosmic rays by [1;34mmmcosmic[0m only[33m...[0m[33m...[0m..: [1;36m717[0m [1m([0m[1;36m000.0223[0m%[1m)[0m         
+pixels flagged as cosmic rays by [1;31mpycosmic[0m and [1;34mmmcosmic[0m:  [1;36m68[0m [1m([0m[1;36m000.0021[0m%[1m)[0m         
+generating diagnostic plot for MEDIANCR[33m...[0m                                      
+saving diagnostic_mediancr.png                                                  
+Entering interactive mode                                                       
+[1m([0mpress [32m'?'[0m for help, [32m'c'[0m to continue, [32m'x'[0m to quit program[1m)[0m                      
+```

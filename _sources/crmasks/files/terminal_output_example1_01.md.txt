@@ -1,0 +1,19 @@
+```{code-block} ansi-shell-session
+:class: my-special-block no-copybutton
+
+mm_synthetic: median                                                            
+mm_hist2d_min_neighbors: [1;36m0[0m                                                      
+mm_dilation: [1;36m1[0m                                                                  
+mm_xy_offsets: [3;35mNone[0m                                                             
+mm_crosscorr_region: [3;35mNone[0m                                                       
+mm_boundary_fit: spline                                                         
+mm_knots_splfit: [1;36m5[0m                                                              
+mm_fixed points_in_boundary: [3;35mNone[0m                                               
+mm_nsimulations: [1;36m10[0m                                                             
+mm_niter_boundary_extension: [1;36m5[0m                                                  
+mm_weight_boundary_extension: [1;36m2.000000[0m                                          
+mm_threshold_rnoise: [1;36m3.0[0m                                                        
+mm_threshold: [1;36m10.200000[0m [1m([0mderived parameter[1m)[0m                                     
+mm_minimum_max2d_rnoise: [1;36m5.000000[0m                                               
+mm_seed: [1;36m123456[0m                                                                 
+```

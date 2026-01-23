@@ -1,0 +1,10 @@
+```{code-block} ansi-shell-session
+:class: my-special-block no-copybutton
+
+...
+...
+pixels flagged as cosmic rays by [1;34mmmcosmic[0m: [1;36m785[0m [1m([0m[1;36m000.0244[0m%[1m)[0m                      
+saving diagnostic_histogram2d.png                                               
+Entering interactive mode                                                       
+[1m([0mpress [32m'r'[0m to repeat plot, [32m'c'[0m to continue, [32m'x'[0m to quit program[1m)[0m                
+```

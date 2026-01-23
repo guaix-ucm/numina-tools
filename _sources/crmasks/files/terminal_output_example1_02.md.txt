@@ -1,0 +1,54 @@
+```{code-block} ansi-shell-session
+:class: my-special-block no-copybutton
+
+[32m-------------------------------------------------------------------------------[0m 
+starting cosmic ray detection in [35mmedian2d[0m[33m...[0m                                    
+PyCosmic will be run in [1;36m2[0m passes with modified parameters.                      
+using PyCosmic version: [1;36m0.6[0m.post0                                               
+[1;32m[[0m[32mPyCosmic parameters for run [0m[1;36m1[0m[1;32m][0m                                                 
+sigma_det for pycosmic: [1;36m5.0[0m                                                     
+rlim for pycosmic: [1;36m1.2[0m                                                          
+iterations for pycosmic: [1;36m5[0m                                                      
+fwhm_gauss for pycosmic: [1m[[0m[1;36m2.5[0m, [1;36m2.5[0m[1m][0m                                             
+replace_box for pycosmic: [1m[[0m[1;36m5[0m, [1;36m5[0m[1m][0m                                                
+replace_error for pycosmic: [1;36m1000000.0[0m                                           
+increase_radius for pycosmic: [1;36m0[0m                                                 
+gain for pycosmic: [1;36m1.0[0m                                                          
+rdnoise for pycosmic: [1;36m3.4[0m                                                       
+bias for pycosmic: [1;36m0.0[0m                                                          
+verbose for pycosmic: [3;92mTrue[0m                                                      
+PyCosmic > A value of [1;36m3.400000[0m is used for the electron read-out noise.         
+PyCosmic > Start the detection process using.                                   
+PyCosmic > Start iteration [1;36m1[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m40[0m out of [1;36m3217536[0m pixels           
+PyCosmic > Start iteration [1;36m2[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m64[0m out of [1;36m3217536[0m pixels           
+PyCosmic > Start iteration [1;36m3[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m65[0m out of [1;36m3217536[0m pixels           
+PyCosmic > Start iteration [1;36m4[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m65[0m out of [1;36m3217536[0m pixels           
+PyCosmic > Start iteration [1;36m5[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m65[0m out of [1;36m3217536[0m pixels           
+[1;32m[[0m[32mPyCosmic parameters modified for run [0m[1;36m2[0m[1;32m][0m                                        
+pc_sigma_det for run [1;36m2[0m [1m([0mrun [1;36m1[0m[1m)[0m: [1;36m3.000000[0m [1m([0m[1;36m5.000000[0m[1m)[0m                             
+PyCosmic > A value of [1;36m3.400000[0m is used for the electron read-out noise.         
+PyCosmic > Start the detection process using.                                   
+PyCosmic > Start iteration [1;36m1[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m1072[0m out of [1;36m3217536[0m pixels         
+PyCosmic > Start iteration [1;36m2[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m1124[0m out of [1;36m3217536[0m pixels         
+PyCosmic > Start iteration [1;36m3[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m1137[0m out of [1;36m3217536[0m pixels         
+PyCosmic > Start iteration [1;36m4[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m1142[0m out of [1;36m3217536[0m pixels         
+PyCosmic > Start iteration [1;36m5[0m                                                    
+PyCosmic > Total number of detected cosmics: [1;36m1144[0m out of [1;36m3217536[0m pixels         
+Number of cosmic ray pixels [1m([0mpeaks[1m)[0m[33m...[0m[33m...[0m[33m...[0m[33m...[0m[33m...[0m:   [1;36m65[0m                        
+Number of cosmic ray pixels [1m([0mtails[1m)[0m[33m...[0m[33m...[0m[33m...[0m[33m...[0m[33m...[0m: [1;36m1144[0m                        
+Number of cosmic ray pixels [1m([0mmerged peaks & tails[1m)[0m:   [1;36m80[0m                        
+PyCosmic execution time: [1;92m0:00:24[0m.[1;36m421640[0m                                         
+pixels flagged as cosmic rays by [1;31mpycosmic[0m: [1;36m80[0m [1m([0m[1;36m000.0025[0m%[1m)[0m                       
+applying [33mmm_threshold[0m=[1;36m10[0m[1;36m.2[0m to auxiliary method [1;31mpycosmic[0m[33m...[0m                      
+number of CR pixels before applying mm_threshold: [1;36m80[0m                            
+number of CR pixels after  applying mm_threshold: [1;36m78[0m                            
+```

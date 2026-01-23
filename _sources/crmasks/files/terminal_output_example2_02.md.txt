@@ -1,0 +1,15 @@
+```{code-block} ansi-shell-session
+:class: my-special-block no-copybutton
+
+computing numerical boundary for coincident cosmic-ray detection[33m...[0m             
+applying binary dilation with [33msize[0m=[1;36m1[0m to cosmic-ray mask                         
+number of pixels flagged before dilation :  [1;36m58[0m                                  
+number of pixels flagged after dilation  : [1;36m329[0m                                  
+applying thresholding again after dilation                                      
+number of pixels after thresholding again: [1;36m329[0m                                  
+applying cleaning mask region                                                   
+pixels flagged as cosmic rays by [1;34mmmcosmic[0m: [1;36m329[0m [1m([0m[1;36m000.0102[0m%[1m)[0m                      
+saving diagnostic_histogram2d.png                                               
+Entering interactive mode                                                       
+[1m([0mpress [32m'r'[0m to repeat plot, [32m'c'[0m to continue, [32m'x'[0m to quit program[1m)[0m                
+```

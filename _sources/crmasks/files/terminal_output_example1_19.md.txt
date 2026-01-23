@@ -1,0 +1,6 @@
+```{code-block} ansi-shell-session
+:class: my-special-block no-copybutton
+
+[32m-------------------------------------------------------------------------------[0m 
+number of problematic cosmic-ray pixels masked in all CRMASKi: [1;36m0[0m                
+```
