@@ -12,7 +12,7 @@ flux factor values: [1m[[0m[1;36m1[0m. [1;36m1[0m. [1;36m1[0m.[1m][0m 
 use_auxmedian: [3;91mFalse[0m                                                            
 applying bias and flux factors to input arrays[33m...[0m                               
 applying combination method: mediancr                                           
-using crmasks in [93m12041c05-1547-4790-acf6-9d8a75e74392[0m                           
+using crmasks in [93m0c2b8fca-ec14-429b-a896-d06c3c1d4132[0m                           
 applying mask MEDIANCR: [1;36m795[0m masked pixels                                       
 saving to [1;35mexample1/combined_mediancr.fits[0m                                       
 combined [1m([0mbias subtracted[1m)[0m array, variance, and map saved                       

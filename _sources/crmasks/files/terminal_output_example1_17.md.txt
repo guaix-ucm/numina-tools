@@ -14,7 +14,7 @@ flux factor values set to [1m[[0m[1;36m1[0m. [1;36m1[0m. [1;36m1[0m.[1m
 use_auxmedian: [3;91mFalse[0m                                                            
 applying bias and flux factors to input arrays[33m...[0m                               
 applying combination method: meancr                                             
-using crmasks in [93m902b3215-61ca-4734-b060-d180958ecd0e[0m                           
+using crmasks in [93mf0e90a5c-fa93-4947-bf27-97b8f151d1d3[0m                           
 applying mask CRMASK1: [1;36m19652[0m masked pixels                                      
 applying mask CRMASK2: [1;36m22300[0m masked pixels                                      
 applying mask CRMASK3: [1;36m20092[0m masked pixels                                      

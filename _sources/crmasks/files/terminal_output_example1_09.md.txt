@@ -1,6 +1,7 @@
 ```{code-block} ansi-shell-session
 :class: my-special-block no-copybutton
 
+saving  [1;36m1[0m CRs in mediancr_identified_other.pdf file                             
 table of [1;36m18[0m CRs in mediancr_identified_any4.csv:                                
 CR_number X_pixel Y_pixel Mask_value                                            
 --------- ------- ------- ----------                                            
