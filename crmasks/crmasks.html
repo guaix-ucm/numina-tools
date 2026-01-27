@@ -366,14 +366,16 @@ background in the example above):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">images</span></code>: List of input FITS images to be processed. Each image is specified
 on an indented line below this keyword, starting with a dash followed by a
-space and the FITS filename.</p></li>
+space and the FITS filename. <strong>Important: input images are assumed to be
+in ADU units</strong>. If the input arrays are in electrons, set <code class="docutils literal notranslate"><span class="pre">gain=1.0</span></code> in the
+<em>General parameters</em> section (see below).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">extnum</span></code>: Extension number of the FITS file to be read (e.g., <code class="docutils literal notranslate"><span class="pre">0</span></code> for the
 primary extension).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">gain</span></code>, <code class="docutils literal notranslate"><span class="pre">rnoise</span></code>, and <code class="docutils literal notranslate"><span class="pre">bias</span></code>: General image parameters including detector
-gain (electrons/ADU), readout noise (ADU), and bias level (ADU). This file
-uses parameters for preprocessed MEGARA exposures where the bias level has
-already been subtracted and the signal converted to electrons (hence
-<code class="docutils literal notranslate"><span class="pre">bias=0</span></code> and <code class="docutils literal notranslate"><span class="pre">gain=1.0</span></code>).</p></li>
+gain (electrons/ADU), readout noise (ADU), and bias level (ADU). Since in
+this example we are working with preprocessed MEGARA exposures where the bias
+level has already been subtracted and the signal converted to electrons, we
+set <code class="docutils literal notranslate"><span class="pre">bias=0</span></code> and <code class="docutils literal notranslate"><span class="pre">gain=1.0</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">requirements</span></code>: This section contains six parameter blocks:</p>
 <ol class="arabic simple">
 <li><p>General execution parameters: Control the overall behavior of
@@ -1721,7 +1723,7 @@ Entering interactive mode
 </pre></div>
 </div>
 <figure class="align-default" id="fig-diagnostic-histogram2d-example2">
-<a class="reference internal image-reference" href="../_images/diagnostic_histogram2d_example2.png"><img alt="MM diagnostic diagram for the median combination" src="../_images/diagnostic_histogram2d_example2.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/diagnostic_histogram2d_example2a.png"><img alt="MM diagnostic diagram for the median combination" src="../_images/diagnostic_histogram2d_example2a.png" style="width: 100%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 7 </span><span class="caption-text">Recomputed 2D histogram showing the simulated (left) and real (right)
@@ -1746,7 +1748,7 @@ Entering interactive mode
 Specifically, false detections on sky lines decrease drastically, as shown in
 panel (c) of the following figure:</p>
 <figure class="align-default" id="fig-diagnostic-mediancr-example2">
-<a class="reference internal image-reference" href="../_images/diagnostic_mediancr_example2.png"><img alt="../_images/diagnostic_mediancr_example2.png" src="../_images/diagnostic_mediancr_example2.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/diagnostic_mediancr_example2a.png"><img alt="../_images/diagnostic_mediancr_example2a.png" src="../_images/diagnostic_mediancr_example2a.png" style="width: 100%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 8 </span><span class="caption-text">MM diagnostic diagram and location of the detected cosmic-ray pixels. To be
