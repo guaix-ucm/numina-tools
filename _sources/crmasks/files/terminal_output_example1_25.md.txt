@@ -12,7 +12,7 @@ flux factor values: [1m[[0m[1;36m1[0m. [1;36m1[0m. [1;36m1[0m.[1m][0m 
 use_auxmedian: [3;91mFalse[0m                                                            
 applying bias and flux factors to input arrays[33m...[0m                               
 applying combination method: meancrt                                            
-using crmasks in [93m0c2b8fca-ec14-429b-a896-d06c3c1d4132[0m                           
+using crmasks in [93mded7f319-ddd6-4642-bedb-d5aadac72aff[0m                           
 applying mask MEDIANCR: [1;36m795[0m masked pixels                                       
 applying mask MEANCRT: [1;36m60822[0m masked pixels                                      
 saving to [1;35mexample1/combined_meancrt.fits[0m                                        

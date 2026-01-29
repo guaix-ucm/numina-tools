@@ -32,6 +32,6 @@ PyCosmic > Total number of detected cosmics: [1;36m25687[0m out of [1;36m3217
 Number of cosmic ray pixels [1m([0mpeaks[1m)[0m[33m...[0m[33m...[0m[33m...[0m[33m...[0m[33m...[0m:  [1;36m7414[0m                       
 Number of cosmic ray pixels [1m([0mtails[1m)[0m[33m...[0m[33m...[0m[33m...[0m[33m...[0m[33m...[0m: [1;36m25687[0m                       
 Number of cosmic ray pixels [1m([0mmerged peaks & tails[1m)[0m:  [1;36m8698[0m                       
-PyCosmic execution time: [1;92m0:00:30[0m.[1;36m093245[0m                                         
+PyCosmic execution time: [1;92m0:00:30[0m.[1;36m071527[0m                                         
 pixels flagged as cosmic rays by [1;31mpycosmic[0m: [1;36m8698[0m [1m([0m[1;36m000.2703[0m%[1m)[0m                     
 ```

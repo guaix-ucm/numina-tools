@@ -2,6 +2,8 @@
 :class: my-special-block no-copybutton
 
 mm_cr_coincidences: [1;36m2[0m                                                           
+mm_photon_distribution: poisson                                                 
+mm_nbinom_shape: [1;36m10[0m                                                  
 mm_synthetic: median                                                            
 mm_hist2d_min_neighbors: [1;36m0[0m                                                      
 mm_ydiag_max: [1;36m0.000000[0m                                                          
