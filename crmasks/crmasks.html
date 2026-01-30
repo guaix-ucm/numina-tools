@@ -659,7 +659,7 @@ pixels to be replaced by the median value when removing the CRs: <span class=" -
 displayed.</p>
 <div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>mm_cr_coincidences: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span>                                                           
 mm_photon_distribution: poisson                                                 
-mm_nbinom_shape: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>                                                  
+mm_nbinom_shape: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1000.000000</span>                                                    
 mm_synthetic: median                                                            
 mm_hist2d_min_neighbors: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span>                                                      
 mm_ydiag_max: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0.000000</span>                                                          
@@ -742,7 +742,7 @@ PyCosmic &gt; Total number of detected cosmics: <span class=" -Color -Color-Bold
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>peaks<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>:   <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">65</span>                        
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>tails<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1144</span>                        
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>merged peaks &amp; tails<span class=" -Color -Color-Bold -C-Bold">)</span>:   <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">80</span>                        
-PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:24</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">349752</span>                                         
+PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:24</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">256351</span>                                         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">80</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0025</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                       
 applying <span class=" -Color -Color-Yellow -C-Yellow">mm_threshold</span>=<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10.2</span> to auxiliary method <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span><span class=" -Color -Color-Yellow -C-Yellow">...</span>                      
 number of CR pixels before applying mm_threshold: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">80</span>                            
@@ -785,7 +785,7 @@ PyCosmic &gt; Total number of detected cosmics: <span class=" -Color -Color-Bold
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>peaks<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>:  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">7414</span>                       
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>tails<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">25687</span>                       
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>merged peaks &amp; tails<span class=" -Color -Color-Bold -C-Bold">)</span>:  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">8698</span>                       
-PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:30</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">071527</span>                                         
+PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:29</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">984193</span>                                         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">8698</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.2703</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                     
 </pre></div>
 </div>
@@ -820,7 +820,7 @@ PyCosmic &gt; Total number of detected cosmics: <span class=" -Color -Color-Bold
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>peaks<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>:  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">8580</span>                       
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>tails<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">27219</span>                       
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>merged peaks &amp; tails<span class=" -Color -Color-Bold -C-Bold">)</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10045</span>                       
-PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:30</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">495519</span>                                         
+PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:30</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">652215</span>                                         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10045</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.3122</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                    
 </pre></div>
 </div>
@@ -855,7 +855,7 @@ PyCosmic &gt; Total number of detected cosmics: <span class=" -Color -Color-Bold
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>peaks<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>:  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">7657</span>                       
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>tails<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">25829</span>                       
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>merged peaks &amp; tails<span class=" -Color -Color-Bold -C-Bold">)</span>:  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">8901</span>                       
-PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:30</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">168921</span>                                         
+PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:30</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">392400</span>                                         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">8901</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.2766</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                     
 </pre></div>
 </div>
@@ -870,16 +870,16 @@ xdiag_min xdiag_max ydiag_min ydiag_max
 flux factor for simulated images: <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>. <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>. <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>.<span class=" -Color -Color-Bold -C-Bold">]</span>                                    
 assuming no offsets between images                                              
 computing simulated 2D histogram<span class=" -Color -Color-Yellow -C-Yellow">...</span>                                             
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">01</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">961836</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">02</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">942837</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">03</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">928381</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">04</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">926574</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">05</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">931178</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">06</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">932150</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">07</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">927039</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">08</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">932923</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">09</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">941473</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">952624</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">01</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">949652</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">02</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">929954</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">03</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">926511</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">04</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">926470</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">05</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">926108</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">06</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">925325</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">07</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">982161</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">08</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">933083</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">09</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">925681</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:00</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">929375</span>                                  
 computing numerical boundary for coincident cosmic-ray detection<span class=" -Color -Color-Yellow -C-Yellow">...</span>             
 applying binary dilation with <span class=" -Color -Color-Yellow -C-Yellow">size</span>=<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> to cosmic-ray mask                         
 number of pixels flagged before dilation : <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">112</span>                                  
@@ -889,8 +889,8 @@ number of pixels after thresholding again: <span class=" -Color -Color-Bold -Col
 applying cleaning mask region                                                   
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">785</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0244</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                      
 saving diagnostic_histogram2d.png                                               
-Entering interactive mode                                                       
-<span class=" -Color -Color-Bold -C-Bold">(</span>press <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit program<span class=" -Color -Color-Bold -C-Bold">)</span>                
+Entering interactive mode <span class=" -Color -Color-Bold -C-Bold">(</span>press any of the following keys<span class=" -Color -Color-Bold -C-Bold">)</span>                     
+<span class=" -Color -Color-Green -C-Green">&#39;f&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to rerun simulations, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit       
 </pre></div>
 </div>
 <p>In this process, a 3D stack is built from the individual exposures. The
@@ -953,14 +953,15 @@ detections made by both the <code class="code-red docutils literal notranslate">
 <code class="code-blue docutils literal notranslate"><span class="pre">M.M.Cosmic</span></code> methods. This allows detailed analysis of how
 many pixels were flagged by one method but not the other, and how many were
 identified by both.</p>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span> or <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span> : <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">795</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0247</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Continuing to next step as per user request <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> key pressed<span class=" -Color -Color-Bold -C-Bold">)</span>.                  
+pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span> or <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span> : <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">795</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0247</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span> only<span class=" -Color -Color-Yellow -C-Yellow">......</span>..:  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0003</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span> only<span class=" -Color -Color-Yellow -C-Yellow">......</span>..: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">717</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0223</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span> and <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>:  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">68</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0021</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
 generating diagnostic plot for MEDIANCR<span class=" -Color -Color-Yellow -C-Yellow">...</span>                                      
 saving diagnostic_mediancr.png                                                  
-Entering interactive mode                                                       
-<span class=" -Color -Color-Bold -C-Bold">(</span>press <span class=" -Color -Color-Green -C-Green">&#39;?&#39;</span> for help, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit program<span class=" -Color -Color-Bold -C-Bold">)</span>                      
+Entering interactive mode <span class=" -Color -Color-Bold -C-Bold">(</span>press any of the following keys<span class=" -Color -Color-Bold -C-Bold">)</span>                     
+<span class=" -Color -Color-Green -C-Green">&#39;?&#39;</span> for help, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit program                              
 </pre></div>
 </div>
 <p>At this point, the code generates the following figure displaying detailed MM
@@ -998,27 +999,27 @@ and (b) of <a class="reference internal" href="#fig-diagnostic-mediancr-example1
 display each cosmic ray pixel individually.</p>
 <p>Pressing the <code class="docutils literal notranslate"><span class="pre">?</span></code> key displays a help message in the terminal showing available
 actions.</p>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>-------------------------------------------------------------------------------
-Keyboard shortcuts:
-&#39;h&#39; or &#39;r&#39;: reset zoom to initial limits
-&#39;p&#39;: pan mode
-&#39;o&#39;: zoom to rectangle
-&#39;f&#39;: toggle full screen mode
-&#39;s&#39;: save the figure to a PNG file
-...............................................................................
-&#39;?&#39;: show this help message
-&#39;i&#39;: print pixel info at mouse position (ax3 only)
-&#39;&amp;&#39;: print CR pixels within the zoomed region (ax3 only)
-&#39;n&#39;: toggle display of number of cosmic rays (ax3 only)
-&#39;a&#39;: toggle imshow aspect=&#39;equal&#39; / aspect=&#39;auto&#39; (ax3 and ax4 only)
-&#39;t&#39;: toggle mean2d -&gt; individual exposures in ax4
-&#39;0&#39;: switch to mean2d in ax4
-&#39;1&#39;, &#39;2&#39;, ...: switch to individual exposure #1, #2, ... in ax4
-&#39;,&#39;: set vmin and vmax to min and max of the zoomed region (ax3 and ax4 only)
-&#39;/&#39;: set vmin and vmax using zscale of the zoomed region (ax3 and ax4 only)
-&#39;c&#39;: close the plot and continue the program execution
-&#39;x&#39;: halt the program execution
--------------------------------------------------------------------------------
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>------------------------------------------------------------------------------- 
+Keyboard shortcuts:                                                             
+<span class=" -Color -Color-Green -C-Green">&#39;h&#39;</span> or <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span>: reset zoom to initial limits                                        
+<span class=" -Color -Color-Green -C-Green">&#39;p&#39;</span>: pan mode                                                                   
+<span class=" -Color -Color-Green -C-Green">&#39;o&#39;</span>: zoom to rectangle                                                          
+<span class=" -Color -Color-Green -C-Green">&#39;f&#39;</span>: toggle full screen mode                                                    
+<span class=" -Color -Color-Green -C-Green">&#39;s&#39;</span>: save the figure to a PNG file                                              
+<span class=" -Color -Color-Yellow -C-Yellow">..............................................................................</span>. 
+<span class=" -Color -Color-Green -C-Green">&#39;?&#39;</span>: show this help message                                                     
+<span class=" -Color -Color-Green -C-Green">&#39;i&#39;</span>: print pixel info at mouse position <span class=" -Color -Color-Bold -C-Bold">(</span>ax3 only<span class=" -Color -Color-Bold -C-Bold">)</span>                              
+<span class=" -Color -Color-Green -C-Green">&#39;&amp;&#39;</span>: print CR pixels within the zoomed region <span class=" -Color -Color-Bold -C-Bold">(</span>ax3 only<span class=" -Color -Color-Bold -C-Bold">)</span>                        
+<span class=" -Color -Color-Green -C-Green">&#39;n&#39;</span>: toggle display of number of cosmic rays <span class=" -Color -Color-Bold -C-Bold">(</span>ax3 only<span class=" -Color -Color-Bold -C-Bold">)</span>                         
+<span class=" -Color -Color-Green -C-Green">&#39;a&#39;</span>: toggle imshow <span class=" -Color -Color-Yellow -C-Yellow">aspect</span>=<span class=" -Color -Color-Green -C-Green">&#39;equal&#39;</span> <span class=" -Color -Color-Magenta -C-Magenta">/</span> <span class=" -Color -Color-Yellow -C-Yellow">aspect</span>=<span class=" -Color -Color-Green -C-Green">&#39;auto&#39;</span> <span class=" -Color -Color-Bold -C-Bold">(</span>ax3 and ax4 only<span class=" -Color -Color-Bold -C-Bold">)</span>            
+<span class=" -Color -Color-Green -C-Green">&#39;t&#39;</span>: toggle mean2d -&gt; individual exposures in ax4                               
+<span class=" -Color -Color-Green -C-Green">&#39;0&#39;</span>: switch to mean2d in ax4                                                    
+<span class=" -Color -Color-Green -C-Green">&#39;1&#39;</span>, <span class=" -Color -Color-Green -C-Green">&#39;2&#39;</span>, <span class=" -Color -Color-Yellow -C-Yellow">...</span>: switch to individual exposure #<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>, #<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span>, <span class=" -Color -Color-Yellow -C-Yellow">...</span> in ax4                 
+<span class=" -Color -Color-Green -C-Green">&#39;,&#39;</span>: set vmin and vmax to min and max of the zoomed region <span class=" -Color -Color-Bold -C-Bold">(</span>ax3 and ax4 only<span class=" -Color -Color-Bold -C-Bold">)</span>   
+<span class=" -Color -Color-Green -C-Green">&#39;/&#39;</span>: set vmin and vmax using zscale of the zoomed region <span class=" -Color -Color-Bold -C-Bold">(</span>ax3 and ax4 only<span class=" -Color -Color-Bold -C-Bold">)</span>     
+<span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span>: close the plot and continue the program execution                          
+<span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span>: halt the program execution                                                 
+------------------------------------------------------------------------------- 
 </pre></div>
 </div>
 <figure class="align-default" id="fig-diagnostic-mediancr-zoom-example1">
@@ -1074,6 +1075,7 @@ plot generation complete
 saving <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">18</span> CRs in mediancr_identified_any4.pdf file                              
 saving  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">7</span> CRs in mediancr_identified_only3.pdf file                             
 saving <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">55</span> CRs in mediancr_identified_only2.pdf file                             
+saving  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> CRs in mediancr_identified_other.pdf file                             
 </pre></div>
 </div>
 <p>The program groups connected pixels into cosmic ray features, each representing
@@ -1101,8 +1103,7 @@ feature. The PDF file is described below. The basenames of these files are
 <code class="docutils literal notranslate"><span class="pre">mediancr_identified_any4</span></code>, <code class="docutils literal notranslate"><span class="pre">mediancr_identified_only3</span></code>,
 <code class="docutils literal notranslate"><span class="pre">mediancr_identified_only2</span></code>, and <code class="docutils literal notranslate"><span class="pre">mediancr_identified_other</span></code> for categories 4,
 3, 2, and other, respectively.</p>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>saving  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> CRs in mediancr_identified_other.pdf file                             
-table of <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">18</span> CRs in mediancr_identified_any4.csv:                                
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>table of <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">18</span> CRs in mediancr_identified_any4.csv:                                
 CR_number X_pixel Y_pixel Mask_value                                            
 --------- ------- ------- ----------                                            
         <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>     <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">423</span>       <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">4</span>          <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span>                                            
@@ -1289,7 +1290,7 @@ PyCosmic &gt; Total number of detected cosmics: <span class=" -Color -Color-Bold
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>peaks<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">18264</span>                       
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>tails<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">20394</span>                       
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>merged peaks &amp; tails<span class=" -Color -Color-Bold -C-Bold">)</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">20153</span>                       
-PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:34</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">014011</span>                                         
+PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:34</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">065978</span>                                         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">20153</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.6263</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                    
 detecting cosmic rays in mean2d using <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span><span class=" -Color -Color-Yellow -C-Yellow">...</span>                               
 applying binary dilation with <span class=" -Color -Color-Yellow -C-Yellow">size</span>=<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> to cosmic-ray mask                         
@@ -1380,7 +1381,7 @@ flux factor values set to <span class=" -Color -Color-Bold -C-Bold">[</span><spa
 use_auxmedian: <span class=" -Color -Color-BrightRed -C-BrightRed">False</span>                                                            
 applying bias and flux factors to input arrays<span class=" -Color -Color-Yellow -C-Yellow">...</span>                               
 applying combination method: meancr                                             
-using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">0059af1b-88d5-4b4d-a7e1-2d290bbdd538</span>                           
+using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">dfbb3ff7-44a3-44e4-a978-395a7e778086</span>                           
 applying mask CRMASK1: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">19652</span> masked pixels                                      
 applying mask CRMASK2: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">22300</span> masked pixels                                      
 applying mask CRMASK3: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">20092</span> masked pixels                                      
@@ -1419,7 +1420,7 @@ PyCosmic &gt; Total number of detected cosmics: <span class=" -Color -Color-Bold
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>peaks<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>:   <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span>                         
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>tails<span class=" -Color -Color-Bold -C-Bold">)</span><span class=" -Color -Color-Yellow -C-Yellow">...............</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">263</span>                         
 Number of cosmic ray pixels <span class=" -Color -Color-Bold -C-Bold">(</span>merged peaks &amp; tails<span class=" -Color -Color-Bold -C-Bold">)</span>:   <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span>                         
-PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:24</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">035468</span>                                         
+PyCosmic execution time: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:23</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">959426</span>                                         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0001</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                        
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0001</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                        
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0000</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                        
@@ -1446,7 +1447,7 @@ different computed masks.</p>
 Cosmic ray masks saved                                                          
 Filename: example1/crmasks.fits                                                 
 No.    Name      Ver    Type      Cards   Dimensions   Format                   
-  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span>  PRIMARY       <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> PrimaryHDU      <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">60</span>   <span class=" -Color -Color-Bold -C-Bold">()</span>                                    
+  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span>  PRIMARY       <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> PrimaryHDU      <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">61</span>   <span class=" -Color -Color-Bold -C-Bold">()</span>                                    
   <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>  MEDIANCR      <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> ImageHDU         <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">9</span>   <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2016</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1596</span><span class=" -Color -Color-Bold -C-Bold">)</span>   uint8                  
   <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span>  MEANCRT       <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> ImageHDU         <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">9</span>   <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2016</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1596</span><span class=" -Color -Color-Bold -C-Bold">)</span>   uint8                  
   <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">3</span>  CRMASK1       <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> ImageHDU         <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">9</span>   <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2016</span>, <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1596</span><span class=" -Color -Color-Bold -C-Bold">)</span>   uint8                  
@@ -1526,7 +1527,7 @@ flux factor values: <span class=" -Color -Color-Bold -C-Bold">[</span><span clas
 use_auxmedian: <span class=" -Color -Color-BrightRed -C-BrightRed">False</span>                                                            
 applying bias and flux factors to input arrays<span class=" -Color -Color-Yellow -C-Yellow">...</span>                               
 applying combination method: mediancr                                           
-using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">ded7f319-ddd6-4642-bedb-d5aadac72aff</span>                           
+using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">92f62dce-2b5f-4119-8943-05a11cbcdeb6</span>                           
 applying mask MEDIANCR: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">795</span> masked pixels                                       
 saving to <span class=" -Color -Color-Bold -Color-Bold-Magenta -C-Bold -C-Magenta">example1/combined_mediancr.fits</span>                                       
 combined <span class=" -Color -Color-Bold -C-Bold">(</span>bias subtracted<span class=" -Color -Color-Bold -C-Bold">)</span> array, variance, and map saved                       
@@ -1548,7 +1549,7 @@ flux factor values: <span class=" -Color -Color-Bold -C-Bold">[</span><span clas
 use_auxmedian: <span class=" -Color -Color-BrightRed -C-BrightRed">False</span>                                                            
 applying bias and flux factors to input arrays<span class=" -Color -Color-Yellow -C-Yellow">...</span>                               
 applying combination method: meancrt                                            
-using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">ded7f319-ddd6-4642-bedb-d5aadac72aff</span>                           
+using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">92f62dce-2b5f-4119-8943-05a11cbcdeb6</span>                           
 applying mask MEDIANCR: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">795</span> masked pixels                                       
 applying mask MEANCRT: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">60822</span> masked pixels                                      
 saving to <span class=" -Color -Color-Bold -Color-Bold-Magenta -C-Bold -C-Magenta">example1/combined_meancrt.fits</span>                                        
@@ -1570,7 +1571,7 @@ flux factor values: <span class=" -Color -Color-Bold -C-Bold">[</span><span clas
 use_auxmedian: <span class=" -Color -Color-BrightRed -C-BrightRed">False</span>                                                            
 applying bias and flux factors to input arrays<span class=" -Color -Color-Yellow -C-Yellow">...</span>                               
 applying combination method: meancr                                             
-using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">ded7f319-ddd6-4642-bedb-d5aadac72aff</span>                           
+using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">92f62dce-2b5f-4119-8943-05a11cbcdeb6</span>                           
 applying mask CRMASK1: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">19652</span> masked pixels                                      
 applying mask CRMASK2: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">22300</span> masked pixels                                      
 applying mask CRMASK3: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">20092</span> masked pixels                                      
@@ -1594,7 +1595,7 @@ flux factor values: <span class=" -Color -Color-Bold -C-Bold">[</span><span clas
 use_auxmedian: <span class=" -Color -Color-BrightRed -C-BrightRed">False</span>                                                            
 applying bias and flux factors to input arrays<span class=" -Color -Color-Yellow -C-Yellow">...</span>                               
 applying combination method: meancr2                                            
-using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">ded7f319-ddd6-4642-bedb-d5aadac72aff</span>                           
+using crmasks in <span class=" -Color -Color-BrightYellow -C-BrightYellow">92f62dce-2b5f-4119-8943-05a11cbcdeb6</span>                           
 applying mask MEDIANCR: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">795</span> masked pixels                                       
 applying mask CRMASK1: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">19652</span> masked pixels                                      
 applying mask CRMASK2: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">22300</span> masked pixels                                      
@@ -1608,7 +1609,7 @@ combined <span class=" -Color -Color-Bold -C-Bold">(</span>bias subtracted<span 
 </div>
 <p>Upon successful completion, the program displays the total execution time and a
 farewell message:</p>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Total time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:07:22</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">168894</span>                                              
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Total time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:05:17</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">026288</span>                                              
 <span class=" -Color -Color-BrightGreen -C-BrightGreen">────────────────────────────────── </span><span class=" -Color -Color-Bold -Color-Bold-Magenta -C-Bold -C-Magenta"> Goodbye! </span><span class=" -Color -Color-BrightGreen -C-BrightGreen"> ──────────────────────────────────</span>
 </pre></div>
 </div>
@@ -1642,8 +1643,8 @@ diagnostic histograms are displayed:</p>
 ...
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">785</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0244</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                      
 saving diagnostic_histogram2d.png                                               
-Entering interactive mode                                                       
-<span class=" -Color -Color-Bold -C-Bold">(</span>press <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit program<span class=" -Color -Color-Bold -C-Bold">)</span>                
+Entering interactive mode <span class=" -Color -Color-Bold -C-Bold">(</span>press any of the following keys<span class=" -Color -Color-Bold -C-Bold">)</span>                     
+<span class=" -Color -Color-Green -C-Green">&#39;f&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to rerun simulations, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit       
 </pre></div>
 </div>
 <figure class="align-default" id="fig-diagnostic-histogram2d-example1-bis">
@@ -1655,61 +1656,62 @@ diagnostic diagram.</span><a class="headerlink" href="#fig-diagnostic-histogram2
 </figcaption>
 </figure>
 <p>While the previous figure is displayed, we can repeat the boundary fit by
-pressing the <code class="docutils literal notranslate"><span class="pre">r</span></code> key. The program then asks several questions about how the
+pressing the <code class="docutils literal notranslate"><span class="pre">f</span></code> key. The program then asks several questions about how the
 boundary fit is performed (values shown in brackets are the current defaults;
 pressing RETURN accepts the proposed value). We accept the default values for
 the first questions:</p>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Minimum number of neighbors to keep bins in the 2D histogram (0-8) [0]:
-Type of boundary fit: piecewise or spline [spline]: spline
-Number of knots for spline boundary fit (min. 2) [5]: 
-Number of iterations for boundary extension (min. 0) [5]: 
-Weight for boundary extension (greater than 1.0) [2]: 
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Repeating fit as per user request <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Green -C-Green">&#39;f&#39;</span> key pressed<span class=" -Color -Color-Bold -C-Bold">)</span>.                            
+Minimum number of neighbors to keep bins in the 2D histogram <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span>-<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">8</span><span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span>       
+Type of boundary fit <span class=" -Color -Color-Bold -C-Bold">(</span>piecewise | spline<span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span>spline<span class=" -Color -Color-Bold -C-Bold">]</span>: spline                      
+Number of knots for spline boundary fit <span class=" -Color -Color-Bold -C-Bold">(</span>min. <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span><span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">5</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">5</span>                         
+Number of iterations for boundary extension <span class=" -Color -Color-Bold -C-Bold">(</span>min. <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span><span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">5</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">5</span>                     
+Weight for boundary extension <span class=" -Color -Color-Bold -C-Bold">(</span>greater than <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1.0</span><span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2.0</span>                       
 </pre></div>
 </div>
 <p>Then we indicate our interest in including fixed points in the boundary fit.
 Specifically, we insert two fixed points at the following <span class="math notranslate nohighlight">\((x,y)\)</span> coordinates:
 <span class="math notranslate nohighlight">\((50, 60)\)</span> and <span class="math notranslate nohighlight">\((150, 80)\)</span>.</p>
 <div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>No fixed points in boundary.                                                    
-Do you want to modify the fixed points in the boundary? (y/[n]): y
+Do you want to modify the fixed points in the boundary <span class=" -Color -Color-Bold -C-Bold">(</span>y/<span class=" -Color -Color-Bold -C-Bold">[</span>n<span class=" -Color -Color-Bold -C-Bold">])</span>? y               
 Type:                                                                           
-- &#39;a&#39; to add a fixed point                                                      
-- &#39;n&#39; none (continue without additional changes)                                
-Your choice (a/[n]): a
-x value of new fixed point: 50
-y value of new fixed point: 60
-weight of new fixed point [10000.0]: 
+- <span class=" -Color -Color-Green -C-Green">&#39;a&#39;</span> to add a fixed point                                                      
+- <span class=" -Color -Color-Green -C-Green">&#39;n&#39;</span> none <span class=" -Color -Color-Bold -C-Bold">(</span>continue without additional changes<span class=" -Color -Color-Bold -C-Bold">)</span>                                
+Your choice <span class=" -Color -Color-Bold -C-Bold">(</span>a/<span class=" -Color -Color-Bold -C-Bold">[</span>n<span class=" -Color -Color-Bold -C-Bold">])</span>: a                                                          
+x value of new fixed point: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">50.0</span>                                                
+y value of new fixed point: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">60.0</span>                                                
+weight of new fixed point <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10000.0</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10000.0</span>                                    
 Current fixed points in boundary:                                               
 number  X    Y    Weight                                                        
 ------ ---- ---- -------                                                        
-     1 50.0 60.0 10000.0                                                        
+     <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">50.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">60.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10000.0</span>                                                        
 Type:                                                                           
-- &#39;a&#39; to add a fixed point                                                      
-- &#39;c&#39; to clear all fixed points                                                 
-- &#39;d&#39; to delete an existing fixed point                                         
-- &#39;e&#39; to edit an existing fixed point                                           
-- &#39;n&#39; none (continue without additional changes)                                
-Your choice (a/c/d/e/[n]): a
-x value of new fixed point: 150
-y value of new fixed point: 80
-weight of new fixed point [10000.0]: 
+- <span class=" -Color -Color-Green -C-Green">&#39;a&#39;</span> to add a fixed point                                                      
+- <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to clear all fixed points                                                 
+- <span class=" -Color -Color-Green -C-Green">&#39;d&#39;</span> to delete an existing fixed point                                         
+- <span class=" -Color -Color-Green -C-Green">&#39;e&#39;</span> to edit an existing fixed point                                           
+- <span class=" -Color -Color-Green -C-Green">&#39;n&#39;</span> none <span class=" -Color -Color-Bold -C-Bold">(</span>continue without additional changes<span class=" -Color -Color-Bold -C-Bold">)</span>                                
+Your choice <span class=" -Color -Color-Bold -C-Bold">(</span>a/c/d/e/<span class=" -Color -Color-Bold -C-Bold">[</span>n<span class=" -Color -Color-Bold -C-Bold">])</span>: a                                                    
+x value of new fixed point: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">150.0</span>                                               
+y value of new fixed point: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">80.0</span>                                                
+weight of new fixed point <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10000.0</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10000.0</span>                                    
 Current fixed points in boundary:                                               
 number   X    Y    Weight                                                       
 ------ ----- ---- -------                                                       
-     1  50.0 60.0 10000.0                                                       
-     2 150.0 80.0 10000.0                                                       
+     <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">50.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">60.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10000.0</span>                                                       
+     <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">150.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">80.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10000.0</span>                                                       
 Type:                                                                           
-- &#39;a&#39; to add a fixed point                                                      
-- &#39;c&#39; to clear all fixed points                                                 
-- &#39;d&#39; to delete an existing fixed point                                         
-- &#39;e&#39; to edit an existing fixed point                                           
-- &#39;n&#39; none (continue without additional changes)                                
-Your choice (a/c/d/e/[n]): n
+- <span class=" -Color -Color-Green -C-Green">&#39;a&#39;</span> to add a fixed point                                                      
+- <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to clear all fixed points                                                 
+- <span class=" -Color -Color-Green -C-Green">&#39;d&#39;</span> to delete an existing fixed point                                         
+- <span class=" -Color -Color-Green -C-Green">&#39;e&#39;</span> to edit an existing fixed point                                           
+- <span class=" -Color -Color-Green -C-Green">&#39;n&#39;</span> none <span class=" -Color -Color-Bold -C-Bold">(</span>continue without additional changes<span class=" -Color -Color-Bold -C-Bold">)</span>                                
+Your choice <span class=" -Color -Color-Bold -C-Bold">(</span>a/c/d/e/<span class=" -Color -Color-Bold -C-Bold">[</span>n<span class=" -Color -Color-Bold -C-Bold">])</span>: n                                                    
 No changes made to fixed points in boundary.                                    
 Current fixed points in boundary:                                               
 number   X    Y    Weight                                                       
 ------ ----- ---- -------                                                       
-     1  50.0 60.0 10000.0                                                       
-     2 150.0 80.0 10000.0  
+     <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">50.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">60.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10000.0</span>                                                       
+     <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">2</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">150.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">80.0</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10000.0</span>                                                       
 </pre></div>
 </div>
 <p>Once the two fixed points have been introduced, the program recomputes and
@@ -1723,8 +1725,8 @@ number of pixels after thresholding again: <span class=" -Color -Color-Bold -Col
 applying cleaning mask region                                                   
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">329</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0102</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                      
 saving diagnostic_histogram2d.png                                               
-Entering interactive mode                                                       
-<span class=" -Color -Color-Bold -C-Bold">(</span>press <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit program<span class=" -Color -Color-Bold -C-Bold">)</span>                
+Entering interactive mode <span class=" -Color -Color-Bold -C-Bold">(</span>press any of the following keys<span class=" -Color -Color-Bold -C-Bold">)</span>                     
+<span class=" -Color -Color-Green -C-Green">&#39;f&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to rerun simulations, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit       
 </pre></div>
 </div>
 <figure class="align-default" id="fig-diagnostic-histogram2d-example2">
@@ -1739,14 +1741,15 @@ squares).</span><a class="headerlink" href="#fig-diagnostic-histogram2d-example2
 </figcaption>
 </figure>
 <p>By pressing <code class="docutils literal notranslate"><span class="pre">c</span></code> the program resumes execution.</p>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span> or <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span> : <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">340</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0106</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Continuing to next step as per user request <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> key pressed<span class=" -Color -Color-Bold -C-Bold">)</span>.                  
+pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span> or <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span> : <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">340</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0106</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span> only<span class=" -Color -Color-Yellow -C-Yellow">......</span>..:  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">11</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0003</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span> only<span class=" -Color -Color-Yellow -C-Yellow">......</span>..: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">262</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0081</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Red -C-Bold -C-Red">pycosmic</span> and <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>:  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">67</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0021</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>         
 generating diagnostic plot for MEDIANCR<span class=" -Color -Color-Yellow -C-Yellow">...</span>                                      
 saving diagnostic_mediancr.png                                                  
-Entering interactive mode                                                       
-<span class=" -Color -Color-Bold -C-Bold">(</span>press <span class=" -Color -Color-Green -C-Green">&#39;?&#39;</span> for help, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit program<span class=" -Color -Color-Bold -C-Bold">)</span>                      
+Entering interactive mode <span class=" -Color -Color-Bold -C-Bold">(</span>press any of the following keys<span class=" -Color -Color-Bold -C-Bold">)</span>                     
+<span class=" -Color -Color-Green -C-Green">&#39;?&#39;</span> for help, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit program                              
 </pre></div>
 </div>
 <p>By shifting the detection boundary upward, the false detection rate decreases.
@@ -1906,16 +1909,16 @@ xdiag_min xdiag_max ydiag_min ydiag_max
 flux factor for simulated images: <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>. <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>. <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span>.<span class=" -Color -Color-Bold -C-Bold">]</span>                                    
 assuming no offsets between images                                              
 computing simulated 2D histogram<span class=" -Color -Color-Yellow -C-Yellow">...</span>                                             
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">01</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">137760</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">02</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">104707</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">03</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">094157</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">04</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">100591</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">05</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">102997</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">06</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">096611</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">07</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">089670</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">08</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">088996</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">09</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">093792</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">090475</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">01</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">133811</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">02</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">114104</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">03</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">113950</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">04</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">115590</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">05</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">119285</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">06</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">109080</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">07</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">113121</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">08</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">114731</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">09</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">106267</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">106638</span>                                  
 computing numerical boundary for coincident cosmic-ray detection<span class=" -Color -Color-Yellow -C-Yellow">...</span>             
 applying binary dilation with <span class=" -Color -Color-Yellow -C-Yellow">size</span>=<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> to cosmic-ray mask                         
 number of pixels flagged before dilation :  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">87</span>                                  
@@ -1925,8 +1928,8 @@ number of pixels after thresholding again: <span class=" -Color -Color-Bold -Col
 applying cleaning mask region                                                   
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">570</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0177</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                      
 saving diagnostic_histogram2d.png                                               
-Entering interactive mode                                                       
-<span class=" -Color -Color-Bold -C-Bold">(</span>press <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit program<span class=" -Color -Color-Bold -C-Bold">)</span>                 
+Entering interactive mode <span class=" -Color -Color-Bold -C-Bold">(</span>press any of the following keys<span class=" -Color -Color-Bold -C-Bold">)</span>                     
+<span class=" -Color -Color-Green -C-Green">&#39;f&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to rerun simulations, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit       
 </pre></div>
 </div>
 <figure class="align-default" id="fig-diagnostic-histogram2d-example4-initial">
@@ -1941,37 +1944,34 @@ diagnostic diagram.</span><a class="headerlink" href="#fig-diagnostic-histogram2
 appears that the fitted boundary derived from the simulated data is still too
 low. We can simulate data with larger dispersion by reducing the shape
 parameter of the negative binomial distribution.</p>
-<p>We press <code class="docutils literal notranslate"><span class="pre">c</span></code> to close the previous plot and continue.</p>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Do you want to rerun the simulations? (y/n) [n]: y
-</pre></div>
-</div>
-<p>By answering <code class="docutils literal notranslate"><span class="pre">y</span></code>, <strong>numina-crmasks</strong> prompts a series of questions related to
-how the simulated images are generated and the limits used to rebuild the 2D
-diagnostic diagram (note that pressing RETURN accepts the default values shown
-in brackets for the following interactive prompts):</p>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Enter new value for mm_photon_distribution (poisson | nbinom) [nbinom]:
-Enter new value for mm_nbinom_shape (float &gt; 0) [1000]: 200
-Enter new value for xdiag_min (float) [-38.03779983520508]: 
-Enter new value for xdiag_max (float &gt; xdiag_min) [303.4587285175408]: 
-Enter new value for ydiag_max (float &gt; 0) [156.6892040763359]: 
-Enter new value for mm_nsimulations (int &gt; 0) [10]: 
-rerunning the simulations as per user request...    
+<p>We press <code class="docutils literal notranslate"><span class="pre">r</span></code> to rerun the simulations. The program prompts a series of
+questions related to how the simulated images are generated and the limits used
+to rebuild the 2D diagnostic diagram (note that pressing RETURN accepts the
+default values shown in brackets for the following interactive prompts):</p>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Rerunning simulations and fit as per user request <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> key pressed<span class=" -Color -Color-Bold -C-Bold">)</span>.            
+modifying simulation parameters<span class=" -Color -Color-Yellow -C-Yellow">...</span>                                              
+Enter new value for mm_photon_distribution <span class=" -Color -Color-Bold -C-Bold">(</span>poisson | nbinom<span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span>nbinom<span class=" -Color -Color-Bold -C-Bold">]</span>: nbinom  
+Enter new value for mm_nbinom_shape <span class=" -Color -Color-Bold -C-Bold">(</span>float &gt; <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span><span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1000</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">200.0</span>                   
+Enter new value for xdiag_min <span class=" -Color -Color-Bold -C-Bold">(</span>float<span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">-38.038</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">-38.038</span>                        
+Enter new value for xdiag_max <span class=" -Color -Color-Bold -C-Bold">(</span>float &gt; xdiag_min<span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">303.459</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">303.459</span>            
+Enter new value for ydiag_max <span class=" -Color -Color-Bold -C-Bold">(</span>float &gt; <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span><span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">156.689</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">156.689</span>                    
+Enter new value for mm_nsimulations <span class=" -Color -Color-Bold -C-Bold">(</span>int &gt; <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span><span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>                          
+rerunning the simulations as per user request<span class=" -Color -Color-Yellow -C-Yellow">...</span>                                
 </pre></div>
 </div>
 <p>In this case, we have reduced <code class="docutils literal notranslate"><span class="pre">mm_nbinom_shape</span></code> from its initial value of 1000
 to 200.</p>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>rerunning the simulations as per user request<span class=" -Color -Color-Yellow -C-Yellow">...</span>                                
-computing simulated 2D histogram<span class=" -Color -Color-Yellow -C-Yellow">...</span>                                             
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">01</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">122323</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">02</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">093290</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">03</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">092629</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">04</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">089285</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">05</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">090403</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">06</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">090366</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">07</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">091765</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">08</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">090145</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">09</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">093786</span>                                  
-simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">092343</span>                                  
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>computing simulated 2D histogram<span class=" -Color -Color-Yellow -C-Yellow">...</span>                                             
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">01</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">135638</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">02</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">105290</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">03</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">105506</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">04</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">111019</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">05</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">109667</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">06</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">110020</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">07</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">104019</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">08</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">111145</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">09</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">109596</span>                                  
+simulation <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>/<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">10</span>, time elapsed: <span class=" -Color -Color-Bold -Color-Bold-BrightGreen -C-Bold -C-BrightGreen">0:00:01</span>.<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">107595</span>                                  
 computing numerical boundary for coincident cosmic-ray detection<span class=" -Color -Color-Yellow -C-Yellow">...</span>             
 applying binary dilation with <span class=" -Color -Color-Yellow -C-Yellow">size</span>=<span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1</span> to cosmic-ray mask                         
 number of pixels flagged before dilation :  <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">68</span>                                  
@@ -1981,8 +1981,8 @@ number of pixels after thresholding again: <span class=" -Color -Color-Bold -Col
 applying cleaning mask region                                                   
 pixels flagged as cosmic rays by <span class=" -Color -Color-Bold -Color-Bold-Blue -C-Bold -C-Blue">mmcosmic</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">411</span> <span class=" -Color -Color-Bold -C-Bold">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">000.0128</span>%<span class=" -Color -Color-Bold -C-Bold">)</span>                      
 saving diagnostic_histogram2d.png                                               
-Entering interactive mode                                                       
-<span class=" -Color -Color-Bold -C-Bold">(</span>press <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit program<span class=" -Color -Color-Bold -C-Bold">)</span>                 
+Entering interactive mode <span class=" -Color -Color-Bold -C-Bold">(</span>press any of the following keys<span class=" -Color -Color-Bold -C-Bold">)</span>                     
+<span class=" -Color -Color-Green -C-Green">&#39;f&#39;</span> to repeat fit, <span class=" -Color -Color-Green -C-Green">&#39;r&#39;</span> to rerun simulations, <span class=" -Color -Color-Green -C-Green">&#39;c&#39;</span> to continue, <span class=" -Color -Color-Green -C-Green">&#39;x&#39;</span> to quit       
 </pre></div>
 </div>
 <figure class="align-default" id="fig-diagnostic-histogram2d-example4">
@@ -1995,7 +1995,7 @@ diagnostic diagram. Compare with
 </figcaption>
 </figure>
 <p>Since the new detection boundary appears reasonable, we press <code class="docutils literal notranslate"><span class="pre">c</span></code> to close the
-previous plot and answer <code class="docutils literal notranslate"><span class="pre">n</span></code> to the question about rerunning the simulations.</p>
+previous plot and continue the program execution.</p>
 <figure class="align-default" id="fig-diagnostic-mediancr-example4">
 <a class="reference internal image-reference" href="../_images/diagnostic_mediancr_example4.png"><img alt="../_images/diagnostic_mediancr_example4.png" src="../_images/diagnostic_mediancr_example4.png" style="width: 100%;" />
 </a>
@@ -2051,7 +2051,7 @@ detections.</p>
 cosmic rays. When running <strong>numina-crmasks</strong> interactively, users can obtain a
 simulated 2D diagnostic diagram closer to the diagram from actual data. To do
 this, remove relatively isolated bins in the simulated histogram by performing
-a refined fit (press the <code class="docutils literal notranslate"><span class="pre">r</span></code> key while the 2D diagnostic histogram is
+a refined fit (press the <code class="docutils literal notranslate"><span class="pre">f</span></code> key while the 2D diagnostic histogram is
 displayed) and specifying the number of neighbors when answering the following
 question:</p>
 <div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>Minimum number of neighbors to keep bins in the 2D histogram (0-8) [0]: 6
@@ -2248,6 +2248,48 @@ avoid this problem (this has not been done in this example).</span><a class="hea
 </figcaption>
 </figure>
 <p>From this point onward, the program can be used as in Example 1.</p>
+<p><strong>Alternative approach: using the negative binomial distribution</strong></p>
+<p>To illustrate how the negative binomial distribution can address the
+limitations described in this example, we now demonstrate the results obtained
+by setting <code class="docutils literal notranslate"><span class="pre">mm_photon_distribution:</span> <span class="pre">nbinom</span></code> in the input YAML file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-crmasks<span class="w"> </span>params_example6c.yaml<span class="w"> </span>--output_dir<span class="w"> </span>example6c
+</pre></div>
+</div>
+<figure class="align-default" id="fig-diagnostic-histogram2d-example6c-initial">
+<a class="reference internal image-reference" href="../_images/diagnostic_histogram2d_example6c_initial.png"><img alt="MM diagnostic diagram for the median combination" src="../_images/diagnostic_histogram2d_example6c_initial.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Simulated (left) and real (right) 2D diagnostic histogram.</span><a class="headerlink" href="#fig-diagnostic-histogram2d-example6c-initial" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The simulated diagram above was generated using the negative binomial
+distribution with a shape parameter of 1000. Since this value is large, the
+negative binomial distribution approaches the behavior of a Poisson
+distribution. Consequently, the detection boundary remains unsatisfactory and
+the number of false positives is still high.</p>
+<p>To exploit the benefits of using the negative binomial here, we modify the
+shape parameter, decreasing it from 1000 to 60 (the latter value was determined
+through quick trial and error).</p>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>...
+...
+Enter new value for mm_nbinom_shape <span class=" -Color -Color-Bold -C-Bold">(</span>float &gt; <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span><span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1000</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">60.0</span>                    
+...
+...
+</pre></div>
+</div>
+<figure class="align-default" id="fig-diagnostic-histogram2d-example6c">
+<a class="reference internal image-reference" href="../_images/diagnostic_histogram2d_example6c.png"><img alt="MM diagnostic diagram for the median combination" src="../_images/diagnostic_histogram2d_example6c.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Simulated (left) and real (right) 2D diagnostic histogram.  Compare with
+<a class="reference internal" href="#fig-diagnostic-histogram2d-example6c-initial"><span class="std std-numref">Fig. 21</span></a>.</span><a class="headerlink" href="#fig-diagnostic-histogram2d-example6c" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The resulting boundary fit is not very different from the one obtained in this
+example when using different flux factors for each individual exposure. The
+benefit of using the negative binomial distribution is that users can skip the
+tedious task of finding suitable flux factors, requiring only adjustment of the
+<code class="docutils literal notranslate"><span class="pre">mm_nbinom_shape</span></code> parameter.</p>
 </section>
 <section id="example-7-taking-care-of-small-image-offsets">
 <h3>Example 7: taking care of small image offsets<a class="headerlink" href="#example-7-taking-care-of-small-image-offsets" title="Link to this heading"></a></h3>
@@ -2279,7 +2321,7 @@ to reproduce what is observed in the individual exposures.</p>
 <a class="reference internal image-reference" href="../_images/diagnostic_histogram2d_example7a.png"><img alt="MM diagnostic diagram for the median combination" src="../_images/diagnostic_histogram2d_example7a.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Simulated (left) and real (right) Median-Minimum diagnostic histogram.
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Simulated (left) and real (right) Median-Minimum diagnostic histogram.
 There is a clear difference between the simulated and the real data.</span><a class="headerlink" href="#fig-diagnostic-histogram2d-example7a" title="Link to this image"></a></p>
 </figcaption>
 </figure>
@@ -2290,7 +2332,7 @@ figure:</p>
 <a class="reference internal image-reference" href="../_images/diagnostic_mediancr_example7a.png"><img alt="../_images/diagnostic_mediancr_example7a.png" src="../_images/diagnostic_mediancr_example7a.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">MM diagnostic diagram and location of detected cosmic-ray pixels. Note the
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">MM diagnostic diagram and location of detected cosmic-ray pixels. Note the
 large number of false detections on sky lines.</span><a class="headerlink" href="#fig-diagnostic-mediancr-example7a" title="Link to this image"></a></p>
 </figcaption>
 </figure>
@@ -2342,7 +2384,7 @@ coincide with the individual exposures.</p>
 <a class="reference internal image-reference" href="../_images/xyoffset_crosscorr_1_example7b.png"><img alt="../_images/xyoffset_crosscorr_1_example7b.png" src="../_images/xyoffset_crosscorr_1_example7b.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">For each individual exposure, the program displays a four-panel figure. In the
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">For each individual exposure, the program displays a four-panel figure. In the
 top row, we have the median combination (left panel) and the corresponding
 individual image (right panel). In the bottom row, we see the difference
 between both images (left panel) and the same result after the individual image
@@ -2358,7 +2400,7 @@ consistent with proper alignment.</span><a class="headerlink" href="#fig-xyoffse
 <a class="reference internal image-reference" href="../_images/xyoffset_crosscorr_2_example7b.png"><img alt="../_images/xyoffset_crosscorr_2_example7b.png" src="../_images/xyoffset_crosscorr_2_example7b.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Figure similar to <a class="reference internal" href="#fig-xyoffset-crosscorr-1-example7b"><span class="std std-numref">Fig. 23</span></a> for the second
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Figure similar to <a class="reference internal" href="#fig-xyoffset-crosscorr-1-example7b"><span class="std std-numref">Fig. 25</span></a> for the second
 individual exposure.</span><a class="headerlink" href="#fig-xyoffset-crosscorr-2-example7b" title="Link to this image"></a></p>
 </figcaption>
 </figure>
@@ -2366,7 +2408,7 @@ individual exposure.</span><a class="headerlink" href="#fig-xyoffset-crosscorr-2
 <a class="reference internal image-reference" href="../_images/xyoffset_crosscorr_3_example7b.png"><img alt="../_images/xyoffset_crosscorr_3_example7b.png" src="../_images/xyoffset_crosscorr_3_example7b.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Figure similar to <a class="reference internal" href="#fig-xyoffset-crosscorr-1-example7b"><span class="std std-numref">Fig. 23</span></a> for the third
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Figure similar to <a class="reference internal" href="#fig-xyoffset-crosscorr-1-example7b"><span class="std std-numref">Fig. 25</span></a> for the third
 individual exposure.</span><a class="headerlink" href="#fig-xyoffset-crosscorr-3-example7b" title="Link to this image"></a></p>
 </figcaption>
 </figure>
@@ -2377,12 +2419,13 @@ same relative displacements as the original three exposures.</p>
 <a class="reference internal image-reference" href="../_images/diagnostic_histogram2d_example7b.png"><img alt="MM diagnostic diagram for the median combination" src="../_images/diagnostic_histogram2d_example7b.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Simulated (left) and real (right) Median-Minimum diagnostic histogram. This
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Simulated (left) and real (right) Median-Minimum diagnostic histogram. This
 diagram has been generated using the <span class="math notranslate nohighlight">\((\delta x, \delta y)\)</span> offsets between
 exposures computed by <strong>numina-crmasks</strong>. This time, the simulated data show a
 distribution much more similar to the original data, and the calculated
 detection boundary is better defined. Compare this figure with
-<a class="reference internal" href="#fig-diagnostic-histogram2d-example7a"><span class="std std-numref">Fig. 21</span></a>.</span><a class="headerlink" href="#fig-diagnostic-histogram2d-example7b" title="Link to this image"></a></p>
+<a class="reference internal" href="#fig-diagnostic-histogram2d-example7a"><span class="std std-numref">Fig. 23</span></a> (note that the upper limit in
+the vertical axis is different!).</span><a class="headerlink" href="#fig-diagnostic-histogram2d-example7b" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The newly calculated detection boundary performs much better, removing the
@@ -2392,8 +2435,8 @@ not accounted for.</p>
 <a class="reference internal image-reference" href="../_images/diagnostic_mediancr_example7b.png"><img alt="../_images/diagnostic_mediancr_example7b.png" src="../_images/diagnostic_mediancr_example7b.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">MM diagnostic diagram and location of detected cosmic-ray pixels. Compare this
-figure with <a class="reference internal" href="#fig-diagnostic-mediancr-example7a"><span class="std std-numref">Fig. 22</span></a>.</span><a class="headerlink" href="#fig-diagnostic-mediancr-example7b" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">MM diagnostic diagram and location of detected cosmic-ray pixels. Compare this
+figure with <a class="reference internal" href="#fig-diagnostic-mediancr-example7a"><span class="std std-numref">Fig. 24</span></a>.</span><a class="headerlink" href="#fig-diagnostic-mediancr-example7b" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>From this point onward, the program can be used as in Example 1.</p>
@@ -2413,6 +2456,49 @@ the input YAML file:</p>
 <span class="nt">mm_crosscorr_region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">  </span><span class="c1"># [xmin, xmax, ymin, ymax] FITS criterium | null</span>
 </pre></div>
 </div>
+<p><strong>Alternative approach: using the negative binomial distribution</strong></p>
+<p>To illustrate how the negative binomial distribution can also address the
+limitations described in this example, we demonstrate the results obtained by
+setting <code class="docutils literal notranslate"><span class="pre">mm_photon_distribution:</span> <span class="pre">nbinom</span></code> in the input YAML file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-crmasks<span class="w"> </span>params_example7c.yaml<span class="w"> </span>--output_dir<span class="w"> </span>example7c
+</pre></div>
+</div>
+<figure class="align-default" id="fig-diagnostic-histogram2d-example7c-initial">
+<a class="reference internal image-reference" href="../_images/diagnostic_histogram2d_example7c_initial.png"><img alt="MM diagnostic diagram for the median combination" src="../_images/diagnostic_histogram2d_example7c_initial.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Simulated (left) and real (right) 2D diagnostic histogram.</span><a class="headerlink" href="#fig-diagnostic-histogram2d-example7c-initial" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The simulated diagram above was generated using the negative binomial
+distribution with a shape parameter of 1000. Since this value is large, the
+negative binomial distribution approaches the behavior of a Poisson
+distribution. Consequently, the detection boundary remains unsatisfactory and
+the number of false positives is still high.</p>
+<p>To exploit the benefits of using the negative binomial here, we modify the
+shape parameter, decreasing it from 1000 to 20 (the latter value was determined
+through quick trial and error).</p>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>...
+...
+Enter new value for mm_nbinom_shape <span class=" -Color -Color-Bold -C-Bold">(</span>float &gt; <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">0</span><span class=" -Color -Color-Bold -C-Bold">)</span> <span class=" -Color -Color-Bold -C-Bold">[</span><span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">1000</span><span class=" -Color -Color-Bold -C-Bold">]</span>: <span class=" -Color -Color-Bold -Color-Bold-Cyan -C-Bold -C-Cyan">20.0</span>                    
+...
+...
+</pre></div>
+</div>
+<figure class="align-default" id="fig-diagnostic-histogram2d-example7c">
+<a class="reference internal image-reference" href="../_images/diagnostic_histogram2d_example7c.png"><img alt="MM diagnostic diagram for the median combination" src="../_images/diagnostic_histogram2d_example7c.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Simulated (left) and real (right) 2D diagnostic histogram. Compare with
+<a class="reference internal" href="#fig-diagnostic-histogram2d-example7c-initial"><span class="std std-numref">Fig. 30</span></a>. Note that here we have
+reduced the number of iterations to extend the detection boundary.</span><a class="headerlink" href="#fig-diagnostic-histogram2d-example7c" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The resulting boundary fit does a better job to reproduce the actual histogram
+obtained with the real data. The benefit of using the negative binomial
+distribution is that users can skip the tedious task of determining the
+corresponding <span class="math notranslate nohighlight">\((\delta x,\, \delta y)\)</span> offsets, requiring only adjustment of
+the <code class="docutils literal notranslate"><span class="pre">mm_nbinom_shape</span></code> parameter.</p>
 </section>
 </section>
 <section id="parameters-in-the-requirements-section">

@@ -1,6 +1,6 @@
 ```{code-block} ansi-shell-session
 :class: my-special-block no-copybutton
 
-Total time elapsed: [1;92m0:07:22[0m.[1;36m168894[0m                                              
+Total time elapsed: [1;92m0:05:17[0m.[1;36m026288[0m                                              
 [92m────────────────────────────────── [0m[1;35m Goodbye! [0m[92m ──────────────────────────────────[0m
 ```
