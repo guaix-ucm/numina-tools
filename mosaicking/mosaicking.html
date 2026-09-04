@@ -7,9 +7,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mosaicking &mdash; numina-tools 2025.10.15 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=932a37d4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=55cbccbb" />
 
   
@@ -53,6 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../misc3d/misc3d.html">Miscellaneous 3D data scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../world2pix/world2pix.html">World to/from pixel</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Mosaicking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#measure-xy-offset-2dimages">measure_xy_offset_2dimages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#extract-2d-slice-from-3d-cube">extract_2d_slice_from_3d_cube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#generate-mosaic-of-2d-images">generate_mosaic_of_2d_images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#generate-mosaic-of-3d-cubes">generate_mosaic_of_3d_cubes</a></li>
@@ -88,6 +90,99 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="mosaicking">
 <h1>Mosaicking<a class="headerlink" href="#mosaicking" title="Link to this heading"></a></h1>
+<section id="measure-xy-offset-2dimages">
+<h2>measure_xy_offset_2dimages<a class="headerlink" href="#measure-xy-offset-2dimages" title="Link to this heading"></a></h2>
+<p>This script determines (X,Y) offsets between two 2D images using
+cross-correlation.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-measure_xy_offset_2dimages<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-measure_xy_offset_2dimages</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--image1</span> <span class="-Ansi -Ansi-C36">IMAGE1</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--image2</span> <span class="-Ansi -Ansi-C36">IMAGE2</span>] [<span class="-Ansi -Ansi-Cyan">--extnum1</span> <span class="-Ansi -Ansi-C36">EXTNUM1</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--extnum2</span> <span class="-Ansi -Ansi-C36">EXTNUM2</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--subtract-background</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--rescale-to-01</span>] [<span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{1,2}</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--plots</span>] [<span class="-Ansi -Ansi-Cyan">--test</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-fwhm</span> <span class="-Ansi -Ansi-C36">TEST_FWHM</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-amplitude</span> <span class="-Ansi -Ansi-C36">TEST_AMPLITUDE</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-background</span> <span class="-Ansi -Ansi-C36">TEST_BACKGROUND</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-noise</span> <span class="-Ansi -Ansi-C36">TEST_NOISE</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-xoffset</span> <span class="-Ansi -Ansi-C36">TEST_XOFFSET</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-yoffset</span> <span class="-Ansi -Ansi-C36">TEST_YOFFSET</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-num-nans</span> <span class="-Ansi -Ansi-C36">TEST_NUM_NANS</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-seed</span> <span class="-Ansi -Ansi-C36">TEST_SEED</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--save-test-images</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>] [<span class="-Ansi -Ansi-Cyan">--record</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--echo</span>] [<span class="-Ansi -Ansi-Cyan">--version</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>]
+
+Determine (X,Y) offsets between 2 2D images using cross-correlation.
+
+<span class="-Ansi -Ansi-C208">Options:</span>
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--image1</span> <span class="-Ansi -Ansi-C36">IMAGE1</span>       Path to the first 2D image
+  <span class="-Ansi -Ansi-Cyan">--image2</span> <span class="-Ansi -Ansi-C36">IMAGE2</span>       Path to the second 2D image
+  <span class="-Ansi -Ansi-Cyan">--extnum1</span> <span class="-Ansi -Ansi-C36">EXTNUM1</span>     Extension number for the first image (default: 0)
+  <span class="-Ansi -Ansi-Cyan">--extnum2</span> <span class="-Ansi -Ansi-C36">EXTNUM2</span>     Extension number for the second image (default: 0)
+  <span class="-Ansi -Ansi-Cyan">--subtract-background</span>
+                        Subtract median background from images
+  <span class="-Ansi -Ansi-Cyan">--rescale-to-01</span>       Rescale images to the range [0, 1] before computing
+                        cross-correlation
+  <span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{1,2}</span>        Method (1: scipy (default), 2: skimage)
+  <span class="-Ansi -Ansi-Cyan">--plots</span>               Generate plots of the images and cross-correlation
+  <span class="-Ansi -Ansi-Cyan">--test</span>                Run test mode with synthetic images
+  <span class="-Ansi -Ansi-Cyan">--test-fwhm</span> <span class="-Ansi -Ansi-C36">TEST_FWHM</span>
+                        FWHM of the synthetic Gaussian star (default: 10.0)
+  <span class="-Ansi -Ansi-Cyan">--test-amplitude</span> <span class="-Ansi -Ansi-C36">TEST_AMPLITUDE</span>
+                        Amplitude of the synthetic Gaussian star (default:
+                        1000.0)
+  <span class="-Ansi -Ansi-Cyan">--test-background</span> <span class="-Ansi -Ansi-C36">TEST_BACKGROUND</span>
+                        Background level of the synthetic images (default:
+                        100.0)
+  <span class="-Ansi -Ansi-Cyan">--test-noise</span> <span class="-Ansi -Ansi-C36">TEST_NOISE</span>
+                        Noise level of the synthetic images (default: 5.0)
+  <span class="-Ansi -Ansi-Cyan">--test-xoffset</span> <span class="-Ansi -Ansi-C36">TEST_XOFFSET</span>
+                        X offset of the synthetic images (default: 5.0)
+  <span class="-Ansi -Ansi-Cyan">--test-yoffset</span> <span class="-Ansi -Ansi-C36">TEST_YOFFSET</span>
+                        Y offset of the synthetic images (default: 3.0)
+  <span class="-Ansi -Ansi-Cyan">--test-num-nans</span> <span class="-Ansi -Ansi-C36">TEST_NUM_NANS</span>
+                        Number of NaN pixels to insert in each synthetic image
+                        (default: 20)
+  <span class="-Ansi -Ansi-Cyan">--test-seed</span> <span class="-Ansi -Ansi-C36">TEST_SEED</span>
+                        Random seed for synthetic images (default: 1234)
+  <span class="-Ansi -Ansi-Cyan">--save-test-images</span>    Save synthetic images to FITS files
+  <span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>
+                        Output directory (default: .)
+  <span class="-Ansi -Ansi-Cyan">--record</span>              Record terminal output
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--version</span>             Display version
+  <span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>
+                        Set the logging level
+</pre></div>
+</div>
+<p>The inputs are two 2D images (numpy arrays) with the same dimensions.</p>
+<p>The computed (X,Y) offsets indicate how much the second image is shifted
+with respect to the first image. The offsets are returned in pixels.</p>
+<p>The input images can be pre-processed by subtracting the median background
+and/or rescaling to the range [0, 1].</p>
+<p>NaN values in the input images are replaced with zeros before computing the
+cross-correlation.</p>
+<p>It is possible to use <code class="docutils literal notranslate"><span class="pre">--test</span></code> mode to create synthetic images with a known
+offset, which can be used to validate the offset measurement. The synthetic
+images can also be saved to FITS files for further analysis.</p>
+<p>Usage examples:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-measure_xy_offset_2dimages<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--subtract-background<span class="w"> </span>--rescale-to-01<span class="w"> </span>--plots
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-measure_xy_offset_2dimages<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image1<span class="w"> </span>image1.fits<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image2<span class="w"> </span>image2.fits<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--subtract-background<span class="w"> </span>--rescale-to-01<span class="w"> </span>--plots
+</pre></div>
+</div>
+</section>
 <section id="extract-2d-slice-from-3d-cube">
 <h2>extract_2d_slice_from_3d_cube<a class="headerlink" href="#extract-2d-slice-from-3d-cube" title="Link to this heading"></a></h2>
 <p>This script extracts a 2D section from a 3D FITS image. It allows specifying
@@ -95,37 +190,38 @@ the axis to collapse and the interval (pixel range) along that axis.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-extract_2d_slice_from_3d_cube<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-extract_2d_slice_from_3d_cube</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--axis</span> <span class=" -Color -Color-C36 -C-C36">AXIS</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--i1</span> <span class=" -Color -Color-C36 -C-C36">I1</span>]
-                                            [<span class=" -Color -Color-Cyan -C-Cyan">--i2</span> <span class=" -Color -Color-C36 -C-C36">I2</span>]
-                                            [<span class=" -Color -Color-Cyan -C-Cyan">--method</span> <span class=" -Color -Color-C36 -C-C36">{sum,mean,median}</span>]
-                                            [<span class=" -Color -Color-Cyan -C-Cyan">--wavecal</span> <span class=" -Color -Color-C36 -C-C36">{none,fridasimulator,1,2,3}</span>]
-                                            [<span class=" -Color -Color-Cyan -C-Cyan">--transpose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--noplot</span>]
-                                            [<span class=" -Color -Color-Cyan -C-Cyan">--vmin</span> <span class=" -Color -Color-C36 -C-C36">VMIN</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--vmax</span> <span class=" -Color -Color-C36 -C-C36">VMAX</span>]
-                                            [<span class=" -Color -Color-Cyan -C-Cyan">--output</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
-                                            [<span class=" -Color -Color-Cyan -C-Cyan">--debug</span>]
-                                            <span class=" -Color -Color-Cyan -C-Cyan">input</span>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-extract_2d_slice_from_3d_cube</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--axis</span> <span class="-Ansi -Ansi-C36">AXIS</span>] [<span class="-Ansi -Ansi-Cyan">--i1</span> <span class="-Ansi -Ansi-C36">I1</span>]
+                                            [<span class="-Ansi -Ansi-Cyan">--i2</span> <span class="-Ansi -Ansi-C36">I2</span>]
+                                            [<span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{sum,mean,median}</span>]
+                                            [<span class="-Ansi -Ansi-Cyan">--wavecal</span> <span class="-Ansi -Ansi-C36">{none,fridasimulator,1,2,3}</span>]
+                                            [<span class="-Ansi -Ansi-Cyan">--transpose</span>] [<span class="-Ansi -Ansi-Cyan">--noplot</span>]
+                                            [<span class="-Ansi -Ansi-Cyan">--vmin</span> <span class="-Ansi -Ansi-C36">VMIN</span>] [<span class="-Ansi -Ansi-Cyan">--vmax</span> <span class="-Ansi -Ansi-C36">VMAX</span>]
+                                            [<span class="-Ansi -Ansi-Cyan">--output</span> <span class="-Ansi -Ansi-C36">OUTPUT</span>] [<span class="-Ansi -Ansi-Cyan">--png</span> <span class="-Ansi -Ansi-C36">PNG</span>]
+                                            [<span class="-Ansi -Ansi-Cyan">--echo</span>] [<span class="-Ansi -Ansi-Cyan">--debug</span>]
+                                            <span class="-Ansi -Ansi-Cyan">input</span>
 
 Extract 2D slice from 3D cube
 
-<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">input</span>                 Input FITS file
+<span class="-Ansi -Ansi-C208">Positional Arguments:</span>
+  <span class="-Ansi -Ansi-Cyan">input</span>                 Input FITS file
 
-<span class=" -Color -Color-C208 -C-C208">Options:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
-  <span class=" -Color -Color-Cyan -C-Cyan">--axis</span> <span class=" -Color -Color-C36 -C-C36">AXIS</span>           Axis to be collapsed in output
-  <span class=" -Color -Color-Cyan -C-Cyan">--i1</span> <span class=" -Color -Color-C36 -C-C36">I1</span>               First pixel of the projected axis
-  <span class=" -Color -Color-Cyan -C-Cyan">--i2</span> <span class=" -Color -Color-C36 -C-C36">I2</span>               Last pixel of the projected axis (0=NAXIS value)
-  <span class=" -Color -Color-Cyan -C-Cyan">--method</span> <span class=" -Color -Color-C36 -C-C36">{sum,mean,median}</span>
+<span class="-Ansi -Ansi-C208">Options:</span>
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--axis</span> <span class="-Ansi -Ansi-C36">AXIS</span>           Axis to be collapsed in output
+  <span class="-Ansi -Ansi-Cyan">--i1</span> <span class="-Ansi -Ansi-C36">I1</span>               First pixel of the projected axis
+  <span class="-Ansi -Ansi-Cyan">--i2</span> <span class="-Ansi -Ansi-C36">I2</span>               Last pixel of the projected axis (0=NAXIS value)
+  <span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{sum,mean,median}</span>
                         Collapse method (default=sum)
-  <span class=" -Color -Color-Cyan -C-Cyan">--wavecal</span> <span class=" -Color -Color-C36 -C-C36">{none,fridasimulator,1,2,3}</span>
+  <span class="-Ansi -Ansi-Cyan">--wavecal</span> <span class="-Ansi -Ansi-C36">{none,fridasimulator,1,2,3}</span>
                         Wavelength calibration type
-  <span class=" -Color -Color-Cyan -C-Cyan">--transpose</span>           Transpose data array in output
-  <span class=" -Color -Color-Cyan -C-Cyan">--noplot</span>              Do not plot result
-  <span class=" -Color -Color-Cyan -C-Cyan">--vmin</span> <span class=" -Color -Color-C36 -C-C36">VMIN</span>           vmin value for imshow
-  <span class=" -Color -Color-Cyan -C-Cyan">--vmax</span> <span class=" -Color -Color-C36 -C-C36">VMAX</span>           vmax value for imshow
-  <span class=" -Color -Color-Cyan -C-Cyan">--output</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT</span>       Output FITS file
-  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
-  <span class=" -Color -Color-Cyan -C-Cyan">--debug</span>               Debug
+  <span class="-Ansi -Ansi-Cyan">--transpose</span>           Transpose data array in output
+  <span class="-Ansi -Ansi-Cyan">--noplot</span>              Do not plot result
+  <span class="-Ansi -Ansi-Cyan">--vmin</span> <span class="-Ansi -Ansi-C36">VMIN</span>           vmin value for imshow
+  <span class="-Ansi -Ansi-Cyan">--vmax</span> <span class="-Ansi -Ansi-C36">VMAX</span>           vmax value for imshow
+  <span class="-Ansi -Ansi-Cyan">--output</span> <span class="-Ansi -Ansi-C36">OUTPUT</span>       Output FITS file
+  <span class="-Ansi -Ansi-Cyan">--png</span> <span class="-Ansi -Ansi-C36">PNG</span>             Output PNG file (plot of the result)
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--debug</span>               Debug
 </pre></div>
 </div>
 </section>
@@ -135,37 +231,37 @@ Extract 2D slice from 3D cube
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-generate_mosaic_of_2d_images<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-generate_mosaic_of_2d_images</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--extname_mask</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_MASK</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--combination_function</span> <span class=" -Color -Color-C36 -C-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--output_3D_stack</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_3D_STACK</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
-                                           <span class=" -Color -Color-Cyan -C-Cyan">input_list</span> <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-generate_mosaic_of_2d_images</span> [<span class="-Ansi -Ansi-Cyan">-h</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--reproject_method</span> <span class="-Ansi -Ansi-C36">{interp,adaptive,exact}</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--extname_image</span> <span class="-Ansi -Ansi-C36">EXTNAME_IMAGE</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--extname_mask</span> <span class="-Ansi -Ansi-C36">EXTNAME_MASK</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--combination_function</span> <span class="-Ansi -Ansi-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--output_3D_stack</span> <span class="-Ansi -Ansi-C36">OUTPUT_3D_STACK</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                                           <span class="-Ansi -Ansi-Cyan">input_list</span> <span class="-Ansi -Ansi-Cyan">output_filename</span>
 
 Generate mosaic of 2D images
 
-<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">input_list</span>            TXT file with list of 2D images to be combined
-  <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>       filename of output FITS image
+<span class="-Ansi -Ansi-C208">Positional Arguments:</span>
+  <span class="-Ansi -Ansi-Cyan">input_list</span>            TXT file with list of 2D images to be combined
+  <span class="-Ansi -Ansi-Cyan">output_filename</span>       filename of output FITS image
 
-<span class=" -Color -Color-C208 -C-C208">Options:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
-  <span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>
+<span class="-Ansi -Ansi-C208">Options:</span>
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--reproject_method</span> <span class="-Ansi -Ansi-C36">{interp,adaptive,exact}</span>
                         Reprojection method (interp, adaptive, exact)
-  <span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>
+  <span class="-Ansi -Ansi-Cyan">--extname_image</span> <span class="-Ansi -Ansi-C36">EXTNAME_IMAGE</span>
                         Extension name for image in input files. Default
                         value: PRIMARY
-  <span class=" -Color -Color-Cyan -C-Cyan">--extname_mask</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_MASK</span>
+  <span class="-Ansi -Ansi-Cyan">--extname_mask</span> <span class="-Ansi -Ansi-C36">EXTNAME_MASK</span>
                         Extension name for mask in input files. Default
-                        &#39;None&#39;: use np.nan in image
-  <span class=" -Color -Color-Cyan -C-Cyan">--combination_function</span> <span class=" -Color -Color-C36 -C-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>
+                        'None': use np.nan in image
+  <span class="-Ansi -Ansi-Cyan">--combination_function</span> <span class="-Ansi -Ansi-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>
                         Combination function. Default: mean
-  <span class=" -Color -Color-Cyan -C-Cyan">--output_3D_stack</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_3D_STACK</span>
+  <span class="-Ansi -Ansi-Cyan">--output_3D_stack</span> <span class="-Ansi -Ansi-C36">OUTPUT_3D_STACK</span>
                         filename for stacked 3D array. Default None
-  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
-  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--verbose</span>             Display intermediate information
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
 </pre></div>
 </div>
 </section>
@@ -184,47 +280,47 @@ Gaussian kernel used when the reprojection method is <code class="docutils liter
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-generate_mosaic_of_3d_cubes<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-generate_mosaic_of_3d_cubes</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--desired_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">DESIRED_CELESTIAL_2D_WCS</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--parallel</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--output_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_CELESTIAL_2D_WCS</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--footprint</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
-                                          <span class=" -Color -Color-Cyan -C-Cyan">input_list</span> <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-generate_mosaic_of_3d_cubes</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--crval3out</span> <span class="-Ansi -Ansi-C36">CRVAL3OUT</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--cdelt3out</span> <span class="-Ansi -Ansi-C36">CDELT3OUT</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--naxis3out</span> <span class="-Ansi -Ansi-C36">NAXIS3OUT</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--desired_celestial_2d_wcs</span> <span class="-Ansi -Ansi-C36">DESIRED_CELESTIAL_2D_WCS</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--reproject_method</span> <span class="-Ansi -Ansi-C36">{interp,adaptive,exact}</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--parallel</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--extname_image</span> <span class="-Ansi -Ansi-C36">EXTNAME_IMAGE</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--output_celestial_2d_wcs</span> <span class="-Ansi -Ansi-C36">OUTPUT_CELESTIAL_2D_WCS</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--footprint</span>] [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                                          <span class="-Ansi -Ansi-Cyan">input_list</span> <span class="-Ansi -Ansi-Cyan">output_filename</span>
 
 Generate a 3D mosaic from individual 3D cubes
 
-<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">input_list</span>            TXT file with list of 3D images to be combined or
+<span class="-Ansi -Ansi-C208">Positional Arguments:</span>
+  <span class="-Ansi -Ansi-Cyan">input_list</span>            TXT file with list of 3D images to be combined or
                         single FITS file
-  <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>       filename of output FITS image
+  <span class="-Ansi -Ansi-Cyan">output_filename</span>       filename of output FITS image
 
-<span class=" -Color -Color-C208 -C-C208">Options:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
-  <span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>
+<span class="-Ansi -Ansi-C208">Options:</span>
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--crval3out</span> <span class="-Ansi -Ansi-C36">CRVAL3OUT</span>
                         Minimum wavelength (in m) for the output image
-  <span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>
+  <span class="-Ansi -Ansi-Cyan">--cdelt3out</span> <span class="-Ansi -Ansi-C36">CDELT3OUT</span>
                         Wavelength step (in m/pixel) for the output image
-  <span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>
+  <span class="-Ansi -Ansi-Cyan">--naxis3out</span> <span class="-Ansi -Ansi-C36">NAXIS3OUT</span>
                         Number of slices in the output image
-  <span class=" -Color -Color-Cyan -C-Cyan">--desired_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">DESIRED_CELESTIAL_2D_WCS</span>
+  <span class="-Ansi -Ansi-Cyan">--desired_celestial_2d_wcs</span> <span class="-Ansi -Ansi-C36">DESIRED_CELESTIAL_2D_WCS</span>
                         Desired 2D celestial WCS projection. Default None
                         (compute for current 3D cube combination)
-  <span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>
+  <span class="-Ansi -Ansi-Cyan">--reproject_method</span> <span class="-Ansi -Ansi-C36">{interp,adaptive,exact}</span>
                         Reprojection method (interp, adaptive, exact)
-  <span class=" -Color -Color-Cyan -C-Cyan">--parallel</span>            Use parallel processing for reprojection
-  <span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>
+  <span class="-Ansi -Ansi-Cyan">--parallel</span>            Use parallel processing for reprojection
+  <span class="-Ansi -Ansi-Cyan">--extname_image</span> <span class="-Ansi -Ansi-C36">EXTNAME_IMAGE</span>
                         Extension name for image in input files. Default
                         value: PRIMARY
-  <span class=" -Color -Color-Cyan -C-Cyan">--output_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_CELESTIAL_2D_WCS</span>
+  <span class="-Ansi -Ansi-Cyan">--output_celestial_2d_wcs</span> <span class="-Ansi -Ansi-C36">OUTPUT_CELESTIAL_2D_WCS</span>
                         filename for output 2D celestial WCS
-  <span class=" -Color -Color-Cyan -C-Cyan">--footprint</span>           Generate a FOOTPRINT extension with the final
+  <span class="-Ansi -Ansi-Cyan">--footprint</span>           Generate a FOOTPRINT extension with the final
                         footprint
-  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
-  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--verbose</span>             Display intermediate information
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
 </pre></div>
 </div>
 </section>

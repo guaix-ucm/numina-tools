@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; numina-tools 2025.10.15 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=932a37d4" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=55cbccbb" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5d99d348"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f0b92f1e"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            numina-tools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/installation.html">Installing numina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arithmetic/arithmetic.html">Basic arithmetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../adr/adr.html">Atmospheric differential refraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc3d/misc3d.html">Miscellaneous 3D data scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../world2pix/world2pix.html">World to/from pixel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mosaicking.html">Mosaicking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../visualization/visualization.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../crmasks/crmasks.html">Removing CR in multiple exposures</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">numina-tools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/mosaicking/files/help_numina-measure_xy_offset_2dimages.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-measure_xy_offset_2dimages<span class="w"> </span>--help
+</pre></div>
+</div>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-measure_xy_offset_2dimages</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--image1</span> <span class="-Ansi -Ansi-C36">IMAGE1</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--image2</span> <span class="-Ansi -Ansi-C36">IMAGE2</span>] [<span class="-Ansi -Ansi-Cyan">--extnum1</span> <span class="-Ansi -Ansi-C36">EXTNUM1</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--extnum2</span> <span class="-Ansi -Ansi-C36">EXTNUM2</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--subtract-background</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--rescale-to-01</span>] [<span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{1,2}</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--plots</span>] [<span class="-Ansi -Ansi-Cyan">--test</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-fwhm</span> <span class="-Ansi -Ansi-C36">TEST_FWHM</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-amplitude</span> <span class="-Ansi -Ansi-C36">TEST_AMPLITUDE</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-background</span> <span class="-Ansi -Ansi-C36">TEST_BACKGROUND</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-noise</span> <span class="-Ansi -Ansi-C36">TEST_NOISE</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-xoffset</span> <span class="-Ansi -Ansi-C36">TEST_XOFFSET</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-yoffset</span> <span class="-Ansi -Ansi-C36">TEST_YOFFSET</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-num-nans</span> <span class="-Ansi -Ansi-C36">TEST_NUM_NANS</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-seed</span> <span class="-Ansi -Ansi-C36">TEST_SEED</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--save-test-images</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>] [<span class="-Ansi -Ansi-Cyan">--record</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--echo</span>] [<span class="-Ansi -Ansi-Cyan">--version</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>]
+
+Determine (X,Y) offsets between 2 2D images using cross-correlation.
+
+<span class="-Ansi -Ansi-C208">Options:</span>
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--image1</span> <span class="-Ansi -Ansi-C36">IMAGE1</span>       Path to the first 2D image
+  <span class="-Ansi -Ansi-Cyan">--image2</span> <span class="-Ansi -Ansi-C36">IMAGE2</span>       Path to the second 2D image
+  <span class="-Ansi -Ansi-Cyan">--extnum1</span> <span class="-Ansi -Ansi-C36">EXTNUM1</span>     Extension number for the first image (default: 0)
+  <span class="-Ansi -Ansi-Cyan">--extnum2</span> <span class="-Ansi -Ansi-C36">EXTNUM2</span>     Extension number for the second image (default: 0)
+  <span class="-Ansi -Ansi-Cyan">--subtract-background</span>
+                        Subtract median background from images
+  <span class="-Ansi -Ansi-Cyan">--rescale-to-01</span>       Rescale images to the range [0, 1] before computing
+                        cross-correlation
+  <span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{1,2}</span>        Method (1: scipy (default), 2: skimage)
+  <span class="-Ansi -Ansi-Cyan">--plots</span>               Generate plots of the images and cross-correlation
+  <span class="-Ansi -Ansi-Cyan">--test</span>                Run test mode with synthetic images
+  <span class="-Ansi -Ansi-Cyan">--test-fwhm</span> <span class="-Ansi -Ansi-C36">TEST_FWHM</span>
+                        FWHM of the synthetic Gaussian star (default: 10.0)
+  <span class="-Ansi -Ansi-Cyan">--test-amplitude</span> <span class="-Ansi -Ansi-C36">TEST_AMPLITUDE</span>
+                        Amplitude of the synthetic Gaussian star (default:
+                        1000.0)
+  <span class="-Ansi -Ansi-Cyan">--test-background</span> <span class="-Ansi -Ansi-C36">TEST_BACKGROUND</span>
+                        Background level of the synthetic images (default:
+                        100.0)
+  <span class="-Ansi -Ansi-Cyan">--test-noise</span> <span class="-Ansi -Ansi-C36">TEST_NOISE</span>
+                        Noise level of the synthetic images (default: 5.0)
+  <span class="-Ansi -Ansi-Cyan">--test-xoffset</span> <span class="-Ansi -Ansi-C36">TEST_XOFFSET</span>
+                        X offset of the synthetic images (default: 5.0)
+  <span class="-Ansi -Ansi-Cyan">--test-yoffset</span> <span class="-Ansi -Ansi-C36">TEST_YOFFSET</span>
+                        Y offset of the synthetic images (default: 3.0)
+  <span class="-Ansi -Ansi-Cyan">--test-num-nans</span> <span class="-Ansi -Ansi-C36">TEST_NUM_NANS</span>
+                        Number of NaN pixels to insert in each synthetic image
+                        (default: 20)
+  <span class="-Ansi -Ansi-Cyan">--test-seed</span> <span class="-Ansi -Ansi-C36">TEST_SEED</span>
+                        Random seed for synthetic images (default: 1234)
+  <span class="-Ansi -Ansi-Cyan">--save-test-images</span>    Save synthetic images to FITS files
+  <span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>
+                        Output directory (default: .)
+  <span class="-Ansi -Ansi-Cyan">--record</span>              Record terminal output
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--version</span>             Display version
+  <span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>
+                        Set the logging level
+</pre></div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Sergio Pascual, Nicolás Cardiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -7,9 +7,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>&lt;no title&gt; &mdash; numina-tools 2025.10.15 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=932a37d4" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
       <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=55cbccbb" />
 
   
@@ -82,47 +83,47 @@
   <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-generate_mosaic_of_3d_cubes<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-generate_mosaic_of_3d_cubes</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--desired_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">DESIRED_CELESTIAL_2D_WCS</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--parallel</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--output_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_CELESTIAL_2D_WCS</span>]
-                                          [<span class=" -Color -Color-Cyan -C-Cyan">--footprint</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
-                                          <span class=" -Color -Color-Cyan -C-Cyan">input_list</span> <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-generate_mosaic_of_3d_cubes</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--crval3out</span> <span class="-Ansi -Ansi-C36">CRVAL3OUT</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--cdelt3out</span> <span class="-Ansi -Ansi-C36">CDELT3OUT</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--naxis3out</span> <span class="-Ansi -Ansi-C36">NAXIS3OUT</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--desired_celestial_2d_wcs</span> <span class="-Ansi -Ansi-C36">DESIRED_CELESTIAL_2D_WCS</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--reproject_method</span> <span class="-Ansi -Ansi-C36">{interp,adaptive,exact}</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--parallel</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--extname_image</span> <span class="-Ansi -Ansi-C36">EXTNAME_IMAGE</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--output_celestial_2d_wcs</span> <span class="-Ansi -Ansi-C36">OUTPUT_CELESTIAL_2D_WCS</span>]
+                                          [<span class="-Ansi -Ansi-Cyan">--footprint</span>] [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                                          <span class="-Ansi -Ansi-Cyan">input_list</span> <span class="-Ansi -Ansi-Cyan">output_filename</span>
 
 Generate a 3D mosaic from individual 3D cubes
 
-<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">input_list</span>            TXT file with list of 3D images to be combined or
+<span class="-Ansi -Ansi-C208">Positional Arguments:</span>
+  <span class="-Ansi -Ansi-Cyan">input_list</span>            TXT file with list of 3D images to be combined or
                         single FITS file
-  <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>       filename of output FITS image
+  <span class="-Ansi -Ansi-Cyan">output_filename</span>       filename of output FITS image
 
-<span class=" -Color -Color-C208 -C-C208">Options:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
-  <span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>
+<span class="-Ansi -Ansi-C208">Options:</span>
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--crval3out</span> <span class="-Ansi -Ansi-C36">CRVAL3OUT</span>
                         Minimum wavelength (in m) for the output image
-  <span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>
+  <span class="-Ansi -Ansi-Cyan">--cdelt3out</span> <span class="-Ansi -Ansi-C36">CDELT3OUT</span>
                         Wavelength step (in m/pixel) for the output image
-  <span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>
+  <span class="-Ansi -Ansi-Cyan">--naxis3out</span> <span class="-Ansi -Ansi-C36">NAXIS3OUT</span>
                         Number of slices in the output image
-  <span class=" -Color -Color-Cyan -C-Cyan">--desired_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">DESIRED_CELESTIAL_2D_WCS</span>
+  <span class="-Ansi -Ansi-Cyan">--desired_celestial_2d_wcs</span> <span class="-Ansi -Ansi-C36">DESIRED_CELESTIAL_2D_WCS</span>
                         Desired 2D celestial WCS projection. Default None
                         (compute for current 3D cube combination)
-  <span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>
+  <span class="-Ansi -Ansi-Cyan">--reproject_method</span> <span class="-Ansi -Ansi-C36">{interp,adaptive,exact}</span>
                         Reprojection method (interp, adaptive, exact)
-  <span class=" -Color -Color-Cyan -C-Cyan">--parallel</span>            Use parallel processing for reprojection
-  <span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>
+  <span class="-Ansi -Ansi-Cyan">--parallel</span>            Use parallel processing for reprojection
+  <span class="-Ansi -Ansi-Cyan">--extname_image</span> <span class="-Ansi -Ansi-C36">EXTNAME_IMAGE</span>
                         Extension name for image in input files. Default
                         value: PRIMARY
-  <span class=" -Color -Color-Cyan -C-Cyan">--output_celestial_2d_wcs</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_CELESTIAL_2D_WCS</span>
+  <span class="-Ansi -Ansi-Cyan">--output_celestial_2d_wcs</span> <span class="-Ansi -Ansi-C36">OUTPUT_CELESTIAL_2D_WCS</span>
                         filename for output 2D celestial WCS
-  <span class=" -Color -Color-Cyan -C-Cyan">--footprint</span>           Generate a FOOTPRINT extension with the final
+  <span class="-Ansi -Ansi-Cyan">--footprint</span>           Generate a FOOTPRINT extension with the final
                         footprint
-  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
-  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--verbose</span>             Display intermediate information
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
 </pre></div>
 </div>
 

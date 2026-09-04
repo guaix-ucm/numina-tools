@@ -7,9 +7,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Miscellaneous 3D data scripts &mdash; numina-tools 2025.10.15 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=932a37d4" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=55cbccbb" />
 
   
@@ -95,35 +96,35 @@ cross-correlation method.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-measure_slice_xy_offsets_in_3d_cube<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-measure_slice_xy_offsets_in_3d_cube</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>]
-                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--polydeg</span> <span class=" -Color -Color-C36 -C-C36">POLYDEG</span>]
-                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--times_sigma_reject</span> <span class=" -Color -Color-C36 -C-C36">TIMES_SIGMA_REJECT</span>]
-                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--islice_reference</span> <span class=" -Color -Color-C36 -C-C36">ISLICE_REFERENCE</span>]
-                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--iterate</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--method</span> <span class=" -Color -Color-C36 -C-C36">{1,2}</span>]
-                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--plots</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>]
-                                                  [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
-                                                  <span class=" -Color -Color-Cyan -C-Cyan">filename</span> <span class=" -Color -Color-Cyan -C-Cyan">npoints</span>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-measure_slice_xy_offsets_in_3d_cube</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>]
+                                                  [<span class="-Ansi -Ansi-Cyan">--polydeg</span> <span class="-Ansi -Ansi-C36">POLYDEG</span>]
+                                                  [<span class="-Ansi -Ansi-Cyan">--times_sigma_reject</span> <span class="-Ansi -Ansi-C36">TIMES_SIGMA_REJECT</span>]
+                                                  [<span class="-Ansi -Ansi-Cyan">--islice_reference</span> <span class="-Ansi -Ansi-C36">ISLICE_REFERENCE</span>]
+                                                  [<span class="-Ansi -Ansi-Cyan">--iterate</span>] [<span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{1,2}</span>]
+                                                  [<span class="-Ansi -Ansi-Cyan">--plots</span>] [<span class="-Ansi -Ansi-Cyan">--verbose</span>]
+                                                  [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                                                  <span class="-Ansi -Ansi-Cyan">filename</span> <span class="-Ansi -Ansi-Cyan">npoints</span>
 
 Determine (X,Y) offsets between slices along NAXIS3
 
-<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">filename</span>              Input 3D FITS file
-  <span class=" -Color -Color-Cyan -C-Cyan">npoints</span>               Number of points along NAXIS3
+<span class="-Ansi -Ansi-C208">Positional Arguments:</span>
+  <span class="-Ansi -Ansi-Cyan">filename</span>              Input 3D FITS file
+  <span class="-Ansi -Ansi-Cyan">npoints</span>               Number of points along NAXIS3
 
-<span class=" -Color -Color-C208 -C-C208">Options:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
-  <span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>     Output extension name to store result (default None)
-  <span class=" -Color -Color-Cyan -C-Cyan">--polydeg</span> <span class=" -Color -Color-C36 -C-C36">POLYDEG</span>     Polynomial degree to fit distortion
-  <span class=" -Color -Color-Cyan -C-Cyan">--times_sigma_reject</span> <span class=" -Color -Color-C36 -C-C36">TIMES_SIGMA_REJECT</span>
+<span class="-Ansi -Ansi-C208">Options:</span>
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>     Output extension name to store result (default None)
+  <span class="-Ansi -Ansi-Cyan">--polydeg</span> <span class="-Ansi -Ansi-C36">POLYDEG</span>     Polynomial degree to fit distortion
+  <span class="-Ansi -Ansi-Cyan">--times_sigma_reject</span> <span class="-Ansi -Ansi-C36">TIMES_SIGMA_REJECT</span>
                         Times sigma to reject fitted offsets (default 3.0)
-  <span class=" -Color -Color-Cyan -C-Cyan">--islice_reference</span> <span class=" -Color -Color-C36 -C-C36">ISLICE_REFERENCE</span>
+  <span class="-Ansi -Ansi-Cyan">--islice_reference</span> <span class="-Ansi -Ansi-C36">ISLICE_REFERENCE</span>
                         Initial pixel corresponding to the reference slice
                         (from 1 to NAXIS3)
-  <span class=" -Color -Color-Cyan -C-Cyan">--iterate</span>             Force one iteration
-  <span class=" -Color -Color-Cyan -C-Cyan">--method</span> <span class=" -Color -Color-C36 -C-C36">{1,2}</span>        Method (1: skimage, 2: scipy)
-  <span class=" -Color -Color-Cyan -C-Cyan">--plots</span>               Plot intermediate results
-  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
-  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--iterate</span>             Force one iteration
+  <span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{1,2}</span>        Method (1: skimage, 2: scipy)
+  <span class="-Ansi -Ansi-Cyan">--plots</span>               Plot intermediate results
+  <span class="-Ansi -Ansi-Cyan">--verbose</span>             Display intermediate information
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
 </pre></div>
 </div>
 </section>
@@ -140,29 +141,29 @@ wavelength grid. In this sense, it produces the same result as the
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-resample_wave_3d_cube<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-resample_wave_3d_cube</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>]
-                                    [<span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>]
-                                    [<span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>]
-                                    [<span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
-                                    <span class=" -Color -Color-Cyan -C-Cyan">input_file</span> <span class=" -Color -Color-Cyan -C-Cyan">output_file</span>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-resample_wave_3d_cube</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--crval3out</span> <span class="-Ansi -Ansi-C36">CRVAL3OUT</span>]
+                                    [<span class="-Ansi -Ansi-Cyan">--cdelt3out</span> <span class="-Ansi -Ansi-C36">CDELT3OUT</span>]
+                                    [<span class="-Ansi -Ansi-Cyan">--naxis3out</span> <span class="-Ansi -Ansi-C36">NAXIS3OUT</span>]
+                                    [<span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>] [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                                    <span class="-Ansi -Ansi-Cyan">input_file</span> <span class="-Ansi -Ansi-Cyan">output_file</span>
 
 Resample a 3D cube in the wavelength axis (NAXIS3).
 
-<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">input_file</span>            Input FITS file with the 3D cube.
-  <span class=" -Color -Color-Cyan -C-Cyan">output_file</span>           Output FITS file with the resampled 3D cube.
+<span class="-Ansi -Ansi-C208">Positional Arguments:</span>
+  <span class="-Ansi -Ansi-Cyan">input_file</span>            Input FITS file with the 3D cube.
+  <span class="-Ansi -Ansi-Cyan">output_file</span>           Output FITS file with the resampled 3D cube.
 
-<span class=" -Color -Color-C208 -C-C208">Options:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
-  <span class=" -Color -Color-Cyan -C-Cyan">--crval3out</span> <span class=" -Color -Color-C36 -C-C36">CRVAL3OUT</span>
+<span class="-Ansi -Ansi-C208">Options:</span>
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--crval3out</span> <span class="-Ansi -Ansi-C36">CRVAL3OUT</span>
                         Minimum wavelength for the output image (in meters).
-  <span class=" -Color -Color-Cyan -C-Cyan">--cdelt3out</span> <span class=" -Color -Color-C36 -C-C36">CDELT3OUT</span>
+  <span class="-Ansi -Ansi-Cyan">--cdelt3out</span> <span class="-Ansi -Ansi-C36">CDELT3OUT</span>
                         Wavelength step for the output image (in meters).
-  <span class=" -Color -Color-Cyan -C-Cyan">--naxis3out</span> <span class=" -Color -Color-C36 -C-C36">NAXIS3OUT</span>
+  <span class="-Ansi -Ansi-Cyan">--naxis3out</span> <span class="-Ansi -Ansi-C36">NAXIS3OUT</span>
                         Number of slices in the output image.
-  <span class=" -Color -Color-Cyan -C-Cyan">--extname</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME</span>     Extension name of the input HDU (default: &#39;PRIMARY&#39;).
-  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
-  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>     Extension name of the input HDU (default: 'PRIMARY').
+  <span class="-Ansi -Ansi-Cyan">--verbose</span>             Display intermediate information
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
 </pre></div>
 </div>
 </section>

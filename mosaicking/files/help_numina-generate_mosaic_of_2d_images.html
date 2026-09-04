@@ -7,9 +7,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>&lt;no title&gt; &mdash; numina-tools 2025.10.15 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=42210275" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=932a37d4" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
       <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=55cbccbb" />
 
   
@@ -82,37 +83,37 @@
   <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-generate_mosaic_of_2d_images<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-C208 -C-C208">Usage:</span> <span class=" -Color -Color-C244 -C-C244">numina-generate_mosaic_of_2d_images</span> [<span class=" -Color -Color-Cyan -C-Cyan">-h</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--extname_mask</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_MASK</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--combination_function</span> <span class=" -Color -Color-C36 -C-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--output_3D_stack</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_3D_STACK</span>]
-                                           [<span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>] [<span class=" -Color -Color-Cyan -C-Cyan">--echo</span>]
-                                           <span class=" -Color -Color-Cyan -C-Cyan">input_list</span> <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-generate_mosaic_of_2d_images</span> [<span class="-Ansi -Ansi-Cyan">-h</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--reproject_method</span> <span class="-Ansi -Ansi-C36">{interp,adaptive,exact}</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--extname_image</span> <span class="-Ansi -Ansi-C36">EXTNAME_IMAGE</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--extname_mask</span> <span class="-Ansi -Ansi-C36">EXTNAME_MASK</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--combination_function</span> <span class="-Ansi -Ansi-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--output_3D_stack</span> <span class="-Ansi -Ansi-C36">OUTPUT_3D_STACK</span>]
+                                           [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                                           <span class="-Ansi -Ansi-Cyan">input_list</span> <span class="-Ansi -Ansi-Cyan">output_filename</span>
 
 Generate mosaic of 2D images
 
-<span class=" -Color -Color-C208 -C-C208">Positional Arguments:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">input_list</span>            TXT file with list of 2D images to be combined
-  <span class=" -Color -Color-Cyan -C-Cyan">output_filename</span>       filename of output FITS image
+<span class="-Ansi -Ansi-C208">Positional Arguments:</span>
+  <span class="-Ansi -Ansi-Cyan">input_list</span>            TXT file with list of 2D images to be combined
+  <span class="-Ansi -Ansi-Cyan">output_filename</span>       filename of output FITS image
 
-<span class=" -Color -Color-C208 -C-C208">Options:</span>
-  <span class=" -Color -Color-Cyan -C-Cyan">-h</span>, <span class=" -Color -Color-Cyan -C-Cyan">--help</span>            show this help message and exit
-  <span class=" -Color -Color-Cyan -C-Cyan">--reproject_method</span> <span class=" -Color -Color-C36 -C-C36">{interp,adaptive,exact}</span>
+<span class="-Ansi -Ansi-C208">Options:</span>
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--reproject_method</span> <span class="-Ansi -Ansi-C36">{interp,adaptive,exact}</span>
                         Reprojection method (interp, adaptive, exact)
-  <span class=" -Color -Color-Cyan -C-Cyan">--extname_image</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_IMAGE</span>
+  <span class="-Ansi -Ansi-Cyan">--extname_image</span> <span class="-Ansi -Ansi-C36">EXTNAME_IMAGE</span>
                         Extension name for image in input files. Default
                         value: PRIMARY
-  <span class=" -Color -Color-Cyan -C-Cyan">--extname_mask</span> <span class=" -Color -Color-C36 -C-C36">EXTNAME_MASK</span>
+  <span class="-Ansi -Ansi-Cyan">--extname_mask</span> <span class="-Ansi -Ansi-C36">EXTNAME_MASK</span>
                         Extension name for mask in input files. Default
-                        &#39;None&#39;: use np.nan in image
-  <span class=" -Color -Color-Cyan -C-Cyan">--combination_function</span> <span class=" -Color -Color-C36 -C-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>
+                        'None': use np.nan in image
+  <span class="-Ansi -Ansi-Cyan">--combination_function</span> <span class="-Ansi -Ansi-C36">{mean,median,sum,std,sigmaclip_mean,sigmaclip_median,sigmaclip_stddev}</span>
                         Combination function. Default: mean
-  <span class=" -Color -Color-Cyan -C-Cyan">--output_3D_stack</span> <span class=" -Color -Color-C36 -C-C36">OUTPUT_3D_STACK</span>
+  <span class="-Ansi -Ansi-Cyan">--output_3D_stack</span> <span class="-Ansi -Ansi-C36">OUTPUT_3D_STACK</span>
                         filename for stacked 3D array. Default None
-  <span class=" -Color -Color-Cyan -C-Cyan">--verbose</span>             Display intermediate information
-  <span class=" -Color -Color-Cyan -C-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--verbose</span>             Display intermediate information
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
 </pre></div>
 </div>
 

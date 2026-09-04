@@ -1036,7 +1036,7 @@ a subdirectory `example2b`:
 (venv_numina) $ numina-crmasks params_example2b.yaml --output_dir example2b
 ```
 
-The results saved in subdirectories `example2` and `example2b` are identical.
+The results saved in subdirectories `example2a` and `example2b` are identical.
 
 ### Example 3: adjusting the detection boundary with piecewise fit
 
