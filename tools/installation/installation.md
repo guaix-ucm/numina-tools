@@ -118,7 +118,7 @@ Since the *numina* package may contain recent changes that are not in,
 it is advisable to install its development version
 
 ```console
-(venv_numina) $ pip install git+https://github.com/guaix-ucm/numina.git@main#egg=numina
+(venv_numina) $ pip install git+https://github.com/guaix-ucm/numina.git@main
 ```
 
 If, for any reason, the standard installation of the package provides
