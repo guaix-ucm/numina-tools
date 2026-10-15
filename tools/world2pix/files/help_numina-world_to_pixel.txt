@@ -1,18 +1,17 @@
-usage: numina-world_to_pixel [-h] [--sky SKY] [--wave WAVE] [--extnum EXTNUM]
-                             [--verbose] [--echo]
-                             inputfile
+[1;34musage: [0m[1;35mnumina-world_to_pixel[0m [[32m-h[0m] [[36m--sky [33mSKY[0m] [[36m--wave [33mWAVE[0m] [[36m--extnum [33mEXTNUM[0m] [[36m--verbose[0m] [[36m--echo[0m]
+                             [32minputfile[0m
 
 Convert world to pixel coordinates.
 
-positional arguments:
-  inputfile        Input FITS file
+[1;34mpositional arguments:[0m
+  [1;32minputfile[0m        Input FITS file
 
-options:
-  -h, --help       show this help message and exit
-  --sky SKY        Celestial coordinate (string)
+[1;34moptions:[0m
+  [1;32m-h[0m, [1;36m--help[0m       show this help message and exit
+  [1;36m--sky[0m [1;33mSKY[0m        Celestial coordinate (string)
                    e.g. 'SkyCoord(0*u.arcsec, 0*u.arcsec)'
-  --wave WAVE      Spectral wavelength (string)
+  [1;36m--wave[0m [1;33mWAVE[0m      Spectral wavelength (string)
                    e.g. '1.9344e-06*u.m'
-  --extnum EXTNUM  Extension number (default 0=PRIMARY)
-  --verbose        Display intermediate information
-  --echo           Display full command line
+  [1;36m--extnum[0m [1;33mEXTNUM[0m  Extension number (default 0=PRIMARY)
+  [1;36m--verbose[0m        Display intermediate information
+  [1;36m--echo[0m           Display full command line

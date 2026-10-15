@@ -5,14 +5,14 @@
 ```{code-block} ansi-shell-session
 :class: my-special-block no-copybutton
 
-[38;5;208mUsage:[0m [38;5;244mnumina-extract_2d_slice_from_3d_cube[0m [[36m-h[0m] [[36m--axis[0m [38;5;36mAXIS[0m] [[36m--i1[0m [38;5;36mI1[0m]
-                                            [[36m--i2[0m [38;5;36mI2[0m]
-                                            [[36m--method[0m [38;5;36m{sum,mean,median}[0m]
-                                            [[36m--wavecal[0m [38;5;36m{none,fridasimulator,1,2,3}[0m]
-                                            [[36m--transpose[0m] [[36m--noplot[0m]
-                                            [[36m--vmin[0m [38;5;36mVMIN[0m] [[36m--vmax[0m [38;5;36mVMAX[0m]
-                                            [[36m--output[0m [38;5;36mOUTPUT[0m] [[36m--png[0m [38;5;36mPNG[0m]
-                                            [[36m--echo[0m] [[36m--debug[0m]
+[38;5;208mUsage:[0m [38;5;244mnumina-extract_2d_slice_from_3d_cube[0m [[36m-h[0m] [[36m-e[0m [38;5;36mEXTNUM[0m] [[36m--extname[0m [38;5;36mEXTNAME[0m] [[36m--axis[0m [38;5;36mAXIS[0m]
+                                            [[36m--i1[0m [38;5;36mI1[0m] [[36m--i2[0m [38;5;36mI2[0m] [[36m--method[0m [38;5;36m{sum,mean,median}[0m]
+                                            [[36m--wavecal[0m [38;5;36m{none,fridasimulator,1,2,3}[0m] [[36m--transpose[0m]
+                                            [[36m--noplot[0m] [[36m--vmin[0m [38;5;36mVMIN[0m] [[36m--vmax[0m [38;5;36mVMAX[0m]
+                                            [[36m--output[0m [38;5;36mOUTPUT[0m] [[36m--png[0m [38;5;36mPNG[0m] [[36m--version[0m]
+                                            [[36m--output-dir[0m [38;5;36mOUTPUT_DIR[0m] [[36m--no-color[0m] [[36m--record[0m]
+                                            [[36m--echo[0m]
+                                            [[36m--log-level[0m [38;5;36m{DEBUG,INFO,WARNING,ERROR,CRITICAL}[0m]
                                             [36minput[0m
 
 [39mExtract 2D slice from 3D cube[0m
@@ -22,6 +22,8 @@
 
 [38;5;208mOptions:[0m
   [36m-h[0m, [36m--help[0m            [39mshow this help message and exit[0m
+  [36m-e[0m, [36m--extnum[0m [38;5;36mEXTNUM[0m   [39mExtension number for image in input files.[0m
+  [36m--extname[0m [38;5;36mEXTNAME[0m     [39mExtension name for image in input files.[0m
   [36m--axis[0m [38;5;36mAXIS[0m           [39mAxis to be collapsed in output[0m
   [36m--i1[0m [38;5;36mI1[0m               [39mFirst pixel of the projected axis[0m
   [36m--i2[0m [38;5;36mI2[0m               [39mLast pixel of the projected axis (0=NAXIS value)[0m
@@ -35,6 +37,12 @@
   [36m--vmax[0m [38;5;36mVMAX[0m           [39mvmax value for imshow[0m
   [36m--output[0m [38;5;36mOUTPUT[0m       [39mOutput FITS file[0m
   [36m--png[0m [38;5;36mPNG[0m             [39mOutput PNG file (plot of the result)[0m
+  [36m--version[0m             [39mDisplay version information and exit[0m
+  [36m--output-dir[0m [38;5;36mOUTPUT_DIR[0m
+                        [39mOutput directory (default: .)[0m
+  [36m--no-color[0m            [39mDisable color output[0m
+  [36m--record[0m              [39mRecord terminal output[0m
   [36m--echo[0m                [39mDisplay full command line[0m
-  [36m--debug[0m               [39mDebug[0m
+  [36m--log-level[0m [38;5;36m{DEBUG,INFO,WARNING,ERROR,CRITICAL}[0m
+                        [39mSet the logging level[0m
 ```
