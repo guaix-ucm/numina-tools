@@ -29,7 +29,7 @@ instrument flexures, and other factors. These variations make it more difficult
 to treat the images as equivalent. Conversely, if an observing program is able
 to provide five or more equivalent exposures, median combination typically
 yields satisfactory results, and the method described below may be not
-necessary. 
+necessary.
 ```
 
 The method described here applies when three or more equivalent exposures are
@@ -42,17 +42,17 @@ complementary procedures to enhance effectiveness:
 - The **Median-Minimum (MM) diagnostic diagram technique**
   {cite}`cardiel_etal_2026`, which identifies pixels that deviate unexpectedly
   in a diagnostic diagram constructed from the median signal and a "minimum
-  signal" value for each pixel **across the different exposures**. 
+  signal" value for each pixel **across the different exposures**.
 
   The "minimum signal" represents the average expected signal at each pixel
   after excluding a predefined number of high-data values. We are calling this
   a parameter `mm_cr_coincidences`. For example:
-  
+
   - With 3 exposures and `mm_cr_coincidences=2`: excluding the 2 highest values
     leaves the minimum signal
   - With 4 or more exposures and `mm_cr_coincidences=2`: excluding the 2
     highest values allows computing the mean of the remaining values
-  
+
   Although this strategy might appear to bias the replacement values of
   cosmic-ray pixels toward lower than expected values, this is not actually the
   case when the method works correctly. If the discarded `mm_cr_coincidences`
@@ -68,45 +68,45 @@ complementary procedures to enhance effectiveness:
   reasonable accuracy. This enables prediction of the typical difference
   between median and "minimum signal" values for each pixel across the
   available exposures as a function of the "minimum signal" (after bias
-  subtraction). 
-  
+  subtraction).
+
   Using numerical simulations, a *detection boundary* is established in the MM
   diagnostic diagram. Pixels above this boundary have a high probability of
   cosmic ray contamination in multiple exposures. We refer to this method as
   {bluecode}`M.M.Cosmic`.
 
-- One of the existing algorithms for detecting and correcting cosmic rays in 
-  **individual exposures**. Here, these algorithms identify residual 
-  cosmic-ray pixels in the median combination—likely corresponding to pixels 
-  contaminated in two of the three exposures. The selected algorithm is also 
-  used to detect cosmic rays in the individual exposures and in the mean 
-  combination. We have incorporated four well-documented algorithms implemented 
+- One of the existing algorithms for detecting and correcting cosmic rays in
+  **individual exposures**. Here, these algorithms identify residual
+  cosmic-ray pixels in the median combination—likely corresponding to pixels
+  contaminated in two of the three exposures. The selected algorithm is also
+  used to detect cosmic rays in the individual exposures and in the mean
+  combination. We have incorporated four well-documented algorithms implemented
   in Python.
 
-  1. The L.A. Cosmic technique {cite}`2001PASP..113.1420V`, a robust algorithm 
-     for cosmic-ray detection based on Laplacian edge detection. We use the 
-     implementation provided by the Python package 
-     [ccdproc](https://ccdproc.readthedocs.io/en/latest/index.html) through the 
-     [{graycode}`cosmicray_lacosmic()` function](https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html), 
-     which itself relies on the 
-     [Astro-SCRAPPY](https://github.com/astropy/astroscrappy) package 
-     {cite}`mccully_2014`. This algorithm is widely used for cosmic ray 
-     detection in individual exposures. We refer to this method as 
+  1. The L.A. Cosmic technique {cite}`2001PASP..113.1420V`, a robust algorithm
+     for cosmic-ray detection based on Laplacian edge detection. We use the
+     implementation provided by the Python package
+     [ccdproc](https://ccdproc.readthedocs.io/en/latest/index.html) through the
+     [{graycode}`cosmicray_lacosmic()` function](https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmic.html),
+     which itself relies on the
+     [Astro-SCRAPPY](https://github.com/astropy/astroscrappy) package
+     {cite}`mccully_2014`. This algorithm is widely used for cosmic ray
+     detection in individual exposures. We refer to this method as
      {darkredcode}`L.A.Cosmic`.
 
-  2. The PyCosmic method {cite}`2012A&A...545A.137H`, a robust method based on 
-     L.A. Cosmic and specifically developed for detecting cosmic rays in 
-     fiber-fed integral-field spectroscopic exposures from the Calar Alto 
+  2. The PyCosmic method {cite}`2012A&A...545A.137H`, a robust method based on
+     L.A. Cosmic and specifically developed for detecting cosmic rays in
+     fiber-fed integral-field spectroscopic exposures from the Calar Alto
      Legacy Integral Field Area (CALIFA) survey {cite}`2012A&A...538A...8S`.
      We refer to this method as
      {darkredcode}`PyCosmic`.
 
-  3. The deepCR method {cite}`2020ApJ...889...24Z`, a deep-learning-based 
-     algorithm for cosmic ray identification and image inpainting. We refer to 
+  3. The deepCR method {cite}`2020ApJ...889...24Z`, a deep-learning-based
+     algorithm for cosmic ray identification and image inpainting. We refer to
      this method as {darkredcode}`deepCR`.
 
-  4. The Cosmic-CoNN method {cite}`2023ApJ...942...73X`, an alternative 
-     deep-learning algorithm trained on large ground-based cosmic ray datasets. 
+  4. The Cosmic-CoNN method {cite}`2023ApJ...942...73X`, an alternative
+     deep-learning algorithm trained on large ground-based cosmic ray datasets.
      We refer to this method as {darkredcode}`CoNN`.
 
   Each of these four methods for correcting individual exposures can be used in
@@ -119,38 +119,38 @@ complementary procedures to enhance effectiveness:
   as needed for their scientific analysis.
 
 ```{note}
-The practical application of the M.M.Cosmic algorithm for removing cosmic rays 
-in MEGARA science exposures is described in [this 
-link](https://guaix-ucm.github.io/megaradrp-cookbook/crmasks.html) within the 
+The practical application of the M.M.Cosmic algorithm for removing cosmic rays
+in MEGARA science exposures is described in [this
+link](https://guaix-ucm.github.io/megaradrp-cookbook/crmasks.html) within the
 MEGARA cookbook.
 ```
 
 ## Script usage
 
 ```{warning}
-This functionality is still under development and not yet fully consolidated. 
-Future modifications may be introduced as testing continues with additional 
+This functionality is still under development and not yet fully consolidated.
+Future modifications may be introduced as testing continues with additional
 images.
 ```
 
-The **numina** script for detecting and correcting residual cosmic rays using 
-{bluecode}`M.M.Cosmic` and any {redcode}`Aux.Cosmic` 
+The **numina** script for detecting and correcting residual cosmic rays using
+{bluecode}`M.M.Cosmic` and any {redcode}`Aux.Cosmic`
 method is **numina-crmasks**. Its execution is straightforward:
 
 ```console
 (venv_numina) $ numina-crmasks params_example1.yaml
 ```
 
-The **numina-crmasks** script takes a single argument: the name of a 
-YAML-formatted file. This file provides default values for multiple parameters, 
+The **numina-crmasks** script takes a single argument: the name of a
+YAML-formatted file. This file provides default values for multiple parameters,
 allowing users to focus on modifying only those they wish to experiment with.
 
 ```{note}
-YAML is a human-readable data serialization language. For details, see the 
+YAML is a human-readable data serialization language. For details, see the
 [YAML syntax description](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html).
 ```
 
-An example `params_example1.yaml` file is shown below and available 
+An example `params_example1.yaml` file is shown below and available
 {download}`here <files/params_example1.yaml>`:
 
 ```{literalinclude} files/params_example1.yaml
@@ -168,23 +168,23 @@ everything after `#` on the same line is ignored by the YAML parser.
 At the top level, there are six parameters (highlighted with a yellow
 background in the example above):
 
-* `images`: List of input FITS images to be processed. Each image is specified 
-  on an indented line below this keyword, starting with a dash followed by a 
+* `images`: List of input FITS images to be processed. Each image is specified
+  on an indented line below this keyword, starting with a dash followed by a
   space and the FITS filename. **Important: input images are assumed to be
   in ADU units**. If the input arrays are in electrons, set `gain=1.0` in the
   *General parameters* section (see below).
 
-* `extnum`: Extension number of the FITS file to be read (e.g., `0` for the 
+* `extnum`: Extension number of the FITS file to be read (e.g., `0` for the
   primary extension).
 
-* `gain`, `rnoise`, and `bias`: General image parameters including detector 
+* `gain`, `rnoise`, and `bias`: General image parameters including detector
   gain (electrons/ADU), readout noise (ADU), and bias level (ADU). Since in
   this example we are working with preprocessed MEGARA exposures where the bias
   level has already been subtracted and the signal converted to electrons, we
   set `bias=0` and `gain=1.0`.
 * `requirements`: This section contains six parameter blocks:
 
-  1. General execution parameters: Control the overall behavior of 
+  1. General execution parameters: Control the overall behavior of
   **numina-crmasks**.
 
   2. Parameters for the {darkredcode}`L.A.Cosmic` technique:
@@ -210,12 +210,12 @@ background in the example above):
   `detect_cr()`
   functions](https://cosmic-conn.readthedocs.io/en/latest/index.html).
 
-  6. Parameters for the {bluecode}`M.M.Cosmic` method: Identified by 
-  the `mm_` prefix, these control the computation of the detection boundary in 
+  6. Parameters for the {bluecode}`M.M.Cosmic` method: Identified by
+  the `mm_` prefix, these control the computation of the detection boundary in
   the MM diagnostic diagram.
 
-A detailed description of all parameters in the `requirements` section is 
-provided below in the [description of parameters in 
+A detailed description of all parameters in the `requirements` section is
+provided below in the [description of parameters in
 requirements](description-of-parameters-in-requirements) section.
 
 ```{note}
@@ -231,14 +231,14 @@ MEGARA cookbook.
 
 ## Script output
 
-After execution (several examples are shown below), the **numina-crmasks** 
+After execution (several examples are shown below), the **numina-crmasks**
 script generates several FITS files:
 
-- `combined_mean.fits`: Simple mean combination containing all cosmic rays from 
-  the three exposures. Useful for comparison with cleaned combinations to 
+- `combined_mean.fits`: Simple mean combination containing all cosmic rays from
+  the three exposures. Useful for comparison with cleaned combinations to
   identify pixels that remain improperly cleaned.
-- `combined_median.fits`: Simple median combination of the three exposures 
-  without additional processing. Saved for comparison with subsequent 
+- `combined_median.fits`: Simple median combination of the three exposures
+  without additional processing. Saved for comparison with subsequent
   combinations.
 - `combined_mediancr.fits`: Median combination of the three exposures,
   replacing pixels suspected of cosmic ray contamination in two of the three
@@ -248,35 +248,35 @@ script generates several FITS files:
   double-contaminated cases, using the "minimum value" is equivalent to relying
   on a single exposure. Since only one measurement is available, there is no
   reason to assume this value is biased toward lower-than-expected levels.
-  
+
   Instead of using the minimum value, flagged pixels can be replaced using
   values computed by the {redcode}`Aux.Cosmic` method by setting
   `use_auxmedian=True`.
-  
+
 - `combined_meancrt.fits`: First attempt at mean (not median) combination of
   the three individual exposures. A direct mean combination is computed first,
   producing an image containing all cosmic rays from the individual frames. A
   cosmic ray mask is then generated from this image using the selected
   {redcode}`Aux.Cosmic` method. Masked pixels are replaced with their
   corresponding values from `combined_mediancr.fits`.
-  
+
 - `combined_meancr.fits`: Second attempt at mean combination. Individual cosmic
   ray masks are generated for each of the three exposures using the selected
   {redcode}`Aux.Cosmic` method. A mean combination is then performed using each
   image with its corresponding mask, with masked pixels replaced by the
   "minimum value".
-  
+
 - `combined_meancr2.fits`: Refined mean combination obtained by applying the
   chosen {redcode}`Aux.Cosmic` method to `combined_mediancr.fits`.  Detected
   pixels are replaced with their "minimum values", correcting residual cosmic
   ray pixels that survived the mean combination.
-  
+
 - `combined_min.fits`: Image containing the "minimum value" of each pixel
   across all individual exposures.
 
-Each FITS file contains the combined image in the primary extension, along with 
-two additional extensions: `VARIANCE` (storing the variance) and `MAP` 
-(containing the number of individual exposures used to compute each pixel's 
+Each FITS file contains the combined image in the primary extension, along with
+two additional extensions: `VARIANCE` (storing the variance) and `MAP`
+(containing the number of individual exposures used to compute each pixel's
 combined value).
 
 ```console
@@ -288,44 +288,44 @@ combined value).
 
 Filename: combined_mean.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   
-  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   
-  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   
+  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  
+  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  
+  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  
 
 Filename: combined_meancr.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   
-  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   
-  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   
+  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  
+  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  
+  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  
 
 Filename: combined_meancr2.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   
-  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   
-  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   
+  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  
+  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  
+  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  
 
 Filename: combined_meancrt.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   
-  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   
-  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   
+  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  
+  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  
+  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  
 
 Filename: combined_median.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   
-  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   
-  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   
+  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  
+  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  
+  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  
 
 Filename: combined_mediancr.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   
-  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   
-  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   
+  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  
+  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  
+  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  
 
 Filename: combined_min.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   
-  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   
+  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  
+  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  
   2  MAP           1 ImageHDU         8   (2016, 1596)   int16  
 ```
 
@@ -336,11 +336,11 @@ suggest that `combined_meancr2.fits` tends to yield the best results. However,
 we recommend comparing the different outputs to determine which works best for
 your specific dataset.
 
-In addition to the FITS images described above, the **numina-crmasks** script 
-generates an additional FITS file compiling the masks and auxiliary data used 
+In addition to the FITS images described above, the **numina-crmasks** script
+generates an additional FITS file compiling the masks and auxiliary data used
 to produce the various image combinations.
 
-- `crmasks.fits`: FITS file containing 6 cosmic ray masks, each stored in a 
+- `crmasks.fits`: FITS file containing 6 cosmic ray masks, each stored in a
   separate extension.
 
 ```console
@@ -352,30 +352,30 @@ to produce the various image combinations.
 
 Filename: crmasks.fits
 No.    Name      Ver    Type      Cards   Dimensions   Format
-  0  PRIMARY       1 PrimaryHDU      56   ()      
-  1  MEDIANCR      1 ImageHDU         8   (2016, 1596)   uint8   
-  2  MEANCRT       1 ImageHDU         8   (2016, 1596)   uint8   
-  3  CRMASK1       1 ImageHDU         8   (2016, 1596)   uint8   
-  4  CRMASK2       1 ImageHDU         8   (2016, 1596)   uint8   
-  5  CRMASK3       1 ImageHDU         8   (2016, 1596)   uint8   
-  6  MEANCR        1 ImageHDU         8   (2016, 1596)   uint8   
-  7  AUXCLEAN      1 ImageHDU         8   (2016, 1596)   float32 
+  0  PRIMARY       1 PrimaryHDU      56   ()  
+  1  MEDIANCR      1 ImageHDU         8   (2016, 1596)   uint8  
+  2  MEANCRT       1 ImageHDU         8   (2016, 1596)   uint8  
+  3  CRMASK1       1 ImageHDU         8   (2016, 1596)   uint8  
+  4  CRMASK2       1 ImageHDU         8   (2016, 1596)   uint8  
+  5  CRMASK3       1 ImageHDU         8   (2016, 1596)   uint8  
+  6  MEANCR        1 ImageHDU         8   (2016, 1596)   uint8  
+  7  AUXCLEAN      1 ImageHDU         8   (2016, 1596)   float32
 ```
 
-In this case, the primary extension does not contain an image, but rather a 
-small set of parameters stored as FITS keywords, along with the parameters used 
-during **numina-crmasks** execution (recorded in the HISTORY section of the 
+In this case, the primary extension does not contain an image, but rather a
+small set of parameters stored as FITS keywords, along with the parameters used
+during **numina-crmasks** execution (recorded in the HISTORY section of the
 primary header). Extensions 1 through 6 contain the following masks:
 
-- {magentacode}`MEDIANCR`: Mask used to generate 
-  `combined_mediancr.fits`. Flagged pixels correspond to those identified by 
+- {magentacode}`MEDIANCR`: Mask used to generate
+  `combined_mediancr.fits`. Flagged pixels correspond to those identified by
   either $\color{blue}\texttt{M.M.Cosmic}$ or {redcode}`Aux.Cosmic`.
-  
+
 - {magentacode}`MEANCRT`: Mask generated by the
-  {redcode}`Aux.Cosmic` algorithm and used to generate 
-  `combined_meancrt.fits`. Pixels flagged in {magentacode}`MEDIANCR` 
+  {redcode}`Aux.Cosmic` algorithm and used to generate
+  `combined_meancrt.fits`. Pixels flagged in {magentacode}`MEDIANCR`
   are also flagged in this mask.
-  
+
 - {magentacode}`CRMASK1`, {magentacode}`CRMASK2`, and
   {magentacode}`CRMASK3`: Individual masks for each of the three
   exposures, generated by the {redcode}`Aux.Cosmic` algorithm, and
@@ -383,12 +383,12 @@ primary header). Extensions 1 through 6 contain the following masks:
   flagged in the {magentacode}`MEANCRT` mask (since the mean
   combination is less noisy than individual exposures, this restriction reduces
   false positives).
-  
+
 - {magentacode}`MEANCR`: Mask computed by the
   {redcode}`Aux.Cosmic` method on the `combined_meancr.fits` image,
   used to generate the refined `combined_meancr2.fits` version.
 
-In all cases, these masks store values of 0 (unaffected pixels) and 1 (cosmic 
+In all cases, these masks store values of 0 (unaffected pixels) and 1 (cosmic
 ray-affected pixels).
 
 Extension 7 contains:
@@ -397,7 +397,7 @@ Extension 7 contains:
   a mask but rather the value of the cosmic-ray-cleaned image obtained using
   {redcode}`Aux.Cosmic`.
 
-In addition to the FITS files, **numina-crmasks** generates auxiliary PNG, PDF, 
+In addition to the FITS files, **numina-crmasks** generates auxiliary PNG, PDF,
 and CSV files containing plots and tables with useful information.
 
 ## Examples
@@ -406,8 +406,8 @@ The images in the following examples correspond to a cropped region from three
 1200-second exposures obtained with MEGARA, a fiber-fed Integral Field Unit at
 Gran Telescopio Canarias.
 
-The files required to run these examples are available in the following ZIP 
-file: 
+The files required to run these examples are available in the following ZIP
+file:
 [crmasks_tutorial_v2.zip](https://guaix.fis.ucm.es/data/megaradrp/crmasks_tutorial_v2.zip)
 
 The initial images have been preprocessed (bias subtracted and gain-corrected).
@@ -418,12 +418,12 @@ along the horizontal axis, with fiber spectra distributed along the vertical
 axis.
 
 ```{note}
-Although the examples below demonstrate highly interactive execution of 
-**numina-crmasks**, the program is designed to run in a largely automated 
-manner when needed. This is useful for observational projects where detector 
-parameters (gain, readout noise) remain constant: after interactively 
-determining optimal parameters for residual cosmic ray removal on a subset of 
-images, the same configuration can be applied to larger sets of similarly 
+Although the examples below demonstrate highly interactive execution of
+**numina-crmasks**, the program is designed to run in a largely automated
+manner when needed. This is useful for observational projects where detector
+parameters (gain, readout noise) remain constant: after interactively
+determining optimal parameters for residual cosmic ray removal on a subset of
+images, the same configuration can be applied to larger sets of similarly
 acquired frames with the same instrumental configuration.
 ```
 
@@ -448,9 +448,9 @@ better for IFU exposures.
 (venv_numina) $ numina-crmasks params_example1.yaml --output_dir example1
 ```
 
-Note that we use `--output_dir example1` to store the resulting output files in 
-a separate subdirectory, allowing comparison of results from different program 
-executions. If this argument is not used, the output directory will be the 
+Note that we use `--output_dir example1` to store the resulting output files in
+a separate subdirectory, allowing comparison of results from different program
+executions. If this argument is not used, the output directory will be the
 current directory.
 
 The program starts by displaying the version number, the YAML file name
@@ -467,7 +467,7 @@ displayed.
 ```{include} files/terminal_output_example1_01.md
 ```
 
-After a short processing time, **numina-crmasks** applies the 
+After a short processing time, **numina-crmasks** applies the
 {redcode}`Aux.Cosmic` technique to detect residual cosmic rays in
 the median combination. In this case, we use
 {darkredcode}`PyCosmic`. Note that this algorithm is applied twice
@@ -495,8 +495,8 @@ identification of neighboring pixels affected by the cosmic ray.
 In the output above, lines starting with `PyCosmic >` correspond to the actual
 output of the {darkredcode}`PyCosmic` code.
 
-Next, **numina-crmasks** applies the same cosmic ray detection procedure to the 
-individual images using the same detection parameters defined for the median 
+Next, **numina-crmasks** applies the same cosmic ray detection procedure to the
+individual images using the same detection parameters defined for the median
 combination.
 
 ```{include} files/terminal_output_example1_03.md
@@ -509,23 +509,23 @@ combination.
 ```
 
 Next, the program begins applying the {bluecode}`M.M.Cosmic`
-method in the median combination. 
+method in the median combination.
 
 ```{include} files/terminal_output_example1_06.md
 ```
 
-In this process, a 3D stack is built from the individual exposures. The 
-"minimum", maximum, and median values of each pixel across the three exposures 
-are computed, resulting in three 2D images: `min2d`, `max2d`, and `median2d`. 
+In this process, a 3D stack is built from the individual exposures. The
+"minimum", maximum, and median values of each pixel across the three exposures
+are computed, resulting in three 2D images: `min2d`, `max2d`, and `median2d`.
 These images have the same dimensions as the original exposures.
 
-Using the `median2d` and `min2d` images, the program constructs a diagram 
-plotting the difference between `median2d` and `min2d` against the value of 
-`min2d` (after bias subtraction). We refer to this as the Median-Minimum (MM) 
+Using the `median2d` and `min2d` images, the program constructs a diagram
+plotting the difference between `median2d` and `min2d` against the value of
+`min2d` (after bias subtraction). We refer to this as the Median-Minimum (MM)
 diagnostic diagram.
 
-Since `interactive=True`, the MM diagnostic diagram is displayed interactively, 
-allowing real-time examination (this figure is also saved as 
+Since `interactive=True`, the MM diagnostic diagram is displayed interactively,
+allowing real-time examination (this figure is also saved as
 `diagnostic_histogram2d.png`).
 
 ```{figure} images/diagnostic_histogram2d_example1.png
@@ -537,59 +537,59 @@ allowing real-time examination (this figure is also saved as
 diagnostic diagram.
 ```
 
-The MM diagnostic diagram above is a 2D histogram where color indicates the 
-number of pixels within each bin, as shown by the colorbar. This histogram is 
+The MM diagnostic diagram above is a 2D histogram where color indicates the
+number of pixels within each bin, as shown by the colorbar. This histogram is
 displayed twice:
 
-- *Left Panel:* Results from a predefined number of simulations 
-  (`mm_nsimulations: 10` in this example). In each simulation, the program uses 
-  the original `median2d` image to generate 3 synthetic exposures based on the 
+- *Left Panel:* Results from a predefined number of simulations
+  (`mm_nsimulations: 10` in this example). In each simulation, the program uses
+  the original `median2d` image to generate 3 synthetic exposures based on the
   provided gain, readout noise, and bias values.
-- *Right Panel:* The same diagnostic diagram using actual data from the 
+- *Right Panel:* The same diagnostic diagram using actual data from the
   individual exposures.
 
-Looking at the left panel of {numref}`fig-diagnostic_histogram2d_example1`, 
-for each bin along the horizontal axis, the corresponding 1D histogram in the 
-vertical direction is converted to a cumulative distribution function (CDF). 
-The red crosses mark the `median2d - min2d` values where the probability of 
-finding a pixel above that value is low enough that only one such pixel is 
-expected. An initial spline constrained to positive derivatives (blue curve) is 
+Looking at the left panel of {numref}`fig-diagnostic_histogram2d_example1`,
+for each bin along the horizontal axis, the corresponding 1D histogram in the
+vertical direction is converted to a cumulative distribution function (CDF).
+The red crosses mark the `median2d - min2d` values where the probability of
+finding a pixel above that value is low enough that only one such pixel is
+expected. An initial spline constrained to positive derivatives (blue curve) is
 fitted through these red crosses.
 
-To define a more conservative detection boundary, the blue curve is extended 
-upward (orange, green, and red curves) by repeating the fit for a few 
-iterations, applying increasing weights to points located above the original 
-fit. The final curve serves as an upper boundary for the expected location of 
+To define a more conservative detection boundary, the blue curve is extended
+upward (orange, green, and red curves) by repeating the fit for a few
+iterations, applying increasing weights to points located above the original
+fit. The final curve serves as an upper boundary for the expected location of
 pixel values in this MM diagnostic diagram.
 
-This detection boundary is also plotted in the right panel of 
-{numref}`fig-diagnostic_histogram2d_example1`, where the 2D histogram 
-corresponds to the `min2d - bias` and `median2d - min2d` values from the actual 
-data. If the three individual exposures are truly equivalent, the MM diagnostic 
-diagram on the right should closely resemble the diagram on the left. Pixels 
-appearing above the calculated boundary in the right panel exhibit very large 
-`median2d - min2d` values, exceeding expectations based on image noise, and are 
+This detection boundary is also plotted in the right panel of
+{numref}`fig-diagnostic_histogram2d_example1`, where the 2D histogram
+corresponds to the `min2d - bias` and `median2d - min2d` values from the actual
+data. If the three individual exposures are truly equivalent, the MM diagnostic
+diagram on the right should closely resemble the diagram on the left. Pixels
+appearing above the calculated boundary in the right panel exhibit very large
+`median2d - min2d` values, exceeding expectations based on image noise, and are
 flagged as cosmic-ray pixels by the {bluecode}`M.M.Cosmic` method.
 
-After pressing the `c` key, the program resumes execution. Press the `x` key to 
-halt execution completely if you need to modify any input parameters in the 
-YAML file. As shown in Example 2, you can also modify the detection boundary 
+After pressing the `c` key, the program resumes execution. Press the `x` key to
+halt execution completely if you need to modify any input parameters in the
+YAML file. As shown in Example 2, you can also modify the detection boundary
 fit interactively by pressing the `r` (replot) key.
 
-Since we are using `crmethod: mm_pycosmic`, the program proceeds to combine the 
+Since we are using `crmethod: mm_pycosmic`, the program proceeds to combine the
 detections made by both the {redcode}`Aux.Cosmic`
-({darkredcode}`PyCosmic` in this case) and 
-{bluecode}`M.M.Cosmic` methods. This allows detailed analysis of how 
-many pixels were flagged by one method but not the other, and how many were 
+({darkredcode}`PyCosmic` in this case) and
+{bluecode}`M.M.Cosmic` methods. This allows detailed analysis of how
+many pixels were flagged by one method but not the other, and how many were
 identified by both.
 
 ```{include} files/terminal_output_example1_07.md
 ```
 
-At this point, the code generates the following figure displaying detailed MM 
+At this point, the code generates the following figure displaying detailed MM
 diagrams and the locations of suspicious cosmic ray pixels.
-Since `interactive: True` is defined in the input parameter YAML file, you can 
-examine the different panels in detail (e.g., zoom, pan) using the Matplotlib 
+Since `interactive: True` is defined in the input parameter YAML file, you can
+examine the different panels in detail (e.g., zoom, pan) using the Matplotlib
 widgets. This figure is also saved as `diagnostic_mediancr.png`.
 
 ```{figure} images/diagnostic_mediancr_example1.png
@@ -621,7 +621,7 @@ and (b) of {numref}`fig-diagnostic_mediancr_example1` because the former is a
 2D histogram displaying binned cosmic ray pixel counts, whereas the latter
 display each cosmic ray pixel individually.
 
-Pressing the `?` key displays a help message in the terminal showing available 
+Pressing the `?` key displays a help message in the terminal showing available
 actions.
 
 ```{include} files/terminal_output_example1_07b.md
@@ -631,31 +631,31 @@ actions.
 :name: fig-diagnostic_mediancr_zoom_example1
 :width: 100%
 
-By zooming into panel (a) of {numref}`fig-diagnostic_mediancr_example1`, you 
-can better visualize what is happening near the detection boundary in the MM 
-diagnostic diagram. Panel (c) then displays only the suspected pixels within 
-the zoomed region of panel (a). As shown, many pixels detected above the 
-detection boundary appear along sky lines, suggesting they are likely false 
-positives. Note that panel (c) now displays suspected pixels using the same 
+By zooming into panel (a) of {numref}`fig-diagnostic_mediancr_example1`, you
+can better visualize what is happening near the detection boundary in the MM
+diagnostic diagram. Panel (c) then displays only the suspected pixels within
+the zoomed region of panel (a). As shown, many pixels detected above the
+detection boundary appear along sky lines, suggesting they are likely false
+positives. Note that panel (c) now displays suspected pixels using the same
 numbering as panel (b).
 ```
 
-Note that this figure shows many cosmic ray pixels detected by 
-{bluecode}`M.M.Cosmic` below the detection boundary. This occurs 
-because `mm_dilation: 1` is used in the input parameter YAML file. This means 
-the locations of cosmic ray pixels initially detected by this method (those 
-above the detection boundary) are extended using the specified dilation factor, 
+Note that this figure shows many cosmic ray pixels detected by
+{bluecode}`M.M.Cosmic` below the detection boundary. This occurs
+because `mm_dilation: 1` is used in the input parameter YAML file. This means
+the locations of cosmic ray pixels initially detected by this method (those
+above the detection boundary) are extended using the specified dilation factor,
 which includes pixels below the detection boundary.
 
-On the other hand, in this case the {bluecode}`M.M.Cosmic` algorithm 
-has detected many false positives at the locations of some bright sky lines. 
-These are easily identified as pixels above the detection boundary for 
+On the other hand, in this case the {bluecode}`M.M.Cosmic` algorithm
+has detected many false positives at the locations of some bright sky lines.
+These are easily identified as pixels above the detection boundary for
 $({\rm min2d} - {\rm bias}) \lesssim 10\;{\rm e}^{-}$ in the MM diagram.
 
 ```{note}
-Even though the detection boundary is slightly underestimated and the program 
-will detect a non-negligible number of false positives, this example is 
-illustrative for understanding the different steps carried out once the 
+Even though the detection boundary is slightly underestimated and the program
+will detect a non-negligible number of false positives, this example is
+illustrative for understanding the different steps carried out once the
 detection boundary has been determined (a more refined detection boundary
 will be employed in Example 2 below).
 ```
@@ -666,31 +666,31 @@ From this point onward, the program continues without interruption.
 ```{include} files/terminal_output_example1_08.md
 ```
 
-The program groups connected pixels into cosmic ray features, each representing 
-an individual cosmic ray hit affecting contiguous pixels. Each feature can 
-contain pixels detected by either {redcode}`Aux.Cosmic` or 
-{bluecode}`M.M.Cosmic`. To assess the reliability of these methods 
+The program groups connected pixels into cosmic ray features, each representing
+an individual cosmic ray hit affecting contiguous pixels. Each feature can
+contain pixels detected by either {redcode}`Aux.Cosmic` or
+{bluecode}`M.M.Cosmic`. To assess the reliability of these methods
 in detecting actual cosmic ray hits, features are classified into 4 categories:
 
-- **4**: The feature contains at least one pixel detected by both 
+- **4**: The feature contains at least one pixel detected by both
   {redcode}`Aux.Cosmic` and {bluecode}`M.M.Cosmic`
-- **3**: The feature contains only pixels detected by 
+- **3**: The feature contains only pixels detected by
   {redcode}`Aux.Cosmic`
-- **2**: The feature contains only pixels detected by 
+- **2**: The feature contains only pixels detected by
   {bluecode}`M.M.Cosmic`
 - **other**: The feature is not included in categories 2, 3, or 4
 
-Note: Category 1 is not used because this flag identifies pixels added to 
-features by applying a global dilation factor (the `dilation` key in the input 
-parameter YAML file). For this example, `dilation: 0`. This global dilation 
-factor is independent of `mm_dilation`, which applies only to cosmic ray pixels 
+Note: Category 1 is not used because this flag identifies pixels added to
+features by applying a global dilation factor (the `dilation` key in the input
+parameter YAML file). For this example, `dilation: 0`. This global dilation
+factor is independent of `mm_dilation`, which applies only to cosmic ray pixels
 detected exclusively by the {bluecode}`M.M.Cosmic` method.
 
-After this classification, **numina-crmasks** saves a CSV file and a PDF file 
-for each category. The CSV file contains the list of pixels assigned to each 
-feature. The PDF file is described below. The basenames of these files are 
-`mediancr_identified_any4`, `mediancr_identified_only3`, 
-`mediancr_identified_only2`, and `mediancr_identified_other` for categories 4, 
+After this classification, **numina-crmasks** saves a CSV file and a PDF file
+for each category. The CSV file contains the list of pixels assigned to each
+feature. The PDF file is described below. The basenames of these files are
+`mediancr_identified_any4`, `mediancr_identified_only3`,
+`mediancr_identified_only2`, and `mediancr_identified_other` for categories 4,
 3, 2, and other, respectively.
 
 ```{include} files/terminal_output_example1_09.md
@@ -705,12 +705,12 @@ feature. The PDF file is described below. The basenames of these files are
 ```{include} files/terminal_output_example1_12.md
 ```
 
-Note that each cosmic ray feature receives a unique number independent of 
+Note that each cosmic ray feature receives a unique number independent of
 category, i.e., the same number does not appear in different categories.
 
-For each identified cosmic ray feature, the program generates two pages in the 
-output PDF files. The corresponding plots are not displayed interactively 
-(unless `verify_cr: True` in the input YAML file), so users should open these 
+For each identified cosmic ray feature, the program generates two pages in the
+output PDF files. The corresponding plots are not displayed interactively
+(unless `verify_cr: True` in the input YAML file), so users should open these
 files manually after the program finishes execution.
 
 ```{figure} images/mediancr_identified_any4_example1_CR12_p1.png
@@ -735,9 +735,9 @@ masked pixels in `median2d` by their value in `min2d`.
 :name: fig-cr12_example1_p2
 :width: 100%
 
-MM diagnostic diagram for the cosmic ray feature shown in the previous figure. 
-The location of each pixel constituting the feature is plotted, with different 
-symbols indicating how each pixel was detected, as described in the legend. 
+MM diagnostic diagram for the cosmic ray feature shown in the previous figure.
+The location of each pixel constituting the feature is plotted, with different
+symbols indicating how each pixel was detected, as described in the legend.
 Pixel coordinates (following the FITS convention) are also shown.
 ```
 
@@ -810,11 +810,11 @@ not displayed interactively but are saved as `diagnostic_crmaski.png`, where
 ```{include} files/terminal_output_example1_16.md
 ```
 
-All pixels suspected of cosmic ray contamination in each individual image are 
-stored with a value of 1 in the {magentacode}`CRMASKi` extension of 
+All pixels suspected of cosmic ray contamination in each individual image are
+stored with a value of 1 in the {magentacode}`CRMASKi` extension of
 the `crmasks.fits` file, where $i$ is the image number.
 
-The code generates a cleaned version of `median2d` that is used to search for 
+The code generates a cleaned version of `median2d` that is used to search for
 residual cosmic ray pixels in this combination.
 
 ```{include} files/terminal_output_example1_17.md
@@ -827,31 +827,31 @@ All pixels suspected of cosmic ray contamination in the cleaned `mean2d` image
 are stored with a value of 1 in the {magentacode}`MEANCR` extension
 of the `crmasks.fits` file.
 
-Since a specific cosmic-ray pixel mask has been obtained for each individual 
-image, it is possible to investigate whether any pixels are masked in all 
-exposures. These *problematic pixels* require special treatment. The program 
-detects them, reports their count, and generates both a graphical 
-representation of each case (`problematic_pixels.pdf`) and a CSV table 
-(`problematic_pixels.csv`) containing the cosmic ray index, pixel coordinates 
+Since a specific cosmic-ray pixel mask has been obtained for each individual
+image, it is possible to investigate whether any pixels are masked in all
+exposures. These *problematic pixels* require special treatment. The program
+detects them, reports their count, and generates both a graphical
+representation of each case (`problematic_pixels.pdf`) and a CSV table
+(`problematic_pixels.csv`) containing the cosmic ray index, pixel coordinates
 (following the FITS convention) for each cosmic ray case, and a mask value.
 
 ```{include} files/terminal_output_example1_19.md
 ```
 
-At this point, the program generates the `crmasks.fits` file, which stores the 
+At this point, the program generates the `crmasks.fits` file, which stores the
 different computed masks.
 
 ```{include} files/terminal_output_example1_20.md
 ```
 
-Note that the masks are stored in different extensions of this file. 
+Note that the masks are stored in different extensions of this file.
 
 Since {darkredcode}`PyCosmic` is used as the
 {redcode}`Aux.Cosmic` method, the cosmic-ray-cleaned image returned
 by the {graycode}`cosmicray_lacosmic()` function is also saved in an
 extension named {magentacode}`AUXCLEAN`.
 
-Finally, the program computes the combined images. First, the simple mean, 
+Finally, the program computes the combined images. First, the simple mean,
 median, and "minimum" 2D images are created. These do not require any cosmic
 ray masks and are generated so users can compare them with the cleaned
 combination versions. The corresponding images are saved as
@@ -867,41 +867,41 @@ respectively.
 ```{include} files/terminal_output_example1_23.md
 ```
 
-Then, the program uses the {magentacode}`MEDIANCR` mask to obtain 
-the corrected median combination, replacing masked pixels with the "minimum 
-value" (or with the value stored in the {magentacode}`AUXCLEAN` 
-extension if `use_auxmedian: True` is set). The corrected image is saved in 
+Then, the program uses the {magentacode}`MEDIANCR` mask to obtain
+the corrected median combination, replacing masked pixels with the "minimum
+value" (or with the value stored in the {magentacode}`AUXCLEAN`
+extension if `use_auxmedian: True` is set). The corrected image is saved in
 `combined_mediancr.fits`.
 
 ```{include} files/terminal_output_example1_24.md
 ```
 
-The first attempt to compute a corrected mean combination is performed on the 
-initial mean-combined image, where values indicated by the 
-{magentacode}`MEANCRT` mask **are replaced with those from the 
-corrected median image**. This is important. The result is saved in 
+The first attempt to compute a corrected mean combination is performed on the
+initial mean-combined image, where values indicated by the
+{magentacode}`MEANCRT` mask **are replaced with those from the
+corrected median image**. This is important. The result is saved in
 `combined_meancrt.fits`.
 
 ```{include} files/terminal_output_example1_25.md
 ```
 
-The program generates a second version of a combined image using the mean value 
-at each pixel, this time using the individual masks 
-{magentacode}`CRMASKi` obtained for each exposure. The resulting 
+The program generates a second version of a combined image using the mean value
+at each pixel, this time using the individual masks
+{magentacode}`CRMASKi` obtained for each exposure. The resulting
 image is saved in `combined_meancr.fits`.
 
 ```{include} files/terminal_output_example1_26.md
 ```
 
-A third version of a mean combination is computed using the 
-{magentacode}`MEANCR` mask to correct residual cosmic ray pixels in 
-the `combined_meancr.fits` image. The result is saved as 
+A third version of a mean combination is computed using the
+{magentacode}`MEANCR` mask to correct residual cosmic ray pixels in
+the `combined_meancr.fits` image. The result is saved as
 `combined_meancr2.fits`.
 
 ```{include} files/terminal_output_example1_27.md
 ```
 
-Upon successful completion, the program displays the total execution time and a 
+Upon successful completion, the program displays the total execution time and a
 farewell message:
 
 ```{include} files/terminal_output_example1_28.md
@@ -909,8 +909,8 @@ farewell message:
 
 ### Example 2: adjusting the detection boundary with spline fit
 
-To obtain a detection boundary that reaches higher values in the MM diagnostic 
-diagram and thus reduces false positive detections, we can perform a manually 
+To obtain a detection boundary that reaches higher values in the MM diagnostic
+diagram and thus reduces false positive detections, we can perform a manually
 refined fit. For this purpose, we start the code execution as in Example 1.
 
 ```console
@@ -938,23 +938,23 @@ diagnostic histograms are displayed:
 diagnostic diagram.
 ```
 
-While the previous figure is displayed, we can repeat the boundary fit by 
-pressing the `f` key. The program then asks several questions about how the 
-boundary fit is performed (values shown in brackets are the current defaults; 
-pressing RETURN accepts the proposed value). We accept the default values for 
+While the previous figure is displayed, we can repeat the boundary fit by
+pressing the `f` key. The program then asks several questions about how the
+boundary fit is performed (values shown in brackets are the current defaults;
+pressing RETURN accepts the proposed value). We accept the default values for
 the first questions:
 
 ```{include} files/terminal_output_example2a_01b.md
 ```
 
-Then we indicate our interest in including fixed points in the boundary fit. 
-Specifically, we insert two fixed points at the following $(x,y)$ coordinates: 
+Then we indicate our interest in including fixed points in the boundary fit.
+Specifically, we insert two fixed points at the following $(x,y)$ coordinates:
 $(50, 60)$ and $(150, 80)$.
 
 ```{include} files/terminal_output_example2a_01c.md
 ```
 
-Once the two fixed points have been introduced, the program recomputes and 
+Once the two fixed points have been introduced, the program recomputes and
 displays the new 2D diagnostic histograms:
 
 ```{include} files/terminal_output_example2a_02.md
@@ -965,10 +965,10 @@ displays the new 2D diagnostic histograms:
 :name: fig-diagnostic_histogram2d_example2
 :width: 100%
 
-Recomputed 2D histogram showing the simulated (left) and real (right) 
-Median-Minimum diagnostic diagram. The data are the same as in 
-{numref}`fig-diagnostic_histogram2d_example1_bis`, but the boundary fit has 
-been forced to pass through two fixed points (displayed as filled magenta 
+Recomputed 2D histogram showing the simulated (left) and real (right)
+Median-Minimum diagnostic diagram. The data are the same as in
+{numref}`fig-diagnostic_histogram2d_example1_bis`, but the boundary fit has
+been forced to pass through two fixed points (displayed as filled magenta
 squares).
 ```
 
@@ -977,8 +977,8 @@ By pressing `c` the program resumes execution.
 ```{include} files/terminal_output_example2a_03.md
 ```
 
-By shifting the detection boundary upward, the false detection rate decreases. 
-Specifically, false detections on sky lines decrease drastically, as shown in 
+By shifting the detection boundary upward, the false detection rate decreases.
+Specifically, false detections on sky lines decrease drastically, as shown in
 panel (c) of the following figure:
 
 
@@ -1000,18 +1000,18 @@ see that with the refined detection boundary we have avoided one false positive
 in `mediancr_identified_any4.csv`, and reduced the number of false positive
 detections in `mediancr_identified_only2.csv`.
 
-By adjusting the number and location of fixed points, users can obtain an even 
+By adjusting the number and location of fixed points, users can obtain an even
 better detection boundary.
 
-Once the optimal fixed points have been identified, it is possible to modify 
-the input parameter YAML file to automate code execution without user 
-interaction. To do this, change `interactive: True` to `interactive: False` (to 
-prevent the program from stopping at intermediate steps) and insert the 
+Once the optimal fixed points have been identified, it is possible to modify
+the input parameter YAML file to automate code execution without user
+interaction. To do this, change `interactive: True` to `interactive: False` (to
+prevent the program from stopping at intermediate steps) and insert the
 fixed point coordinates by modifying
 
 ```{code-block} yaml
 :class: my-special-block no-copybutton
-mm_fixed_points_in_boundary: 
+mm_fixed_points_in_boundary:
 # - [x, y, weight]  # weights are optional (ignored) for spline (piecewise) fit
 ```
 
@@ -1019,7 +1019,7 @@ to
 
 ```{code-block} yaml
 :class: my-special-block no-copybutton
-mm_fixed_points_in_boundary: 
+mm_fixed_points_in_boundary:
 # - [x, y, weight]  # weights are optional (ignored) for spline (piecewise) fit
   - [50, 60]
   - [150, 80]
@@ -1028,8 +1028,8 @@ mm_fixed_points_in_boundary:
 (here we insert the same two fixed points used previously; the default weight
 10000 are assumed by default).
 
-The modified YAML file `params_example2b.yaml` contains these changes. We can 
-execute **numina-crmasks** with this modified file, storing the results in 
+The modified YAML file `params_example2b.yaml` contains these changes. We can
+execute **numina-crmasks** with this modified file, storing the results in
 a subdirectory `example2b`:
 
 ```console
@@ -1040,12 +1040,12 @@ The results saved in subdirectories `example2a` and `example2b` are identical.
 
 ### Example 3: adjusting the detection boundary with piecewise fit
 
-An alternative to using a spline fit to determine the detection boundary is to 
-use a piecewise fit through a list of fixed points. Users can modify the fit 
-type (spline or piecewise) when running the code interactively, just after the 
+An alternative to using a spline fit to determine the detection boundary is to
+use a piecewise fit through a list of fixed points. Users can modify the fit
+type (spline or piecewise) when running the code interactively, just after the
 2D diagnostic histogram is displayed.
 
-Another option is to define `mm_boundary_fit: piecewise` in the input YAML file 
+Another option is to define `mm_boundary_fit: piecewise` in the input YAML file
 and specify the desired number of fixed points. For example:
 ```{code-block} yaml
 :class: my-special-block no-copybutton
@@ -1053,7 +1053,7 @@ and specify the desired number of fixed points. For example:
 ...
 mm_boundary_fit: piecewise
 ...
-mm_fixed_points_in_boundary: 
+mm_fixed_points_in_boundary:
 # - [x, y, weight]  # weights are optional (ignored) for spline (piecewise) fit
   - [0, 30]
   - [50, 60]
@@ -1069,14 +1069,14 @@ These changes have been introduced in `params_example3.yaml`. You can execute:
 :name: fig-diagnostic_histogram2d_example3
 :width: 100%
 
-MM diagnostic diagram and location of detected cosmic-ray pixels. Compare with 
+MM diagnostic diagram and location of detected cosmic-ray pixels. Compare with
 {numref}`fig-diagnostic_histogram2d_example2`.
 ```
 
-Since this detection boundary is not very different from the one determined in 
-Example 2, the resulting cosmic ray masks are very similar. In fact, 
-`mediancr_identified_any4.csv` and `mediancr_identified_only3.csv` are 
-identical, and only `mediancr_identified_only2.csv` differs by 1 cosmic ray 
+Since this detection boundary is not very different from the one determined in
+Example 2, the resulting cosmic ray masks are very similar. In fact,
+`mediancr_identified_any4.csv` and `mediancr_identified_only3.csv` are
+identical, and only `mediancr_identified_only2.csv` differs by 1 cosmic ray
 feature.
 
 ### Example 4: simulate images using the negative binomial distribution
@@ -1110,7 +1110,7 @@ behaves as an overdispersed Poisson distribution.
 
 The shape parameter employed by **numina-crmasks** when using the
 negative binomial distribution is defined in the input parameter YAML file as
-`mm_binom_shape`. 
+`mm_binom_shape`.
 
 ```{code-block} yaml
 :class: my-special-block no-copybutton
@@ -1140,7 +1140,7 @@ diagnostic diagram.
 At this point, examining the 2D diagnostic diagram for the original data, it
 appears that the fitted boundary derived from the simulated data is still too
 low. We can simulate data with larger dispersion by reducing the shape
-parameter of the negative binomial distribution. 
+parameter of the negative binomial distribution.
 
 We press `r` to rerun the simulations. The program prompts a series of
 questions related to how the simulated images are generated and the limits used
@@ -1195,12 +1195,12 @@ in the median image to define the expected number of counts in every pixel for
 all exposures. However, this is not always a good approximation because, as
 discussed in Example 4, individual exposures are not necessarily equivalent.
 
-When these kinds of problems are present in the data, a better approach to 
-generate the simulated 2D diagnostic histogram is to use a better model for 
-the signal in each individual exposure. We have implemented this in 
-**numina-crmasks** by obtaining a pre-cleaned version of each individual 
-exposure using the chosen {redcode}`Aux.Cosmic` algorithm and using 
-these to generate simulated exposure sets. To use this approach, define 
+When these kinds of problems are present in the data, a better approach to
+generate the simulated 2D diagnostic histogram is to use a better model for
+the signal in each individual exposure. We have implemented this in
+**numina-crmasks** by obtaining a pre-cleaned version of each individual
+exposure using the chosen {redcode}`Aux.Cosmic` algorithm and using
+these to generate simulated exposure sets. To use this approach, define
 `mm_synthetic: single` in the input YAML file.
 
 You can test this approach using `params_example5.yaml`, which is identical to
@@ -1217,9 +1217,9 @@ set to `single` instead of `median`:
 diagnostic diagram. Compare with {numref}`fig-diagnostic_histogram2d_example1`.
 ```
 
-The new simulated 2D diagnostic diagram covers a more extended region of the MM 
-diagram, and the corresponding detection boundary is shifted toward higher 
-${\rm median2d} - {\rm min2d}$ values, which is less prone to false positive 
+The new simulated 2D diagnostic diagram covers a more extended region of the MM
+diagram, and the corresponding detection boundary is shifted toward higher
+${\rm median2d} - {\rm min2d}$ values, which is less prone to false positive
 detections.
 
 On the other hand, this new approach may skip some pixels actually affected by
@@ -1236,11 +1236,11 @@ question:
 Minimum number of neighbors to keep bins in the 2D histogram (0-8) [0]: 6
 ```
 
-By entering an integer larger than zero (maximum 8), the program recomputes the 
-2D diagnostic histogram and removes any bin whose number of neighbors with 
+By entering an integer larger than zero (maximum 8), the program recomputes the
+2D diagnostic histogram and removes any bin whose number of neighbors with
 nonzero values is less than the specified value.
 
-Additionally, we can modify other fit parameters. For example, we can modify 
+Additionally, we can modify other fit parameters. For example, we can modify
 the number of knots and the number of iterations for boundary extension:
 
 ```{code-block} ansi-shell-session
@@ -1295,12 +1295,12 @@ more general. Nevertheless, we have kept the documentation of Example 6 to
 provide an alternative procedure that may be useful in some cases.
 ```
 
-In some circumstances, small flux variations may occur among different 
-exposures. This causes a straightforward execution of **numina-crmasks** to 
-produce a simulated diagnostic diagram that does not match the one obtained 
-from the individual exposures. To illustrate this issue, this example again 
-uses three individual exposures, but here the signal in the three images 
-corresponds to simulated images built from the median of the three exposures 
+In some circumstances, small flux variations may occur among different
+exposures. This causes a straightforward execution of **numina-crmasks** to
+produce a simulated diagnostic diagram that does not match the one obtained
+from the individual exposures. To illustrate this issue, this example again
+uses three individual exposures, but here the signal in the three images
+corresponds to simulated images built from the median of the three exposures
 used in previous examples, to which individual cosmic rays detected in the
 single exposures have been added. Additionally, the signal of the first
 simulated image has been artificially decreased by 20%, while the third
@@ -1320,8 +1320,8 @@ this case, there is a clear difference between the simulated and the real
 data.
 ```
 
-Since the detection boundary is underestimated, the number of false positives 
-on sky lines increases dramatically, as shown in panel (c) of the following 
+Since the detection boundary is underestimated, the number of false positives
+on sky lines increases dramatically, as shown in panel (c) of the following
 figure:
 
 ```{figure} images/diagnostic_mediancr_example6a.png
@@ -1332,13 +1332,13 @@ MM diagnostic diagram and location of the detected cosmic-ray pixels. Note the
 large number of false detections on the sky lines.
 ```
 
-The **numina-crmasks** program includes the option to determine multiplicative 
-factors for rescaling individual exposures to minimize this problem. The 
-procedure does not guarantee optimal results but can help reveal the presence 
-of this issue. Users may also explicitly provide the multiplicative factors 
+The **numina-crmasks** program includes the option to determine multiplicative
+factors for rescaling individual exposures to minimize this problem. The
+procedure does not guarantee optimal results but can help reveal the presence
+of this issue. Users may also explicitly provide the multiplicative factors
 after calculating them beforehand.
 
-In the following steps, we attempt to automatically estimate these factors by 
+In the following steps, we attempt to automatically estimate these factors by
 specifying the following information in the parameter file:
 
 ```{literalinclude} files/params_example6b.yaml
@@ -1348,49 +1348,49 @@ specifying the following information in the parameter file:
 :linenos: true
 ```
 
-Note that the `flux_factor` parameter has been changed from `none` to `auto`. 
-This instructs **numina-crmasks** to check for a multiplicative factor between 
-the individual exposures and the median image before generating the diagnostic 
+Note that the `flux_factor` parameter has been changed from `none` to `auto`.
+This instructs **numina-crmasks** to check for a multiplicative factor between
+the individual exposures and the median image before generating the diagnostic
 diagram.
 
-If nothing else is changed in the parameter file, the code uses information 
-from the entire image. However, in this example, large detector regions have 
-very little signal, so selecting rectangular regions containing pixels with 
-significant signal is advisable. In this case, a single region is selected that 
-includes the sky emission lines. The coordinates of this rectangle are 
+If nothing else is changed in the parameter file, the code uses information
+from the entire image. However, in this example, large detector regions have
+very little signal, so selecting rectangular regions containing pixels with
+significant signal is advisable. In this case, a single region is selected that
+includes the sky emission lines. The coordinates of this rectangle are
 specified under the `flux_factor_regions` parameter.
 
-The additional parameter `apply_flux_factor_to` allows choosing whether the 
-calculated multiplicative factors should be applied to the simulated images 
-(generating individual exposures that preserve signal differences between them) 
-or to the original images (rescaling them so the exposures have similar signal 
+The additional parameter `apply_flux_factor_to` allows choosing whether the
+calculated multiplicative factors should be applied to the simulated images
+(generating individual exposures that preserve signal differences between them)
+or to the original images (rescaling them so the exposures have similar signal
 levels). In this example, we choose the first option.
 
 ```console
 (venv_numina) $ numina-crmasks params_example6b.yaml --output_dir example6b
 ```
 
-Before generating the diagnostic diagram, **numina-crmasks** displays a figure 
-showing the median combination (left panel) and the image number used to 
+Before generating the diagnostic diagram, **numina-crmasks** displays a figure
+showing the median combination (left panel) and the image number used to
 compute the median at each pixel (right panel).
 
 ```{figure} images/image_number_at_median_position_example6b.png
 :name: fig-image_number_at_median_position_example6b
 :width: 100%
 
-Left panel: median combination. Right panel: image number used to compute the 
-median at each pixel. Since in this example the signal of the first and third 
-exposures has been decreased and increased, respectively, the pixels with the 
-strongest signal (sky lines) are mostly shown in the right panel with the color 
-corresponding to the second individual image. Users can interactively zoom in 
-on either panel, and the same zoom level is automatically applied to the 
+Left panel: median combination. Right panel: image number used to compute the
+median at each pixel. Since in this example the signal of the first and third
+exposures has been decreased and increased, respectively, the pixels with the
+strongest signal (sky lines) are mostly shown in the right panel with the color
+corresponding to the second individual image. Users can interactively zoom in
+on either panel, and the same zoom level is automatically applied to the
 adjacent panel.
 ```
 
-Examining the previous figure clearly reveals signal discrepancies among the 
+Examining the previous figure clearly reveals signal discrepancies among the
 individual exposures.
 
-Next, **numina-crmasks** attempts to determine a multiplicative flux factor 
+Next, **numina-crmasks** attempts to determine a multiplicative flux factor
 between each individual exposure and the median image.
 
 ```{figure} images/flux_factor1_example6b.png
@@ -1408,28 +1408,28 @@ between each individual exposure and the median image.
 :width: 100%
 ```
 
-In the figures above, the ratio between the signal in each individual image and 
-the median image is compared as a function of the signal in the image. These 
-figures are 2D histograms; after removing isolated bins (left panels), a fit is 
-performed to determine a multiplicative factor for each individual exposure 
+In the figures above, the ratio between the signal in each individual image and
+the median image is compared as a function of the signal in the image. These
+figures are 2D histograms; after removing isolated bins (left panels), a fit is
+performed to determine a multiplicative factor for each individual exposure
 (right panels).
 
-Users can choose to proceed using these automatically determined factors or 
-rerun the program by explicitly setting the desired factors in the 
-`flux_factor` parameter. In the latter case, the factors are provided as a 
+Users can choose to proceed using these automatically determined factors or
+rerun the program by explicitly setting the desired factors in the
+`flux_factor` parameter. In the latter case, the factors are provided as a
 list, for example: `flux_factor: [0.75, 1.01, 1.16]`.
 
-In this example, the factors automatically calculated by **numina-crmasks** do 
-not exactly match the factors used to generate the input images (those factors 
-were `0.80`, `1.00`, and `1.20`). Since we are using `apply_flux_factor_to: 
-simulated` as an input parameter, the discrepancy is not very problematic 
-because the goal is to obtain an appropriate detection boundary, and the 
-multiplicative factors are used only for that task. If instead 
-`apply_flux_factor_to: original` were used, a more accurate determination of 
+In this example, the factors automatically calculated by **numina-crmasks** do
+not exactly match the factors used to generate the input images (those factors
+were `0.80`, `1.00`, and `1.20`). Since we are using `apply_flux_factor_to:
+simulated` as an input parameter, the discrepancy is not very problematic
+because the goal is to obtain an appropriate detection boundary, and the
+multiplicative factors are used only for that task. If instead
+`apply_flux_factor_to: original` were used, a more accurate determination of
 those multiplicative factors would be advisable.
 
-Continuing program execution after the automatic estimation of the 
-multiplicative factors, the code displays the resulting diagnostic diagram and 
+Continuing program execution after the automatic estimation of the
+multiplicative factors, the code displays the resulting diagnostic diagram and
 the estimated detection boundary.
 
 ```{figure} images/diagnostic_histogram2d_example6b.png
@@ -1437,10 +1437,10 @@ the estimated detection boundary.
 :name: fig-diagnostic_histogram2d_example6b
 :width: 100%
 
-Simulated (left) and real (right) 2D diagnostic histogram. This diagram has 
-been generated using the multiplicative factors computed by **numina-crmasks**. 
-This time, the simulated data show a distribution much more similar to the 
-original data, and the calculated detection boundary is better defined. Compare 
+Simulated (left) and real (right) 2D diagnostic histogram. This diagram has
+been generated using the multiplicative factors computed by **numina-crmasks**.
+This time, the simulated data show a distribution much more similar to the
+original data, and the calculated detection boundary is better defined. Compare
 this figure with {numref}`fig-diagnostic_histogram2d_example6a`.
 ```
 
@@ -1474,7 +1474,7 @@ by setting `mm_photon_distribution: nbinom` in the input YAML file.
 :name: fig-diagnostic_histogram2d_example6c_initial
 :width: 100%
 
-Simulated (left) and real (right) 2D diagnostic histogram. 
+Simulated (left) and real (right) 2D diagnostic histogram.
 ```
 
 The simulated diagram above was generated using the negative binomial
@@ -1483,8 +1483,8 @@ negative binomial distribution approaches the behavior of a Poisson
 distribution. Consequently, the detection boundary remains unsatisfactory and
 the number of false positives is still high.
 
-To exploit the benefits of using the negative binomial here, we modify the 
-shape parameter, decreasing it from 1000 to 60 (the latter value was determined 
+To exploit the benefits of using the negative binomial here, we modify the
+shape parameter, decreasing it from 1000 to 60 (the latter value was determined
 through quick trial and error).
 
 ```{include} files/terminal_output_example6c_01.md
@@ -1499,10 +1499,10 @@ Simulated (left) and real (right) 2D diagnostic histogram.  Compare with
 {numref}`fig-diagnostic_histogram2d_example6c_initial`.
 ```
 
-The resulting boundary fit is not very different from the one obtained in this 
-example when using different flux factors for each individual exposure. The 
-benefit of using the negative binomial distribution is that users can skip the 
-tedious task of finding suitable flux factors, requiring only adjustment of the 
+The resulting boundary fit is not very different from the one obtained in this
+example when using different flux factors for each individual exposure. The
+benefit of using the negative binomial distribution is that users can skip the
+tedious task of finding suitable flux factors, requiring only adjustment of the
 `mm_nbinom_shape` parameter.
 
 ### Example 7: taking care of small image offsets
@@ -1516,14 +1516,14 @@ documentation of Example 7 to provide an alternative procedure that may be
 useful in some cases.
 ```
 
-Another situation that may occur is that individual exposures show small 
-shifts, on the order of a fraction of a pixel in X or Y. Note that offsets 
-larger than 1 pixel can always be reduced to values smaller than one pixel by 
+Another situation that may occur is that individual exposures show small
+shifts, on the order of a fraction of a pixel in X or Y. Note that offsets
+larger than 1 pixel can always be reduced to values smaller than one pixel by
 applying an integer translation and leaving the fractional part as a residual.
 
-In this example, we use as input a set of individual images that are slightly 
-shifted. Specifically, we kept the second image fixed and shifted the first 
-image by $(\delta x, \delta y) = (-0.5, +0.5)$ pixels, while the offsets applied to the 
+In this example, we use as input a set of individual images that are slightly
+shifted. Specifically, we kept the second image fixed and shifted the first
+image by $(\delta x, \delta y) = (-0.5, +0.5)$ pixels, while the offsets applied to the
 third exposure were $(\delta x, \delta y) = (+0.5, -0.25)$ pixels.
 
 We start by running **numina-crmasks** while ignoring the possibility that
@@ -1545,25 +1545,25 @@ Simulated (left) and real (right) Median-Minimum diagnostic histogram.
 There is a clear difference between the simulated and the real data.
 ```
 
-Since the detection boundary is underestimated, the number of false positives 
-on sky lines increases dramatically, as shown in panel (c) of the following 
+Since the detection boundary is underestimated, the number of false positives
+on sky lines increases dramatically, as shown in panel (c) of the following
 figure:
 
 ```{figure} images/diagnostic_mediancr_example7a.png
 :name: fig-diagnostic_mediancr_example7a
 :width: 100%
 
-MM diagnostic diagram and location of detected cosmic-ray pixels. Note the 
+MM diagnostic diagram and location of detected cosmic-ray pixels. Note the
 large number of false detections on sky lines.
 ```
 
-To handle this situation, the **numina-crmasks** program includes the option to 
-determine offsets between individual exposures using 2D cross-correlation. The 
-procedure does not guarantee optimal results but can help reveal the presence 
-of this issue. Users may also explicitly provide the desired offsets after 
+To handle this situation, the **numina-crmasks** program includes the option to
+determine offsets between individual exposures using 2D cross-correlation. The
+procedure does not guarantee optimal results but can help reveal the presence
+of this issue. Users may also explicitly provide the desired offsets after
 calculating them beforehand.
 
-In the following steps, we attempt to automatically determine these offsets by 
+In the following steps, we attempt to automatically determine these offsets by
 specifying the following information in the parameter file:
 
 ```{code-block} yaml
@@ -1572,9 +1572,9 @@ specifying the following information in the parameter file:
 mm_crosscorr_region: [214, 320, 651, 733]  # [xmin, xmax, ymin, ymax] FITS criterium | null
 ```
 
-Note that the `mm_crosscorr_region` parameter has been changed from `null` to a 
-rectangular region to be used in the cross-correlation procedure. This 
-instructs **numina-crmasks** to check for offsets between each individual 
+Note that the `mm_crosscorr_region` parameter has been changed from `null` to a
+rectangular region to be used in the cross-correlation procedure. This
+instructs **numina-crmasks** to check for offsets between each individual
 exposure and the median combination before generating the diagnostic diagram.
 
 ```console
@@ -1584,28 +1584,28 @@ exposure and the median combination before generating the diagnostic diagram.
 ```{include} files/terminal_output_example7b_01.md
 ```
 
-In this example, we use a rectangular region of the image that contains bright 
-sky lines. The offsets found for the three exposures $(\delta x, \delta 
-y)=(-0.46, 0.41)$, $(0.00, -0.01)$, and $(0.48, -0.26)$ for exposures 1, 2, and 
-3, respectively, agree well (within $\sim 0.1$ pix) with the offsets introduced 
-when simulating the individual exposures: $(\delta x, \delta y)=(-0.50, 0.50)$, 
-$(0.00, 0.00)$, and $(0.50, -0.25)$. Remember that these offsets indicate how 
-much the median image must be shifted in $(x,y)$ for the shifted image to 
+In this example, we use a rectangular region of the image that contains bright
+sky lines. The offsets found for the three exposures $(\delta x, \delta
+y)=(-0.46, 0.41)$, $(0.00, -0.01)$, and $(0.48, -0.26)$ for exposures 1, 2, and
+3, respectively, agree well (within $\sim 0.1$ pix) with the offsets introduced
+when simulating the individual exposures: $(\delta x, \delta y)=(-0.50, 0.50)$,
+$(0.00, 0.00)$, and $(0.50, -0.25)$. Remember that these offsets indicate how
+much the median image must be shifted in $(x,y)$ for the shifted image to
 coincide with the individual exposures.
 
 ```{figure} images/xyoffset_crosscorr_1_example7b.png
 :name: fig-xyoffset_crosscorr_1_example7b
 :width: 100%
 
-For each individual exposure, the program displays a four-panel figure. In the 
-top row, we have the median combination (left panel) and the corresponding 
-individual image (right panel). In the bottom row, we see the difference 
-between both images (left panel) and the same result after the individual image 
-has been shifted by the calculated $(\delta x, \delta y)$ offsets using 2D 
-cross-correlation (right panel). In this case, the first individual exposure is 
-shown. The offset between the median and that exposure is clearly visible 
-(bottom-left panel), and after applying the calculated offset, the difference 
-between the median and the shifted individual image becomes much more 
+For each individual exposure, the program displays a four-panel figure. In the
+top row, we have the median combination (left panel) and the corresponding
+individual image (right panel). In the bottom row, we see the difference
+between both images (left panel) and the same result after the individual image
+has been shifted by the calculated $(\delta x, \delta y)$ offsets using 2D
+cross-correlation (right panel). In this case, the first individual exposure is
+shown. The offset between the median and that exposure is clearly visible
+(bottom-left panel), and after applying the calculated offset, the difference
+between the median and the shifted individual image becomes much more
 consistent with proper alignment.
 ```
 
@@ -1613,7 +1613,7 @@ consistent with proper alignment.
 :name: fig-xyoffset_crosscorr_2_example7b
 :width: 100%
 
-Figure similar to {numref}`fig-xyoffset_crosscorr_1_example7b` for the second 
+Figure similar to {numref}`fig-xyoffset_crosscorr_1_example7b` for the second
 individual exposure.
 ```
 
@@ -1625,8 +1625,8 @@ Figure similar to {numref}`fig-xyoffset_crosscorr_1_example7b` for the third
 individual exposure.
 ```
 
-When generating the 2D diagnostic histogram, **numina-crmasks** applies the 
-calculated offsets to the median image to simulate three exposures with the 
+When generating the 2D diagnostic histogram, **numina-crmasks** applies the
+calculated offsets to the median image to simulate three exposures with the
 same relative displacements as the original three exposures.
 
 ```{figure} images/diagnostic_histogram2d_example7b.png
@@ -1634,33 +1634,33 @@ same relative displacements as the original three exposures.
 :name: fig-diagnostic_histogram2d_example7b
 :width: 100%
 
-Simulated (left) and real (right) Median-Minimum diagnostic histogram. This 
-diagram has been generated using the $(\delta x, \delta y)$ offsets between 
-exposures computed by **numina-crmasks**. This time, the simulated data show a 
-distribution much more similar to the original data, and the calculated 
-detection boundary is better defined. Compare this figure with 
+Simulated (left) and real (right) Median-Minimum diagnostic histogram. This
+diagram has been generated using the $(\delta x, \delta y)$ offsets between
+exposures computed by **numina-crmasks**. This time, the simulated data show a
+distribution much more similar to the original data, and the calculated
+detection boundary is better defined. Compare this figure with
 {numref}`fig-diagnostic_histogram2d_example7a` (note that the upper limit in
 the vertical axis is different!).
 ```
 
-The newly calculated detection boundary performs much better, removing the 
-large number of false detections that occur when offsets between exposures are 
+The newly calculated detection boundary performs much better, removing the
+large number of false detections that occur when offsets between exposures are
 not accounted for.
 
 ```{figure} images/diagnostic_mediancr_example7b.png
 :name: fig-diagnostic_mediancr_example7b
 :width: 100%
 
-MM diagnostic diagram and location of detected cosmic-ray pixels. Compare this 
+MM diagnostic diagram and location of detected cosmic-ray pixels. Compare this
 figure with {numref}`fig-diagnostic_mediancr_example7a`.
 ```
 
 From this point onward, the program can be used as in Example 1.
 
-If users obtain incorrect values when applying the cross-correlation technique 
-but have another way to estimate the offsets between individual exposures, 
-those values can be entered explicitly under the `mm_xy_offsets` parameter. In 
-this case, each $(\delta x, \delta y)$ offset pair must be provided on a 
+If users obtain incorrect values when applying the cross-correlation technique
+but have another way to estimate the offsets between individual exposures,
+those values can be entered explicitly under the `mm_xy_offsets` parameter. In
+this case, each $(\delta x, \delta y)$ offset pair must be provided on a
 separate line for each individual exposure. For example, to reproduce the same
 results obtained in this example, one should employ the following parameters in
 the input YAML file:
@@ -1679,8 +1679,8 @@ mm_crosscorr_region: null  # [xmin, xmax, ymin, ymax] FITS criterium | null
 
 **Alternative approach: using the negative binomial distribution**
 
-To illustrate how the negative binomial distribution can also address the 
-limitations described in this example, we demonstrate the results obtained by 
+To illustrate how the negative binomial distribution can also address the
+limitations described in this example, we demonstrate the results obtained by
 setting `mm_photon_distribution: nbinom` in the input YAML file.
 
 ```console
@@ -1692,7 +1692,7 @@ setting `mm_photon_distribution: nbinom` in the input YAML file.
 :name: fig-diagnostic_histogram2d_example7c_initial
 :width: 100%
 
-Simulated (left) and real (right) 2D diagnostic histogram. 
+Simulated (left) and real (right) 2D diagnostic histogram.
 ```
 
 The simulated diagram above was generated using the negative binomial
@@ -1701,8 +1701,8 @@ negative binomial distribution approaches the behavior of a Poisson
 distribution. Consequently, the detection boundary remains unsatisfactory and
 the number of false positives is still high.
 
-To exploit the benefits of using the negative binomial here, we modify the 
-shape parameter, decreasing it from 1000 to 20 (the latter value was determined 
+To exploit the benefits of using the negative binomial here, we modify the
+shape parameter, decreasing it from 1000 to 20 (the latter value was determined
 through quick trial and error).
 
 ```{include} files/terminal_output_example7c_01.md
@@ -1753,19 +1753,19 @@ These parameters determine the overall execution of **numina-crmasks**:
 
   - {greencode}`mm_lacosmic`: Combination of
     {darkredcode}`L.A.Cosmic` and {bluecode}`M.M.Cosmic`.
-    
+
   - {greencode}`mm_pycosmic`: Combination of
     {darkredcode}`PyCosmic` and
     {bluecode}`M.M.Cosmic`.
-    
+
   - {greencode}`mm_deepcr`: Combination of
     {darkredcode}`deepCR` and
     {bluecode}`M.M.Cosmic`.
-    
+
   - {greencode}`mm_conn`: Combination of
     {darkredcode}`CoNN` and
     {bluecode}`M.M.Cosmic`.
-    
+
 - `use_auxmedian` (boolean): If True, the cosmic-ray corrected array
   returned by the selected {redcode}`Aux.Cosmic` algorithm when
   cleaning the median array is used instead of the "minimum value" at each
@@ -1808,12 +1808,12 @@ These parameters determine the overall execution of **numina-crmasks**:
   - Single float: A single value (e.g., 1.0) applies the same flux factor to
     all exposures.
 
-- `flux_factor_regions` 
+- `flux_factor_regions`
   (string {greencode}`"[xmin:xmax, ymin:ymax]"`): rectangular region
   to determine the relative flux levels of the individual exposures in
   comparison to the median combination, where the limits are defined in pixels
   following the FITS convention (the first pixel in each direction is numbered
-  as 1). If this parameter is set to null in the YAML file (intepreted as None
+  as 1). If this parameter is set to null in the YAML file (interpreted as None
   when read by Python), it is assumed that the full image area is employed.
 
 - `apply_flux_factor_to` (string): specifies to which images the flux factors
@@ -1880,14 +1880,14 @@ function](https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmi
 - `la_gain_apply` (bool): If True, apply the gain when computing the corrected
   image.
 
-- `la_sigclip` ([float, float]): Laplacian-to-noise limit for cosmic ray 
-  detection. The first number is used in the first execution of the algorithm 
-  and the second number in the second execution. This helps identify the more 
-  conspicuous cosmic ray pixels in the first execution and add the cosmic ray 
+- `la_sigclip` ([float, float]): Laplacian-to-noise limit for cosmic ray
+  detection. The first number is used in the first execution of the algorithm
+  and the second number in the second execution. This helps identify the more
+  conspicuous cosmic ray pixels in the first execution and add the cosmic ray
   tails in a second execution using a lower value.
 
-- `la_sigfrac` ([float, float]): Fractional detection limit for neighboring 
-  pixels. The first number is used in the first execution and the second number 
+- `la_sigfrac` ([float, float]): Fractional detection limit for neighboring
+  pixels. The first number is used in the first execution and the second number
   in the second execution.
 
 - `la_objlim` (float): Minimum contrast between Laplacian image and the fine
@@ -1944,18 +1944,18 @@ function](https://ccdproc.readthedocs.io/en/latest/api/ccdproc.cosmicray_lacosmi
 
 - `la_psfsize` (integer): Size of the kernel to calculate (pixels).
 
-- `la_psfbeta` (float): Moffat beta parameter. Only used if 
+- `la_psfbeta` (float): Moffat beta parameter. Only used if
   `la_fsmode`={greencode}`convolve` and `la_psfmodel`={greencode}`moffat`.
 
 - `la_verbose` (boolean): Print to the screen or not. This parameter is
   automatically set to False if the program is executed with `--log-level` set
   to `WARNING` or higher.
 
-- `la_padwidth` (integer): Padding to be applied to the images to mitigate edge 
-  effects. When different from zero, images to be cleaned are padded on all 
-  sides by the indicated number of pixels using a mirror reflection of the data 
-  (without repeating the outermost values). This helps find cosmic ray pixels 
-  very close to the image borders, which remain undetected when using 
+- `la_padwidth` (integer): Padding to be applied to the images to mitigate edge
+  effects. When different from zero, images to be cleaned are padded on all
+  sides by the indicated number of pixels using a mirror reflection of the data
+  (without repeating the outermost values). This helps find cosmic ray pixels
+  very close to the image borders, which remain undetected when using
   {graycode}`cosmicray_lacosmic()` without this preliminary manipulation.
 
 In addition to these parameters, **numina-crmasks** also uses the values of
@@ -2144,7 +2144,7 @@ them from those associated with the L.A.Cosmic method.
 - `mm_knots_splfit` (integer): Total number of knots employed in the spline fit
   that define the detection boundary in the diagnostic diagram.
 
-- `mm_fixed_points_in_boundary` (list of 
+- `mm_fixed_points_in_boundary` (list of
   {greencode}`[X, Y, weight]`): Points used to fit the detection
   boundary in the MM diagnostic diagram. In the case of a `piecewise` fit, the
   boundary is constructed using straight lines connecting the specified points.

@@ -41,4 +41,3 @@ echo '```' >> "$output"
 
 # display name of output file
 echo "${output} generated"
-

@@ -25,4 +25,3 @@ the inverse transformation.
 
 ```{include} files/help_numina-world_to_pixel.md
 ```
-

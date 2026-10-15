@@ -53,7 +53,7 @@ numfig = True
 numfig_secnum_depth = 2  # Number of section levels to include in numbering
 
 # This tells Sphinx not to print warnings from MyST cross-reference resolution
-# [NCL] This is to solve: 
+# [NCL] This is to solve:
 # WARNING: Domain 'click_extra.sphinx::click' has not implemented a `resolve_any_xref` method [myst.domains]
 # [NCL] It is not fatal, but annoying.
 suppress_warnings = ["myst.domains"]
@@ -167,4 +167,3 @@ latex_elements = {
 \end{titlepage}
 ''',
 }
-

@@ -106,7 +106,7 @@ For more information on the use of conda virtual environments, please consult
 
 ## Installing the software
 
-After activating the Python enviroment, **numina** can be easily installed with
+After activating the Python environment, **numina** can be easily installed with
 `pip`, a standard Python tool for package management. It should download the
 package and its dependencies, unpack everything and compile when needed.
 
