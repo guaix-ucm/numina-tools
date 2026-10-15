@@ -11,7 +11,8 @@
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=55cbccbb" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c180e49b" />
+      <link rel="stylesheet" type="text/css" href="../_static/click-extra.css?v=59573e2f" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -96,20 +97,28 @@ extensions (e.g., <code class="docutils literal notranslate"><span class="pre">A
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-compare_adr_extensions_in_3d_cube<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-compare_adr_extensions_in_3d_cube</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-compare_adr_extensions_in_3d_cube</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--version</span>] [<span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>]
+                                                [<span class="-Ansi -Ansi-Cyan">--no-color</span>] [<span class="-Ansi -Ansi-Cyan">--record</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                                                [<span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>]
                                                 <span class="-Ansi -Ansi-Cyan">filename</span> <span class="-Ansi -Ansi-Cyan">extname1</span> <span class="-Ansi -Ansi-Cyan">extname2</span>
 
 Compare ADR extensions in 3D cube
 
 <span class="-Ansi -Ansi-C208">Positional Arguments:</span>
-  <span class="-Ansi -Ansi-Cyan">filename</span>    Input 3D FITS file
-  <span class="-Ansi -Ansi-Cyan">extname1</span>    First extension name
-  <span class="-Ansi -Ansi-Cyan">extname2</span>    Second extension name (optional)
+  <span class="-Ansi -Ansi-Cyan">filename</span>              Input 3D FITS file
+  <span class="-Ansi -Ansi-Cyan">extname1</span>              First extension name
+  <span class="-Ansi -Ansi-Cyan">extname2</span>              Second extension name (optional)
 
 <span class="-Ansi -Ansi-C208">Options:</span>
-  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>  show this help message and exit
-  <span class="-Ansi -Ansi-Cyan">--verbose</span>   Display intermediate information
-  <span class="-Ansi -Ansi-Cyan">--echo</span>      Display full command line
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--version</span>             Display version information and exit
+  <span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>
+                        Output directory (default: .)
+  <span class="-Ansi -Ansi-Cyan">--no-color</span>            Disable color output
+  <span class="-Ansi -Ansi-Cyan">--record</span>              Record terminal output
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>
+                        Set the logging level
 </pre></div>
 </div>
 </section>
@@ -121,30 +130,27 @@ wavelength as reference.</p>
 </pre></div>
 </div>
 <div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-compute_adr_wavelength</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--airmass</span> <span class="-Ansi -Ansi-C36">AIRMASS</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--reference_wave_vacuum</span> <span class="-Ansi -Ansi-C36">REFERENCE_WAVE_VACUUM</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--wave_ini</span> <span class="-Ansi -Ansi-C36">WAVE_INI</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--wave_end</span> <span class="-Ansi -Ansi-C36">WAVE_END</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--wave_step</span> <span class="-Ansi -Ansi-C36">WAVE_STEP</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--wave_unit</span> <span class="-Ansi -Ansi-C36">WAVE_UNIT</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--temperature</span> <span class="-Ansi -Ansi-C36">TEMPERATURE</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--pressure</span> <span class="-Ansi -Ansi-C36">PRESSURE</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--pressure_water_vapor</span> <span class="-Ansi -Ansi-C36">PRESSURE_WATER_VAPOR</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--plots</span>] [<span class="-Ansi -Ansi-Cyan">--ndecimal_wave</span> <span class="-Ansi -Ansi-C36">NDECIMAL_WAVE</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--ndecimal_adr</span> <span class="-Ansi -Ansi-C36">NDECIMAL_ADR</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
-                                     [<span class="-Ansi -Ansi-Cyan">--debug</span>]
+                                     [<span class="-Ansi -Ansi-Cyan">--reference-wave-vacuum</span> <span class="-Ansi -Ansi-C36">REFERENCE_WAVE_VACUUM</span>]
+                                     [<span class="-Ansi -Ansi-Cyan">--wave-ini</span> <span class="-Ansi -Ansi-C36">WAVE_INI</span>] [<span class="-Ansi -Ansi-Cyan">--wave-end</span> <span class="-Ansi -Ansi-C36">WAVE_END</span>]
+                                     [<span class="-Ansi -Ansi-Cyan">--wave-step</span> <span class="-Ansi -Ansi-C36">WAVE_STEP</span>] [<span class="-Ansi -Ansi-Cyan">--wave-unit</span> <span class="-Ansi -Ansi-C36">WAVE_UNIT</span>]
+                                     [<span class="-Ansi -Ansi-Cyan">--temperature</span> <span class="-Ansi -Ansi-C36">TEMPERATURE</span>] [<span class="-Ansi -Ansi-Cyan">--pressure</span> <span class="-Ansi -Ansi-C36">PRESSURE</span>]
+                                     [<span class="-Ansi -Ansi-Cyan">--pressure_water_vapor</span> <span class="-Ansi -Ansi-C36">PRESSURE_WATER_VAPOR</span>] [<span class="-Ansi -Ansi-Cyan">--plots</span>]
+                                     [<span class="-Ansi -Ansi-Cyan">--ndecimal-wave</span> <span class="-Ansi -Ansi-C36">NDECIMAL_WAVE</span>] [<span class="-Ansi -Ansi-Cyan">--ndecimal-adr</span> <span class="-Ansi -Ansi-C36">NDECIMAL_ADR</span>]
+                                     [<span class="-Ansi -Ansi-Cyan">--version</span>] [<span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>] [<span class="-Ansi -Ansi-Cyan">--no-color</span>] [<span class="-Ansi -Ansi-Cyan">--record</span>]
+                                     [<span class="-Ansi -Ansi-Cyan">--echo</span>] [<span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>]
 
 Compute Atmospheric Differential Refraction
 
 <span class="-Ansi -Ansi-C208">Options:</span>
   <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
   <span class="-Ansi -Ansi-Cyan">--airmass</span> <span class="-Ansi -Ansi-C36">AIRMASS</span>     Airmass
-  <span class="-Ansi -Ansi-Cyan">--reference_wave_vacuum</span> <span class="-Ansi -Ansi-C36">REFERENCE_WAVE_VACUUM</span>
+  <span class="-Ansi -Ansi-Cyan">--reference-wave-vacuum</span> <span class="-Ansi -Ansi-C36">REFERENCE_WAVE_VACUUM</span>
                         Reference wavelength (vacuum)
-  <span class="-Ansi -Ansi-Cyan">--wave_ini</span> <span class="-Ansi -Ansi-C36">WAVE_INI</span>   Initial wavelength
-  <span class="-Ansi -Ansi-Cyan">--wave_end</span> <span class="-Ansi -Ansi-C36">WAVE_END</span>   Final wavelength
-  <span class="-Ansi -Ansi-Cyan">--wave_step</span> <span class="-Ansi -Ansi-C36">WAVE_STEP</span>
+  <span class="-Ansi -Ansi-Cyan">--wave-ini</span> <span class="-Ansi -Ansi-C36">WAVE_INI</span>   Initial wavelength
+  <span class="-Ansi -Ansi-Cyan">--wave-end</span> <span class="-Ansi -Ansi-C36">WAVE_END</span>   Final wavelength
+  <span class="-Ansi -Ansi-Cyan">--wave-step</span> <span class="-Ansi -Ansi-C36">WAVE_STEP</span>
                         Wavelength step
-  <span class="-Ansi -Ansi-Cyan">--wave_unit</span> <span class="-Ansi -Ansi-C36">WAVE_UNIT</span>
+  <span class="-Ansi -Ansi-Cyan">--wave-unit</span> <span class="-Ansi -Ansi-C36">WAVE_UNIT</span>
                         Wavelength unit (astropy)
   <span class="-Ansi -Ansi-Cyan">--temperature</span> <span class="-Ansi -Ansi-C36">TEMPERATURE</span>
                         Temperature (Celsius)
@@ -152,12 +158,18 @@ Compute Atmospheric Differential Refraction
   <span class="-Ansi -Ansi-Cyan">--pressure_water_vapor</span> <span class="-Ansi -Ansi-C36">PRESSURE_WATER_VAPOR</span>
                         Water vapor pressure (mmHg)
   <span class="-Ansi -Ansi-Cyan">--plots</span>               Plot intermediate results
-  <span class="-Ansi -Ansi-Cyan">--ndecimal_wave</span> <span class="-Ansi -Ansi-C36">NDECIMAL_WAVE</span>
+  <span class="-Ansi -Ansi-Cyan">--ndecimal-wave</span> <span class="-Ansi -Ansi-C36">NDECIMAL_WAVE</span>
                         Number of decimal places in wavelength
-  <span class="-Ansi -Ansi-Cyan">--ndecimal_adr</span> <span class="-Ansi -Ansi-C36">NDECIMAL_ADR</span>
+  <span class="-Ansi -Ansi-Cyan">--ndecimal-adr</span> <span class="-Ansi -Ansi-C36">NDECIMAL_ADR</span>
                         Number of decimal places in ADR
+  <span class="-Ansi -Ansi-Cyan">--version</span>             Display version information and exit
+  <span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>
+                        Output directory (default: .)
+  <span class="-Ansi -Ansi-Cyan">--no-color</span>            Disable color output
+  <span class="-Ansi -Ansi-Cyan">--record</span>              Record terminal output
   <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
-  <span class="-Ansi -Ansi-Cyan">--debug</span>               Debug
+  <span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>
+                        Set the logging level
 </pre></div>
 </div>
 </section>

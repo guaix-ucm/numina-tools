@@ -11,7 +11,8 @@
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=55cbccbb" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c180e49b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/click-extra.css?v=59573e2f" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
@@ -83,29 +84,44 @@
   <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-resample_wave_3d_cube<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-resample_wave_3d_cube</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--crval3out</span> <span class="-Ansi -Ansi-C36">CRVAL3OUT</span>]
-                                    [<span class="-Ansi -Ansi-Cyan">--cdelt3out</span> <span class="-Ansi -Ansi-C36">CDELT3OUT</span>]
-                                    [<span class="-Ansi -Ansi-Cyan">--naxis3out</span> <span class="-Ansi -Ansi-C36">NAXIS3OUT</span>]
-                                    [<span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>] [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
-                                    <span class="-Ansi -Ansi-Cyan">input_file</span> <span class="-Ansi -Ansi-Cyan">output_file</span>
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-resample_wave_3d_cube</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>] [<span class="-Ansi -Ansi-Cyan">--crval3out</span> <span class="-Ansi -Ansi-C36">CRVAL3OUT</span>]
+                                    [<span class="-Ansi -Ansi-Cyan">--cdelt3out</span> <span class="-Ansi -Ansi-C36">CDELT3OUT</span>] [<span class="-Ansi -Ansi-Cyan">--naxis3out</span> <span class="-Ansi -Ansi-C36">NAXIS3OUT</span>]
+                                    [<span class="-Ansi -Ansi-Cyan">--slice_ini</span> <span class="-Ansi -Ansi-C36">SLICE_INI</span>] [<span class="-Ansi -Ansi-Cyan">--slice_end</span> <span class="-Ansi -Ansi-C36">SLICE_END</span>]
+                                    [<span class="-Ansi -Ansi-Cyan">--wcskey</span> <span class="-Ansi -Ansi-C36">WCSKEY</span>] [<span class="-Ansi -Ansi-Cyan">--connected_zeros_to_nan</span>] [<span class="-Ansi -Ansi-Cyan">--version</span>]
+                                    [<span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>] [<span class="-Ansi -Ansi-Cyan">--no-color</span>] [<span class="-Ansi -Ansi-Cyan">--record</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                                    [<span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>]
+                                    <span class="-Ansi -Ansi-Cyan">input</span> <span class="-Ansi -Ansi-Cyan">output</span>
 
 Resample a 3D cube in the wavelength axis (NAXIS3).
 
 <span class="-Ansi -Ansi-C208">Positional Arguments:</span>
-  <span class="-Ansi -Ansi-Cyan">input_file</span>            Input FITS file with the 3D cube.
-  <span class="-Ansi -Ansi-Cyan">output_file</span>           Output FITS file with the resampled 3D cube.
+  <span class="-Ansi -Ansi-Cyan">input</span>                 Input FITS file with the 3D cube.
+  <span class="-Ansi -Ansi-Cyan">output</span>                Output FITS file with the resampled 3D cube.
 
 <span class="-Ansi -Ansi-C208">Options:</span>
   <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>     Extension name of the input HDU (default: 'PRIMARY').
   <span class="-Ansi -Ansi-Cyan">--crval3out</span> <span class="-Ansi -Ansi-C36">CRVAL3OUT</span>
                         Minimum wavelength for the output image (in meters).
   <span class="-Ansi -Ansi-Cyan">--cdelt3out</span> <span class="-Ansi -Ansi-C36">CDELT3OUT</span>
                         Wavelength step for the output image (in meters).
   <span class="-Ansi -Ansi-Cyan">--naxis3out</span> <span class="-Ansi -Ansi-C36">NAXIS3OUT</span>
                         Number of slices in the output image.
-  <span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>     Extension name of the input HDU (default: 'PRIMARY').
-  <span class="-Ansi -Ansi-Cyan">--verbose</span>             Display intermediate information
+  <span class="-Ansi -Ansi-Cyan">--slice_ini</span> <span class="-Ansi -Ansi-C36">SLICE_INI</span>
+                        Initial slice index to be resampled (1-based).
+  <span class="-Ansi -Ansi-Cyan">--slice_end</span> <span class="-Ansi -Ansi-C36">SLICE_END</span>
+                        Final slice index to be resampled (1-based).
+  <span class="-Ansi -Ansi-Cyan">--wcskey</span> <span class="-Ansi -Ansi-C36">WCSKEY</span>       WCS key to use when multiple WCS are present in the FITS header.
+  <span class="-Ansi -Ansi-Cyan">--connected_zeros_to_nan</span>
+                        Convert connected zeros to NaN before resampling.
+  <span class="-Ansi -Ansi-Cyan">--version</span>             Display version information and exit
+  <span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>
+                        Output directory (default: .)
+  <span class="-Ansi -Ansi-Cyan">--no-color</span>            Disable color output
+  <span class="-Ansi -Ansi-Cyan">--record</span>              Record terminal output
   <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>
+                        Set the logging level
 </pre></div>
 </div>
 

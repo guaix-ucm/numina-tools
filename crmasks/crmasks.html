@@ -11,7 +11,8 @@
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=55cbccbb" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c180e49b" />
+      <link rel="stylesheet" type="text/css" href="../_static/click-extra.css?v=59573e2f" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -354,7 +355,7 @@ allowing users to focus on modifying only those they wish to experiment with.</p
 <span class="linenos">100</span><span class="w">  </span><span class="c1"># - [x, y, weight]  # weights are optional(ignored) for spline(piecewise) fit</span>
 <span class="linenos">101</span><span class="w">  </span><span class="nt">mm_nsimulations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">                 </span><span class="c1"># simulations for each set of images</span>
 <span class="linenos">102</span><span class="w">  </span><span class="nt">mm_niter_boundary_extension</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">      </span><span class="c1"># iterations to extend the spline fit</span>
-<span class="linenos">103</span><span class="w">  </span><span class="nt">mm_weight_boundary_extension</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w">     </span><span class="c1"># multiplicative increment in weigth</span>
+<span class="linenos">103</span><span class="w">  </span><span class="nt">mm_weight_boundary_extension</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w">     </span><span class="c1"># multiplicative increment in weight</span>
 <span class="linenos">104</span><span class="w">  </span><span class="nt">mm_threshold_rnoise</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0</span><span class="w">            </span><span class="c1"># threshold value (in readout units)</span>
 <span class="linenos">105</span><span class="w">  </span><span class="nt">mm_minimum_max2d_rnoise</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span><span class="w">        </span><span class="c1"># minimum max2d (in readout units)</span>
 <span class="linenos">106</span><span class="w">  </span><span class="nt">mm_seed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">123456</span><span class="w">                     </span><span class="c1"># random seed for reproducibility</span>
@@ -474,44 +475,44 @@ combined value).</p>
 </div>
 <div class="my-special-block no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Filename: combined_mean.fits</span>
 <span class="go">No.    Name      Ver    Type      Cards   Dimensions   Format</span>
-<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   </span>
-<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   </span>
-<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   </span>
+<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  </span>
+<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  </span>
+<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  </span>
 
 <span class="go">Filename: combined_meancr.fits</span>
 <span class="go">No.    Name      Ver    Type      Cards   Dimensions   Format</span>
-<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   </span>
-<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   </span>
-<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   </span>
+<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  </span>
+<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  </span>
+<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  </span>
 
 <span class="go">Filename: combined_meancr2.fits</span>
 <span class="go">No.    Name      Ver    Type      Cards   Dimensions   Format</span>
-<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   </span>
-<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   </span>
-<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   </span>
+<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  </span>
+<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  </span>
+<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  </span>
 
 <span class="go">Filename: combined_meancrt.fits</span>
 <span class="go">No.    Name      Ver    Type      Cards   Dimensions   Format</span>
-<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   </span>
-<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   </span>
-<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   </span>
+<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  </span>
+<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  </span>
+<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  </span>
 
 <span class="go">Filename: combined_median.fits</span>
 <span class="go">No.    Name      Ver    Type      Cards   Dimensions   Format</span>
-<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   </span>
-<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   </span>
-<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   </span>
+<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  </span>
+<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  </span>
+<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  </span>
 
 <span class="go">Filename: combined_mediancr.fits</span>
 <span class="go">No.    Name      Ver    Type      Cards   Dimensions   Format</span>
-<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   </span>
-<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   </span>
-<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16   </span>
+<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  </span>
+<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  </span>
+<span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  </span>
 
 <span class="go">Filename: combined_min.fits</span>
 <span class="go">No.    Name      Ver    Type      Cards   Dimensions   Format</span>
-<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32   </span>
-<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32   </span>
+<span class="go">  0  PRIMARY       1 PrimaryHDU      22   (2016, 1596)   float32  </span>
+<span class="go">  1  VARIANCE      1 ImageHDU         8   (2016, 1596)   float32  </span>
 <span class="go">  2  MAP           1 ImageHDU         8   (2016, 1596)   int16  </span>
 </pre></div>
 </div>
@@ -533,14 +534,14 @@ separate extension.</p></li>
 </div>
 <div class="my-special-block no-copybutton highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Filename: crmasks.fits</span>
 <span class="go">No.    Name      Ver    Type      Cards   Dimensions   Format</span>
-<span class="go">  0  PRIMARY       1 PrimaryHDU      56   ()      </span>
-<span class="go">  1  MEDIANCR      1 ImageHDU         8   (2016, 1596)   uint8   </span>
-<span class="go">  2  MEANCRT       1 ImageHDU         8   (2016, 1596)   uint8   </span>
-<span class="go">  3  CRMASK1       1 ImageHDU         8   (2016, 1596)   uint8   </span>
-<span class="go">  4  CRMASK2       1 ImageHDU         8   (2016, 1596)   uint8   </span>
-<span class="go">  5  CRMASK3       1 ImageHDU         8   (2016, 1596)   uint8   </span>
-<span class="go">  6  MEANCR        1 ImageHDU         8   (2016, 1596)   uint8   </span>
-<span class="go">  7  AUXCLEAN      1 ImageHDU         8   (2016, 1596)   float32 </span>
+<span class="go">  0  PRIMARY       1 PrimaryHDU      56   ()  </span>
+<span class="go">  1  MEDIANCR      1 ImageHDU         8   (2016, 1596)   uint8  </span>
+<span class="go">  2  MEANCRT       1 ImageHDU         8   (2016, 1596)   uint8  </span>
+<span class="go">  3  CRMASK1       1 ImageHDU         8   (2016, 1596)   uint8  </span>
+<span class="go">  4  CRMASK2       1 ImageHDU         8   (2016, 1596)   uint8  </span>
+<span class="go">  5  CRMASK3       1 ImageHDU         8   (2016, 1596)   uint8  </span>
+<span class="go">  6  MEANCR        1 ImageHDU         8   (2016, 1596)   uint8  </span>
+<span class="go">  7  AUXCLEAN      1 ImageHDU         8   (2016, 1596)   float32</span>
 </pre></div>
 </div>
 <p>In this case, the primary extension does not contain an image, but rather a
@@ -1802,12 +1803,12 @@ the input parameter YAML file to automate code execution without user
 interaction. To do this, change <code class="docutils literal notranslate"><span class="pre">interactive:</span> <span class="pre">True</span></code> to <code class="docutils literal notranslate"><span class="pre">interactive:</span> <span class="pre">False</span></code> (to
 prevent the program from stopping at intermediate steps) and insert the
 fixed point coordinates by modifying</p>
-<div class="my-special-block no-copybutton highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mm_fixed_points_in_boundary</span><span class="p">:</span><span class="w"> </span>
+<div class="my-special-block no-copybutton highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mm_fixed_points_in_boundary</span><span class="p">:</span>
 <span class="c1"># - [x, y, weight]  # weights are optional (ignored) for spline (piecewise) fit</span>
 </pre></div>
 </div>
 <p>to</p>
-<div class="my-special-block no-copybutton highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mm_fixed_points_in_boundary</span><span class="p">:</span><span class="w"> </span>
+<div class="my-special-block no-copybutton highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mm_fixed_points_in_boundary</span><span class="p">:</span>
 <span class="c1"># - [x, y, weight]  # weights are optional (ignored) for spline (piecewise) fit</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">50</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">60</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">150</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">80</span><span class="p p-Indicator">]</span>
@@ -1834,7 +1835,7 @@ and specify the desired number of fixed points. For example:</p>
 <div class="my-special-block no-copybutton highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
 <span class="nt">mm_boundary_fit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">piecewise</span>
 <span class="nn">...</span>
-<span class="nt">mm_fixed_points_in_boundary</span><span class="p">:</span><span class="w"> </span>
+<span class="nt">mm_fixed_points_in_boundary</span><span class="p">:</span>
 <span class="c1"># - [x, y, weight]  # weights are optional (ignored) for spline (piecewise) fit</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">30</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">50</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">60</span><span class="p p-Indicator">]</span>
@@ -2216,7 +2217,7 @@ rerun the program by explicitly setting the desired factors in the
 list, for example: <code class="docutils literal notranslate"><span class="pre">flux_factor:</span> <span class="pre">[0.75,</span> <span class="pre">1.01,</span> <span class="pre">1.16]</span></code>.</p>
 <p>In this example, the factors automatically calculated by <strong>numina-crmasks</strong> do
 not exactly match the factors used to generate the input images (those factors
-were <code class="docutils literal notranslate"><span class="pre">0.80</span></code>, <code class="docutils literal notranslate"><span class="pre">1.00</span></code>, and <code class="docutils literal notranslate"><span class="pre">1.20</span></code>). Since we are using <code class="docutils literal notranslate"><span class="pre">apply_flux_factor_to:</span>&#160; <span class="pre">simulated</span></code> as an input parameter, the discrepancy is not very problematic
+were <code class="docutils literal notranslate"><span class="pre">0.80</span></code>, <code class="docutils literal notranslate"><span class="pre">1.00</span></code>, and <code class="docutils literal notranslate"><span class="pre">1.20</span></code>). Since we are using <code class="docutils literal notranslate"><span class="pre">apply_flux_factor_to:</span> <span class="pre">simulated</span></code> as an input parameter, the discrepancy is not very problematic
 because the goal is to obtain an appropriate detection boundary, and the
 multiplicative factors are used only for that task. If instead
 <code class="docutils literal notranslate"><span class="pre">apply_flux_factor_to:</span> <span class="pre">original</span></code> were used, a more accurate determination of
@@ -2374,7 +2375,7 @@ saving xyoffset_crosscorr_3.png
 </pre></div>
 </div>
 <p>In this example, we use a rectangular region of the image that contains bright
-sky lines. The offsets found for the three exposures <span class="math notranslate nohighlight">\((\delta x, \delta 
+sky lines. The offsets found for the three exposures <span class="math notranslate nohighlight">\((\delta x, \delta
 y)=(-0.46, 0.41)\)</span>, <span class="math notranslate nohighlight">\((0.00, -0.01)\)</span>, and <span class="math notranslate nohighlight">\((0.48, -0.26)\)</span> for exposures 1, 2, and
 3, respectively, agree well (within <span class="math notranslate nohighlight">\(\sim 0.1\)</span> pix) with the offsets introduced
 when simulating the individual exposures: <span class="math notranslate nohighlight">\((\delta x, \delta y)=(-0.50, 0.50)\)</span>,
@@ -2578,7 +2579,7 @@ all exposures.</p></li>
 to determine the relative flux levels of the individual exposures in
 comparison to the median combination, where the limits are defined in pixels
 following the FITS convention (the first pixel in each direction is numbered
-as 1). If this parameter is set to null in the YAML file (intepreted as None
+as 1). If this parameter is set to null in the YAML file (interpreted as None
 when read by Python), it is assumed that the full image area is employed.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">apply_flux_factor_to</span></code> (string): specifies to which images the flux factors
 should be applied. Valid options are:</p>

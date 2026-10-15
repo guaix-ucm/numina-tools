@@ -11,7 +11,7 @@ to be reused across pipelines for different instruments.
 
 This webpage *does not describe how to use the data reduction pipelines* for
 the various GTC instruments. That information is provided in dedicated
-documentation pages for each instrument: [pyemir](https://pyemir.readthedocs.io/en/stable/), [megaradrp](https://guaix-ucm.github.io/megaradrp-cookbook/), and [fridadrp](https://guaix-ucm.github.io/fridadrp-tutorials/) (still under developement).
+documentation pages for each instrument: [pyemir](https://pyemir.readthedocs.io/en/stable/), [megaradrp](https://guaix-ucm.github.io/megaradrp-cookbook/), and [fridadrp](https://guaix-ucm.github.io/fridadrp-tutorials/) (still under development).
 The utilities described here correspond only to particular manipulations of
 astronomical images which, once implemented as part of a data reduction
 pipeline for a particular instrument, have proven useful for processing images

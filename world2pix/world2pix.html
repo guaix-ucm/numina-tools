@@ -11,7 +11,8 @@
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=55cbccbb" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c180e49b" />
+      <link rel="stylesheet" type="text/css" href="../_static/click-extra.css?v=59573e2f" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -96,33 +97,31 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-pixel_solid_angle_arcsec2<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>usage: numina-pixel_solid_angle_arcsec2 [-h] [--extname EXTNAME]
-                                        [--method METHOD]
-                                        [--kernel_size KERNEL_SIZE]
-                                        [--verbose] [--echo]
-                                        input_file output_file
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-Bold -Ansi-Blue">usage: </span><span class="-Ansi -Ansi-Bold -Ansi-Magenta">numina-pixel_solid_angle_arcsec2</span> [<span class="-Ansi -Ansi-Green">-h</span>] [<span class="-Ansi -Ansi-Cyan">--extname </span><span class="-Ansi -Ansi-Yellow">EXTNAME</span>] [<span class="-Ansi -Ansi-Cyan">--method </span><span class="-Ansi -Ansi-Yellow">METHOD</span>]
+                                        [<span class="-Ansi -Ansi-Cyan">--kernel_size </span><span class="-Ansi -Ansi-Yellow">KERNEL_SIZE</span>] [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                                        <span class="-Ansi -Ansi-Green">input_file</span> <span class="-Ansi -Ansi-Green">output_file</span>
 
 Compute the solid angle in arcsec^2 for each pixel in a 2D image.
 
-positional arguments:
-  input_file            FITS file containing the image data.
-  output_file           Output FITS file to save the solid angle data.
+<span class="-Ansi -Ansi-Bold -Ansi-Blue">positional arguments:</span>
+  <span class="-Ansi -Ansi-Bold -Ansi-Green">input_file</span>            FITS file containing the image data.
+  <span class="-Ansi -Ansi-Bold -Ansi-Green">output_file</span>           Output FITS file to save the solid angle data.
 
-options:
-  -h, --help            show this help message and exit
-  --extname EXTNAME     Extension name of the input HDU (default: 'PRIMARY').
-  --method METHOD       Method to compute the solid angle:
+<span class="-Ansi -Ansi-Bold -Ansi-Blue">options:</span>
+  <span class="-Ansi -Ansi-Bold -Ansi-Green">-h</span>, <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-Bold -Ansi-Yellow">EXTNAME</span>     Extension name of the input HDU (default: 'PRIMARY').
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-Bold -Ansi-Yellow">METHOD</span>       Method to compute the solid angle:
                         1: Use spherical polygons (slow)
                            (not recommended for very small pixel sizes)
                         2: Use spherical polygons (different approach, slow)
                            (recommended for small pixel sizes)
                         3: Use spherical coordinates and distances (fast)
                            (default, not recommended for very small pixel sizes)
-  --kernel_size KERNEL_SIZE
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--kernel_size</span> <span class="-Ansi -Ansi-Bold -Ansi-Yellow">KERNEL_SIZE</span>
                         Kernel size for smoothing the result using a median
                         filter. If not specified, no smoothing is applied.
-  --verbose             Display intermediate information
-  --echo                Display full command line
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--verbose</span>             Display intermediate information
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--echo</span>                Display full command line
 </pre></div>
 </div>
 </section>
@@ -134,21 +133,30 @@ the inverse transformation.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-pixel_to_world<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-pixel_to_world</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--pixel</span> <span class="-Ansi -Ansi-C36">PIXEL</span>] [<span class="-Ansi -Ansi-Cyan">--extnum</span> <span class="-Ansi -Ansi-C36">EXTNUM</span>]
-                             [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-pixel_to_world</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--pixel</span> <span class="-Ansi -Ansi-C36">PIXEL</span>] [<span class="-Ansi -Ansi-Cyan">-e</span> <span class="-Ansi -Ansi-C36">EXTNUM</span>] [<span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>]
+                             [<span class="-Ansi -Ansi-Cyan">--wcskey</span> <span class="-Ansi -Ansi-C36">WCSKEY</span>] [<span class="-Ansi -Ansi-Cyan">--version</span>] [<span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>] [<span class="-Ansi -Ansi-Cyan">--no-color</span>]
+                             [<span class="-Ansi -Ansi-Cyan">--record</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>] [<span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>]
                              <span class="-Ansi -Ansi-Cyan">inputfile</span>
 
 Convert pixel to world coordinates.
 
 <span class="-Ansi -Ansi-C208">Positional Arguments:</span>
-  <span class="-Ansi -Ansi-Cyan">inputfile</span>        Input FITS file
+  <span class="-Ansi -Ansi-Cyan">inputfile</span>             Input FITS file
 
 <span class="-Ansi -Ansi-C208">Options:</span>
-  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>       show this help message and exit
-  <span class="-Ansi -Ansi-Cyan">--pixel</span> <span class="-Ansi -Ansi-C36">PIXEL</span>    WCS pixel coordinate (comma separated values)
-  <span class="-Ansi -Ansi-Cyan">--extnum</span> <span class="-Ansi -Ansi-C36">EXTNUM</span>  Extension number (default 0=PRIMARY)
-  <span class="-Ansi -Ansi-Cyan">--verbose</span>        Display intermediate information
-  <span class="-Ansi -Ansi-Cyan">--echo</span>           Display full command line
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--pixel</span> <span class="-Ansi -Ansi-C36">PIXEL</span>         WCS pixel coordinate (comma separated values)
+  <span class="-Ansi -Ansi-Cyan">-e</span>, <span class="-Ansi -Ansi-Cyan">--extnum</span> <span class="-Ansi -Ansi-C36">EXTNUM</span>   Extension number
+  <span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>     Extension name
+  <span class="-Ansi -Ansi-Cyan">--wcskey</span> <span class="-Ansi -Ansi-C36">WCSKEY</span>       WCS key to use when multiple WCS are present in the FITS header
+  <span class="-Ansi -Ansi-Cyan">--version</span>             Display version information and exit
+  <span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>
+                        Output directory (default: .)
+  <span class="-Ansi -Ansi-Cyan">--no-color</span>            Disable color output
+  <span class="-Ansi -Ansi-Cyan">--record</span>              Record terminal output
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>
+                        Set the logging level
 </pre></div>
 </div>
 </section>
@@ -160,24 +168,23 @@ the inverse transformation.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-world_to_pixel<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span>usage: numina-world_to_pixel [-h] [--sky SKY] [--wave WAVE] [--extnum EXTNUM]
-                             [--verbose] [--echo]
-                             inputfile
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-Bold -Ansi-Blue">usage: </span><span class="-Ansi -Ansi-Bold -Ansi-Magenta">numina-world_to_pixel</span> [<span class="-Ansi -Ansi-Green">-h</span>] [<span class="-Ansi -Ansi-Cyan">--sky </span><span class="-Ansi -Ansi-Yellow">SKY</span>] [<span class="-Ansi -Ansi-Cyan">--wave </span><span class="-Ansi -Ansi-Yellow">WAVE</span>] [<span class="-Ansi -Ansi-Cyan">--extnum </span><span class="-Ansi -Ansi-Yellow">EXTNUM</span>] [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+                             <span class="-Ansi -Ansi-Green">inputfile</span>
 
 Convert world to pixel coordinates.
 
-positional arguments:
-  inputfile        Input FITS file
+<span class="-Ansi -Ansi-Bold -Ansi-Blue">positional arguments:</span>
+  <span class="-Ansi -Ansi-Bold -Ansi-Green">inputfile</span>        Input FITS file
 
-options:
-  -h, --help       show this help message and exit
-  --sky SKY        Celestial coordinate (string)
+<span class="-Ansi -Ansi-Bold -Ansi-Blue">options:</span>
+  <span class="-Ansi -Ansi-Bold -Ansi-Green">-h</span>, <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--help</span>       show this help message and exit
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--sky</span> <span class="-Ansi -Ansi-Bold -Ansi-Yellow">SKY</span>        Celestial coordinate (string)
                    e.g. 'SkyCoord(0*u.arcsec, 0*u.arcsec)'
-  --wave WAVE      Spectral wavelength (string)
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--wave</span> <span class="-Ansi -Ansi-Bold -Ansi-Yellow">WAVE</span>      Spectral wavelength (string)
                    e.g. '1.9344e-06*u.m'
-  --extnum EXTNUM  Extension number (default 0=PRIMARY)
-  --verbose        Display intermediate information
-  --echo           Display full command line
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--extnum</span> <span class="-Ansi -Ansi-Bold -Ansi-Yellow">EXTNUM</span>  Extension number (default 0=PRIMARY)
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--verbose</span>        Display intermediate information
+  <span class="-Ansi -Ansi-Bold -Ansi-Cyan">--echo</span>           Display full command line
 </pre></div>
 </div>
 </section>

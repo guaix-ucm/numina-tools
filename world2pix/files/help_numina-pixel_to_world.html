@@ -11,7 +11,8 @@
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=55cbccbb" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c180e49b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/click-extra.css?v=59573e2f" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
@@ -83,21 +84,30 @@
   <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-pixel_to_world<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-pixel_to_world</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--pixel</span> <span class="-Ansi -Ansi-C36">PIXEL</span>] [<span class="-Ansi -Ansi-Cyan">--extnum</span> <span class="-Ansi -Ansi-C36">EXTNUM</span>]
-                             [<span class="-Ansi -Ansi-Cyan">--verbose</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>]
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-pixel_to_world</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--pixel</span> <span class="-Ansi -Ansi-C36">PIXEL</span>] [<span class="-Ansi -Ansi-Cyan">-e</span> <span class="-Ansi -Ansi-C36">EXTNUM</span>] [<span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>]
+                             [<span class="-Ansi -Ansi-Cyan">--wcskey</span> <span class="-Ansi -Ansi-C36">WCSKEY</span>] [<span class="-Ansi -Ansi-Cyan">--version</span>] [<span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>] [<span class="-Ansi -Ansi-Cyan">--no-color</span>]
+                             [<span class="-Ansi -Ansi-Cyan">--record</span>] [<span class="-Ansi -Ansi-Cyan">--echo</span>] [<span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>]
                              <span class="-Ansi -Ansi-Cyan">inputfile</span>
 
 Convert pixel to world coordinates.
 
 <span class="-Ansi -Ansi-C208">Positional Arguments:</span>
-  <span class="-Ansi -Ansi-Cyan">inputfile</span>        Input FITS file
+  <span class="-Ansi -Ansi-Cyan">inputfile</span>             Input FITS file
 
 <span class="-Ansi -Ansi-C208">Options:</span>
-  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>       show this help message and exit
-  <span class="-Ansi -Ansi-Cyan">--pixel</span> <span class="-Ansi -Ansi-C36">PIXEL</span>    WCS pixel coordinate (comma separated values)
-  <span class="-Ansi -Ansi-Cyan">--extnum</span> <span class="-Ansi -Ansi-C36">EXTNUM</span>  Extension number (default 0=PRIMARY)
-  <span class="-Ansi -Ansi-Cyan">--verbose</span>        Display intermediate information
-  <span class="-Ansi -Ansi-Cyan">--echo</span>           Display full command line
+  <span class="-Ansi -Ansi-Cyan">-h</span>, <span class="-Ansi -Ansi-Cyan">--help</span>            show this help message and exit
+  <span class="-Ansi -Ansi-Cyan">--pixel</span> <span class="-Ansi -Ansi-C36">PIXEL</span>         WCS pixel coordinate (comma separated values)
+  <span class="-Ansi -Ansi-Cyan">-e</span>, <span class="-Ansi -Ansi-Cyan">--extnum</span> <span class="-Ansi -Ansi-C36">EXTNUM</span>   Extension number
+  <span class="-Ansi -Ansi-Cyan">--extname</span> <span class="-Ansi -Ansi-C36">EXTNAME</span>     Extension name
+  <span class="-Ansi -Ansi-Cyan">--wcskey</span> <span class="-Ansi -Ansi-C36">WCSKEY</span>       WCS key to use when multiple WCS are present in the FITS header
+  <span class="-Ansi -Ansi-Cyan">--version</span>             Display version information and exit
+  <span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>
+                        Output directory (default: .)
+  <span class="-Ansi -Ansi-Cyan">--no-color</span>            Disable color output
+  <span class="-Ansi -Ansi-Cyan">--record</span>              Record terminal output
+  <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
+  <span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>
+                        Set the logging level
 </pre></div>
 </div>
 

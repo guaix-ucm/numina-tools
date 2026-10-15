@@ -22,4 +22,3 @@ wavelength grid. In this sense, it produces the same result as the
 
 ```{include} files/help_numina-resample_wave_3d_cube.md
 ```
-

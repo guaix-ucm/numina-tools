@@ -20,4 +20,3 @@ This is a tool for visualizing 2D FITS images using Matplotlib, which can be con
 
 ```{include} files/help_numina-ximshow.md
 ```
-

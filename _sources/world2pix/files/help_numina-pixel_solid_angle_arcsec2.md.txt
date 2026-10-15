@@ -5,31 +5,29 @@
 ```{code-block} ansi-shell-session
 :class: my-special-block no-copybutton
 
-usage: numina-pixel_solid_angle_arcsec2 [-h] [--extname EXTNAME]
-                                        [--method METHOD]
-                                        [--kernel_size KERNEL_SIZE]
-                                        [--verbose] [--echo]
-                                        input_file output_file
+[1;34musage: [0m[1;35mnumina-pixel_solid_angle_arcsec2[0m [[32m-h[0m] [[36m--extname [33mEXTNAME[0m] [[36m--method [33mMETHOD[0m]
+                                        [[36m--kernel_size [33mKERNEL_SIZE[0m] [[36m--verbose[0m] [[36m--echo[0m]
+                                        [32minput_file[0m [32moutput_file[0m
 
 Compute the solid angle in arcsec^2 for each pixel in a 2D image.
 
-positional arguments:
-  input_file            FITS file containing the image data.
-  output_file           Output FITS file to save the solid angle data.
+[1;34mpositional arguments:[0m
+  [1;32minput_file[0m            FITS file containing the image data.
+  [1;32moutput_file[0m           Output FITS file to save the solid angle data.
 
-options:
-  -h, --help            show this help message and exit
-  --extname EXTNAME     Extension name of the input HDU (default: 'PRIMARY').
-  --method METHOD       Method to compute the solid angle:
+[1;34moptions:[0m
+  [1;32m-h[0m, [1;36m--help[0m            show this help message and exit
+  [1;36m--extname[0m [1;33mEXTNAME[0m     Extension name of the input HDU (default: 'PRIMARY').
+  [1;36m--method[0m [1;33mMETHOD[0m       Method to compute the solid angle:
                         1: Use spherical polygons (slow)
                            (not recommended for very small pixel sizes)
                         2: Use spherical polygons (different approach, slow)
                            (recommended for small pixel sizes)
                         3: Use spherical coordinates and distances (fast)
                            (default, not recommended for very small pixel sizes)
-  --kernel_size KERNEL_SIZE
+  [1;36m--kernel_size[0m [1;33mKERNEL_SIZE[0m
                         Kernel size for smoothing the result using a median
                         filter. If not specified, no smoothing is applied.
-  --verbose             Display intermediate information
-  --echo                Display full command line
+  [1;36m--verbose[0m             Display intermediate information
+  [1;36m--echo[0m                Display full command line
 ```

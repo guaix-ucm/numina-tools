@@ -11,7 +11,8 @@
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../../_static/sphinx-new-tab-link.css?v=d87cb1ac" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=55cbccbb" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c180e49b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/click-extra.css?v=59573e2f" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
@@ -83,23 +84,18 @@
   <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(venv_numina)</span> <span class="gp">$ </span>numina-measure_xy_offset_2dimages<span class="w"> </span>--help
 </pre></div>
 </div>
-<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-measure_xy_offset_2dimages</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--image1</span> <span class="-Ansi -Ansi-C36">IMAGE1</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--image2</span> <span class="-Ansi -Ansi-C36">IMAGE2</span>] [<span class="-Ansi -Ansi-Cyan">--extnum1</span> <span class="-Ansi -Ansi-C36">EXTNUM1</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--extnum2</span> <span class="-Ansi -Ansi-C36">EXTNUM2</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--subtract-background</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--rescale-to-01</span>] [<span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{1,2}</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--plots</span>] [<span class="-Ansi -Ansi-Cyan">--test</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--test-fwhm</span> <span class="-Ansi -Ansi-C36">TEST_FWHM</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--test-amplitude</span> <span class="-Ansi -Ansi-C36">TEST_AMPLITUDE</span>]
+<div class="my-special-block no-copybutton highlight-ansi-shell-session notranslate"><div class="highlight"><pre><span></span><span class="-Ansi -Ansi-C208">Usage:</span> <span class="-Ansi -Ansi-C244">numina-measure_xy_offset_2dimages</span> [<span class="-Ansi -Ansi-Cyan">-h</span>] [<span class="-Ansi -Ansi-Cyan">--image1</span> <span class="-Ansi -Ansi-C36">IMAGE1</span>] [<span class="-Ansi -Ansi-Cyan">--image2</span> <span class="-Ansi -Ansi-C36">IMAGE2</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--extnum1</span> <span class="-Ansi -Ansi-C36">EXTNUM1</span>] [<span class="-Ansi -Ansi-Cyan">--extnum2</span> <span class="-Ansi -Ansi-C36">EXTNUM2</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--subtract-background</span>] [<span class="-Ansi -Ansi-Cyan">--rescale-to-01</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{1,2}</span>] [<span class="-Ansi -Ansi-Cyan">--plots</span>] [<span class="-Ansi -Ansi-Cyan">--test</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-fwhm</span> <span class="-Ansi -Ansi-C36">TEST_FWHM</span>] [<span class="-Ansi -Ansi-Cyan">--test-amplitude</span> <span class="-Ansi -Ansi-C36">TEST_AMPLITUDE</span>]
                                          [<span class="-Ansi -Ansi-Cyan">--test-background</span> <span class="-Ansi -Ansi-C36">TEST_BACKGROUND</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--test-noise</span> <span class="-Ansi -Ansi-C36">TEST_NOISE</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--test-xoffset</span> <span class="-Ansi -Ansi-C36">TEST_XOFFSET</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-noise</span> <span class="-Ansi -Ansi-C36">TEST_NOISE</span>] [<span class="-Ansi -Ansi-Cyan">--test-xoffset</span> <span class="-Ansi -Ansi-C36">TEST_XOFFSET</span>]
                                          [<span class="-Ansi -Ansi-Cyan">--test-yoffset</span> <span class="-Ansi -Ansi-C36">TEST_YOFFSET</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--test-num-nans</span> <span class="-Ansi -Ansi-C36">TEST_NUM_NANS</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--test-seed</span> <span class="-Ansi -Ansi-C36">TEST_SEED</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--save-test-images</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>] [<span class="-Ansi -Ansi-Cyan">--record</span>]
-                                         [<span class="-Ansi -Ansi-Cyan">--echo</span>] [<span class="-Ansi -Ansi-Cyan">--version</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--test-num-nans</span> <span class="-Ansi -Ansi-C36">TEST_NUM_NANS</span>] [<span class="-Ansi -Ansi-Cyan">--test-seed</span> <span class="-Ansi -Ansi-C36">TEST_SEED</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--save-test-images</span>] [<span class="-Ansi -Ansi-Cyan">--version</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>] [<span class="-Ansi -Ansi-Cyan">--no-color</span>] [<span class="-Ansi -Ansi-Cyan">--record</span>]
+                                         [<span class="-Ansi -Ansi-Cyan">--echo</span>]
                                          [<span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>]
 
 Determine (X,Y) offsets between 2 2D images using cross-correlation.
@@ -112,19 +108,16 @@ Determine (X,Y) offsets between 2 2D images using cross-correlation.
   <span class="-Ansi -Ansi-Cyan">--extnum2</span> <span class="-Ansi -Ansi-C36">EXTNUM2</span>     Extension number for the second image (default: 0)
   <span class="-Ansi -Ansi-Cyan">--subtract-background</span>
                         Subtract median background from images
-  <span class="-Ansi -Ansi-Cyan">--rescale-to-01</span>       Rescale images to the range [0, 1] before computing
-                        cross-correlation
+  <span class="-Ansi -Ansi-Cyan">--rescale-to-01</span>       Rescale images to the range [0, 1] before computing cross-correlation
   <span class="-Ansi -Ansi-Cyan">--method</span> <span class="-Ansi -Ansi-C36">{1,2}</span>        Method (1: scipy (default), 2: skimage)
   <span class="-Ansi -Ansi-Cyan">--plots</span>               Generate plots of the images and cross-correlation
   <span class="-Ansi -Ansi-Cyan">--test</span>                Run test mode with synthetic images
   <span class="-Ansi -Ansi-Cyan">--test-fwhm</span> <span class="-Ansi -Ansi-C36">TEST_FWHM</span>
                         FWHM of the synthetic Gaussian star (default: 10.0)
   <span class="-Ansi -Ansi-Cyan">--test-amplitude</span> <span class="-Ansi -Ansi-C36">TEST_AMPLITUDE</span>
-                        Amplitude of the synthetic Gaussian star (default:
-                        1000.0)
+                        Amplitude of the synthetic Gaussian star (default: 1000.0)
   <span class="-Ansi -Ansi-Cyan">--test-background</span> <span class="-Ansi -Ansi-C36">TEST_BACKGROUND</span>
-                        Background level of the synthetic images (default:
-                        100.0)
+                        Background level of the synthetic images (default: 100.0)
   <span class="-Ansi -Ansi-Cyan">--test-noise</span> <span class="-Ansi -Ansi-C36">TEST_NOISE</span>
                         Noise level of the synthetic images (default: 5.0)
   <span class="-Ansi -Ansi-Cyan">--test-xoffset</span> <span class="-Ansi -Ansi-C36">TEST_XOFFSET</span>
@@ -132,16 +125,16 @@ Determine (X,Y) offsets between 2 2D images using cross-correlation.
   <span class="-Ansi -Ansi-Cyan">--test-yoffset</span> <span class="-Ansi -Ansi-C36">TEST_YOFFSET</span>
                         Y offset of the synthetic images (default: 3.0)
   <span class="-Ansi -Ansi-Cyan">--test-num-nans</span> <span class="-Ansi -Ansi-C36">TEST_NUM_NANS</span>
-                        Number of NaN pixels to insert in each synthetic image
-                        (default: 20)
+                        Number of NaN pixels to insert in each synthetic image (default: 20)
   <span class="-Ansi -Ansi-Cyan">--test-seed</span> <span class="-Ansi -Ansi-C36">TEST_SEED</span>
                         Random seed for synthetic images (default: 1234)
   <span class="-Ansi -Ansi-Cyan">--save-test-images</span>    Save synthetic images to FITS files
+  <span class="-Ansi -Ansi-Cyan">--version</span>             Display version information and exit
   <span class="-Ansi -Ansi-Cyan">--output-dir</span> <span class="-Ansi -Ansi-C36">OUTPUT_DIR</span>
                         Output directory (default: .)
+  <span class="-Ansi -Ansi-Cyan">--no-color</span>            Disable color output
   <span class="-Ansi -Ansi-Cyan">--record</span>              Record terminal output
   <span class="-Ansi -Ansi-Cyan">--echo</span>                Display full command line
-  <span class="-Ansi -Ansi-Cyan">--version</span>             Display version
   <span class="-Ansi -Ansi-Cyan">--log-level</span> <span class="-Ansi -Ansi-C36">{DEBUG,INFO,WARNING,ERROR,CRITICAL}</span>
                         Set the logging level
 </pre></div>
